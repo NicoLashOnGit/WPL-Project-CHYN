@@ -1,0 +1,22 @@
+{
+  "name": "wpl-project-chyn",
+  "version": "1.0.0",
+  "description": "fortnite project WPL",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoLashOnGit/WPL-Project-CHYN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicoLashOnGit/WPL-Project-CHYN/issues"
+  },
+  "homepage": "https://github.com/NicoLashOnGit/WPL-Project-CHYN#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.1"
+  }
+}
