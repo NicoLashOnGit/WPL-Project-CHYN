@@ -1,0 +1,22 @@
+#nav{
+    display: flex;
+    background-color: #18181C;
+    padding: .5em;
+    align-items: center;
+}
+
+#navLogoImage{
+    width: 5em;
+    
+}
+
+.navLinks{
+    text-decoration: none;
+    color: white;
+    padding-left: 2em;
+    
+}
+.navLinks:hover{
+    color: lightslategrey;
+    transform: scale(1.2);
+}
