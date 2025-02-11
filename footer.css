@@ -1,8 +1,10 @@
+
 #nav{
     display: flex;
     background-color: #18181C;
     padding: .5em;
     align-items: center;
+    
 }
 
 #navLogoImage{
@@ -18,5 +20,53 @@
 }
 .navLinks:hover{
     color: lightslategrey;
-    transform: scale(1.2);
+    transform: scale(1.2);   
+}
+.searchBar{
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 0 0 2em;
+    padding-left: 1em ;
+}
+
+#searchBar {
+    border: none;
+    outline: none;
+    width: 200px;
+    border-radius: 25px;
+}
+
+#searchBtn {
+    border: none;
+    background: #007BFF;
+    color: white;
+    padding: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#searchBtn:hover {
+    background: #0056b3;
+}
+
+#loginBtn{
+    background-color: rgb(247,255,25); /* Green background */
+    color: black;  /* White text */
+    border: none;  /* No border */
+    padding: 8px 16px;  /* Padding for size */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Font size */
+    border-radius: 8px;  /* Rounded corners */
+    cursor: pointer;  /* Cursor on hover */
+    transition: rgb(247,255,25) 0.3s, transform 0.3s ease-in-out;
+}
+
+#accountImage{
+    width: 48px ;
+    height: 48px;
+    border-radius: 50%;
 }
