@@ -1,0 +1,54 @@
+/* Header */
+
+
+
+/*Account Page*/
+
+/*Character Page*/
+
+/*Character Info*/
+body {
+    background-color: #34343c;
+}
+.charInfoContainer{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
+}
+.winLoseContainer{
+    display: flex;
+    align-items: center;
+    color: white;
+    #button{
+        font-size: 100px;
+    }
+    p{
+        font-size: 100px;
+    }
+}
+.aboutTitle, .about{
+    color: white;
+}
+.charImg {
+    width: 350px;
+    padding: 10px;
+}
+/*Favorites*/
+
+/*Blacklist*/
+
+/*Landing*/
+
+/*Contact*/
+
+/*FAQ*/
+
+
+
+/*Footer*/
+
+/*Mediaqueries*/
