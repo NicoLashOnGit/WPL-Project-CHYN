@@ -5,6 +5,77 @@
 /*Account Page*/
 
 /*Character Page*/
+#Characterpage{
+    height:70vh;
+    width: 100vw;
+    background-color: rgb(18, 18, 1);
+    color:white;
+    font-family: sans-serif;
+    align-items: center;
+}
+
+#Characterpage > #filter{
+    align-items:start;
+    margin-left: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#Characterpage > #Characterlist{
+    width: 60vw;
+    margin:auto;
+    
+}
+
+#Characterpage > #Characterlist > li{
+    border:2px solid yellow;
+    background-color: rgb(69, 68, 68);
+    border-style:outset;
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: white;
+    height: 80px;
+
+}
+
+#Characterpage > #Characterlist > li > img{
+    border:2px solid black;
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+
+}
+
+#Characterpage > #Characterlist > li > p{
+    
+}
+
+#Characterpage > #Characterlist > li > section{
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    
+}
+
+#Characterpage > #Characterlist > li > section > #fav{
+
+    clip-path: polygon(
+                50% 0%, 61% 35%, 98% 35%, 
+                68% 57%, 79% 91%, 50% 70%, 
+                21% 91%, 32% 57%, 2% 35%, 39% 35%
+            );
+    color: gold;
+    background-color: gold;
+
+}
+
+#Characterpage > #Characterlist > li > section > #blacklist{
+    padding-top:6px;
+}
+
+#Characterpage > #Characterlist > li > section > #blacklist:hover{
+    color:red;
+}
 
 /*Character Info*/
 
@@ -13,6 +84,62 @@
 /*Blacklist*/
 
 /*Landing*/
+#Mainlanding{
+    height:70%;
+    width: 100vw;
+    background-color: rgb(18, 18, 1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: sans-serif;
+
+}
+
+#Mainlanding > section{
+
+    margin: 2.5rem 2.5rem;
+    padding: 4rem;
+    height: 400px;
+    width: 300px;
+    border-width: 4px;
+    border-color: yellow;
+    border-style:outset;
+}
+
+#Mainlanding > section > h1{
+    text-align: center;
+    padding-top: 1rem;
+    color: white;
+}
+
+#Fifa{
+    background-image: url("/Images/Backgrounds/Fifa.jpg");
+    background-position: center;
+}
+
+#Fortnite{
+    background-image: url("/Images/Backgrounds/Fortnite.jpg");
+    background-position: center;
+}
+
+#LegoMasters{
+    background-image: url("/Images/Backgrounds/LegoMasters.jpg");
+    background-position: center;
+}
+
+#Lotr{
+    background-image: url("/Images/Backgrounds/LOTR.jpg");
+    background-position: center;
+}
+
+#Mtg{
+    background-image: url("/Images/Backgrounds/MagicTheGathering.jpg");
+    background-position: center;
+}
+
+#Pokemon{
+    background-image: url("/Images/Backgrounds/Pokemon.jpg");
+    background-position: center;
+}
 
 /*Contact*/
 
