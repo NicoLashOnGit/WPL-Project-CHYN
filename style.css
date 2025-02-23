@@ -40,7 +40,55 @@ body {
 /*Favorites*/
 
 /*Blacklist*/
-
+h1{
+    text-transform: uppercase;
+    position: relative;
+    font-size: 50px;
+    color: white;
+    left: 25%;
+}
+h2{
+    text-transform: uppercase;
+    color: white;
+    font-size: 50px;
+}
+p{
+    font-size: 25px;
+    color: white;
+}
+.char1{
+    border: solid ;
+    position: relative;
+    /*left: 25%;*/
+    top: 50px;
+    display: flex;
+    align-items: flex-start;
+    #char1Img{
+        margin-right: 100px;
+    }
+}
+.char2{
+    border: solid ;
+    position: relative;
+    /*left: 25%;*/
+    top: 55px;
+    display: flex;
+    align-items: flex-start;
+    #char1Img{
+        margin-right: 100px;
+    }
+}
+.char3{
+    border: solid ;
+    position: relative;
+    /*left: 25%;*/
+    top: 60px;
+    display: flex;
+    align-items: flex-start;
+    #char1Img{
+        margin-right: 100px;
+    }
+}
 /*Landing*/
 
 /*Contact*/
