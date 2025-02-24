@@ -78,11 +78,88 @@
 }
 
 /*Character Info*/
-
+body {
+    background-color: #34343c;
+}
+.charInfoContainer{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
+}
+.winLoseContainer{
+    display: flex;
+    align-items: center;
+    color: white;
+    #button{
+        font-size: 100px;
+    }
+    p{
+        font-size: 100px;
+    }
+}
+.aboutTitle, .about{
+    color: white;
+}
+.charImg {
+    width: 350px;
+    padding: 10px;
+}
 /*Favorites*/
 
 /*Blacklist*/
-
+h1{
+    text-transform: uppercase;
+    position: relative;
+    font-size: 50px;
+    color: white;
+    left: 25%;
+}
+h2{
+    text-transform: uppercase;
+    color: white;
+    font-size: 50px;
+}
+p{
+    font-size: 25px;
+    color: white;
+}
+.char1{
+    border: solid ;
+    position: relative;
+    /*left: 25%;*/
+    top: 50px;
+    display: flex;
+    align-items: flex-start;
+    #char1Img{
+        margin-right: 100px;
+    }
+}
+.char2{
+    border: solid ;
+    position: relative;
+    /*left: 25%;*/
+    top: 55px;
+    display: flex;
+    align-items: flex-start;
+    #char1Img{
+        margin-right: 100px;
+    }
+}
+.char3{
+    border: solid ;
+    position: relative;
+    /*left: 25%;*/
+    top: 60px;
+    display: flex;
+    align-items: flex-start;
+    #char1Img{
+        margin-right: 100px;
+    }
+}
 /*Landing*/
 #Mainlanding{
     height:70%;
@@ -140,6 +217,15 @@
     background-image: url("/Images/Backgrounds/Pokemon.jpg");
     background-position: center;
 }
+=======
+
+/*Character Info*/
+
+/*Favorites*/
+
+/*Blacklist*/
+
+/*Landing*/
 
 /*Contact*/
 
