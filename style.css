@@ -1,10 +1,20 @@
-/* Header */
+/* ###################################*/
+/*----------------Body----------------*/
+/* ###################################*/
 
+body{
+    background-color: #34343c;
+    font-family: sans-serif;
+    width: 100%;
+}
 
+/* ###################################*/
+/*------------Account Page-------------*/
+/* ###################################*/
 
-/*Account Page*/
-
-/*Character Page*/
+/* ###################################*/
+/*-----------Character Page------------*/
+/* ###################################*/
 #Characterpage{
     height:70vh;
     width: 100vw;
@@ -77,10 +87,10 @@
     color:red;
 }
 
-/*Character Info*/
-body {
-    background-color: #34343c;
-}
+/* ###################################*/
+/*------------Chacter Info-------------*/
+/* ###################################*/
+
 .charInfoContainer{
     display: flex;
     align-items: flex-start;
@@ -160,7 +170,10 @@ p{
         margin-right: 100px;
     }
 }
-/*Landing*/
+/* ###################################*/
+/*---------------Landing--------------*/
+/* ###################################*/
+
 #Mainlanding{
     height:70%;
     width: 100vw;
@@ -217,22 +230,150 @@ p{
     background-image: url("/Images/Backgrounds/Pokemon.jpg");
     background-position: center;
 }
-=======
 
-/*Character Info*/
+/* ###################################*/
+/*-----------Character Info-----------*/
+/* ###################################*/
 
-/*Favorites*/
+/* ###################################*/
+/*-------------Favourites--------------*/
+/* ###################################*/
 
-/*Blacklist*/
+/* ###################################*/
+/*-------------Blacklist--------------*/
+/* ###################################*/
 
-/*Landing*/
+/* ###################################*/
+/*----------------Landing-----------------*/
+/* ###################################*/
 
-/*Contact*/
+/* ###################################*/
+/*----------------Contact-----------------*/
+/* ###################################*/
 
-/*FAQ*/
+/* ###################################*/
+/*----------------FAQ-----------------*/
+/* ###################################*/
 
+/* ###################################*/
+/*----------------Nav-----------------*/
+/* ###################################*/
 
+#nav{
+    display: flex;
+    background-color: #18181C;
+    padding: .5em;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+#navLinksList,ul{
+    list-style: none;
+}
 
-/*Footer*/
+#navLogoImage{
+    width: 5em;  
+}
 
-/*Mediaqueries*/
+.navLinks{
+    text-decoration: none;
+    color: white;
+    padding-left: 2em;
+}
+.navLinks:hover{
+    color: lightslategrey;
+}
+.searchBar{
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 0 0 2em;
+    padding-left: .5em ;
+}
+
+#searchBar {
+    border: none;
+    outline: none;
+    width: 200px;
+    border-radius: 25px;
+}
+
+#searchBtn {
+    border: none;
+    background: #007BFF;
+    color: white;
+    padding: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#searchBtn:hover {
+    background: #0056b3;
+}
+
+#loginBtn{
+    background-color: rgb(247,255,25); /* Green background */
+    color: black;  /* White text */
+    border: none;  /* No border */
+    padding: 8px 16px;  /* Padding for size */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Font size */
+    border-radius: 8px;  /* Rounded corners */
+    cursor: pointer;  /* Cursor on hover */
+    transition: rgb(247,255,25) 0.3s, transform 0.3s ease-in-out;
+}
+
+#accountImage{
+    width: 48px ;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.navRight{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 2em;
+    gap: .5em;
+}
+
+/* ###################################*/
+/*--------------Footer----------------*/
+/* ###################################*/
+
+footer{
+    background-color: #18181C;
+    color: white;
+    display: flex;
+    padding: 2em;
+}
+
+.footerLinks{
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-bottom: .75em; /* ruimte tussen de links.*/
+}
+.footerLinks:hover{
+    color: lightslategray;
+}
+
+.footerTitles{
+    color: gray;
+    font-size: 1.5em;
+    margin-bottom: .5em;
+}
+
+.footerArticles{
+    width: 30%;
+    
+}
+
+/* ###################################*/
+/*--------------Media Queries----------*/
+/* ###################################*/
