@@ -65,6 +65,7 @@ body {
 /* ###################################*/
 /*-----------Character Page------------*/
 /* ###################################*/
+<<<<<<< HEAD
 #Characterpage {
   height: 70vh;
   width: 100vw;
@@ -72,6 +73,14 @@ body {
   color: white;
   font-family: sans-serif;
   align-items: center;
+=======
+#Characterpage{
+    height:70vh;
+    background-color: rgb(18, 18, 1);
+    color:white;
+    font-family: sans-serif;
+    align-items: center;
+>>>>>>> 858c5553104738b3d3d8b08894f105b660cab212
 }
 
 #Characterpage > #filter {
