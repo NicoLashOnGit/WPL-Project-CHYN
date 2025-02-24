@@ -2,291 +2,232 @@
 /*----------------Body----------------*/
 /* ###################################*/
 
-body {
-  background-color: #34343c;
-  font-family: sans-serif;
-  width: 100%;
+body{
+    background-color: #34343c;
+    font-family: sans-serif;
+    width: 100%;
 }
 
 /* ###################################*/
 /*------------Account Page-------------*/
 /* ###################################*/
-.container {
-  width: 50%;
-  margin: auto;
-  padding: 20px;
-  text-align: center;
-}
-.profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-.profile img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid white;
-}
-.subtext {
-  color: lightgray;
-}
-.info {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  padding: 10px;
-}
-.info p {
-  text-align: left;
-  border: solid rgba(255, 255, 255, 0.568);
-  border-width: 1px;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  min-width: 120px;
-  place-content: center;
-}
-.change-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 20px;
-  margin-top: 10px;
-  border: none;
-  background-color: yellow;
-  color: black;
-  font-weight: bold;
-  border-radius: 10px;
-  height: 35px;
-}
 
 /* ###################################*/
 /*-----------Character Page------------*/
 /* ###################################*/
-<<<<<<< HEAD
-#Characterpage {
-  height: 70vh;
-  width: 100vw;
-  background-color: rgb(18, 18, 1);
-  color: white;
-  font-family: sans-serif;
-  align-items: center;
-=======
 #Characterpage{
     height:70vh;
     background-color: rgb(18, 18, 1);
     color:white;
     font-family: sans-serif;
     align-items: center;
->>>>>>> 858c5553104738b3d3d8b08894f105b660cab212
 }
 
-#Characterpage > #filter {
-  align-items: start;
-  margin-left: 3rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+#Characterpage > #filter{
+    align-items:start;
+    margin-left: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-#Characterpage > #Characterlist {
-  width: 60vw;
-  margin: auto;
+#Characterpage > #Characterlist{
+    width: 60vw;
+    margin:auto;
+    
 }
 
-#Characterpage > #Characterlist > li {
-  border: 2px solid yellow;
-  background-color: rgb(69, 68, 68);
-  border-style: outset;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  color: white;
-  height: 80px;
+#Characterpage > #Characterlist > li{
+    border:2px solid yellow;
+    background-color: rgb(69, 68, 68);
+    border-style:outset;
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: white;
+    height: 80px;
+
 }
 
-#Characterpage > #Characterlist > li > img {
-  border: 2px solid black;
-  border-radius: 30px;
-  height: 60px;
-  width: 60px;
+#Characterpage > #Characterlist > li > img{
+    border:2px solid black;
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+
 }
 
-#Characterpage > #Characterlist > li > p {
+#Characterpage > #Characterlist > li > p{
+    
 }
 
-#Characterpage > #Characterlist > li > section {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+#Characterpage > #Characterlist > li > section{
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    
 }
 
-#Characterpage > #Characterlist > li > section > #fav {
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-  color: gold;
-  background-color: gold;
+#Characterpage > #Characterlist > li > section > #fav{
+
+    clip-path: polygon(
+                50% 0%, 61% 35%, 98% 35%, 
+                68% 57%, 79% 91%, 50% 70%, 
+                21% 91%, 32% 57%, 2% 35%, 39% 35%
+            );
+    color: gold;
+    background-color: gold;
+
 }
 
-#Characterpage > #Characterlist > li > section > #blacklist {
-  padding-top: 6px;
+#Characterpage > #Characterlist > li > section > #blacklist{
+    padding-top:6px;
 }
 
-#Characterpage > #Characterlist > li > section > #blacklist:hover {
-  color: red;
+#Characterpage > #Characterlist > li > section > #blacklist:hover{
+    color:red;
 }
 
 /* ###################################*/
 /*------------Chacter Info-------------*/
 /* ###################################*/
 
-.charInfoContainer {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
+.charInfoContainer{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
 }
-.aboutContainer {
-  display: flex;
-  flex-direction: column;
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
 }
-.winLoseContainer {
-  display: flex;
-  align-items: center;
-  color: white;
-  #button {
-    font-size: 100px;
-  }
-  p {
-    font-size: 100px;
-  }
+.winLoseContainer{
+    display: flex;
+    align-items: center;
+    color: white;
+    #button{
+        font-size: 100px;
+    }
+    p{
+        font-size: 100px;
+    }
 }
-.aboutTitle,
-.about {
-  color: white;
+.aboutTitle, .about{
+    color: white;
 }
 .charImg {
-  width: 350px;
-  padding: 10px;
+    width: 350px;
+    padding: 10px;
 }
 /*Favorites*/
 
 /*Blacklist*/
-h1 {
-  text-transform: uppercase;
-  position: relative;
-  font-size: 50px;
-  color: white;
-  left: 25%;
+h1{
+    text-transform: uppercase;
+    position: relative;
+    font-size: 50px;
+    color: white;
+    left: 25%;
 }
-h2 {
-  text-transform: uppercase;
-  color: white;
-  font-size: 50px;
+h2{
+    text-transform: uppercase;
+    color: white;
+    font-size: 50px;
 }
-p {
-  font-size: 25px;
-  color: white;
+p{
+    font-size: 25px;
+    color: white;
 }
-.char1 {
-  border: solid;
-  position: relative;
-  /*left: 25%;*/
-  top: 50px;
-  display: flex;
-  align-items: flex-start;
-  #char1Img {
-    margin-right: 100px;
-  }
+.char1{
+    border: solid ;
+    position: relative;
+    /*left: 25%;*/
+    top: 50px;
+    display: flex;
+    align-items: flex-start;
+    #char1Img{
+        margin-right: 100px;
+    }
 }
-.char2 {
-  border: solid;
-  position: relative;
-  /*left: 25%;*/
-  top: 55px;
-  display: flex;
-  align-items: flex-start;
-  #char1Img {
-    margin-right: 100px;
-  }
+.char2{
+    border: solid ;
+    position: relative;
+    /*left: 25%;*/
+    top: 55px;
+    display: flex;
+    align-items: flex-start;
+    #char1Img{
+        margin-right: 100px;
+    }
 }
-.char3 {
-  border: solid;
-  position: relative;
-  /*left: 25%;*/
-  top: 60px;
-  display: flex;
-  align-items: flex-start;
-  #char1Img {
-    margin-right: 100px;
-  }
+.char3{
+    border: solid ;
+    position: relative;
+    /*left: 25%;*/
+    top: 60px;
+    display: flex;
+    align-items: flex-start;
+    #char1Img{
+        margin-right: 100px;
+    }
 }
 /* ###################################*/
 /*---------------Landing--------------*/
 /* ###################################*/
 
-#Mainlanding {
-  height: 70%;
-  width: 100vw;
-  background-color: rgb(18, 18, 1);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  font-family: sans-serif;
+#Mainlanding{
+    height:70%;
+    width: 100vw;
+    background-color: rgb(18, 18, 1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: sans-serif;
+
 }
 
-#Mainlanding > section {
-  margin: 2.5rem 2.5rem;
-  padding: 4rem;
-  height: 400px;
-  width: 300px;
-  border-width: 4px;
-  border-color: yellow;
-  border-style: outset;
+#Mainlanding > section{
+
+    margin: 2.5rem 2.5rem;
+    padding: 4rem;
+    height: 400px;
+    width: 300px;
+    border-width: 4px;
+    border-color: yellow;
+    border-style:outset;
 }
 
-#Mainlanding > section > h1 {
-  text-align: center;
-  padding-top: 1rem;
-  color: white;
+#Mainlanding > section > h1{
+    text-align: center;
+    padding-top: 1rem;
+    color: white;
 }
 
-#Fifa {
-  background-image: url("/Images/Backgrounds/Fifa.jpg");
-  background-position: center;
+#Fifa{
+    background-image: url("/Images/Backgrounds/Fifa.jpg");
+    background-position: center;
 }
 
-#Fortnite {
-  background-image: url("/Images/Backgrounds/Fortnite.jpg");
-  background-position: center;
+#Fortnite{
+    background-image: url("/Images/Backgrounds/Fortnite.jpg");
+    background-position: center;
 }
 
-#LegoMasters {
-  background-image: url("/Images/Backgrounds/LegoMasters.jpg");
-  background-position: center;
+#LegoMasters{
+    background-image: url("/Images/Backgrounds/LegoMasters.jpg");
+    background-position: center;
 }
 
-#Lotr {
-  background-image: url("/Images/Backgrounds/LOTR.jpg");
-  background-position: center;
+#Lotr{
+    background-image: url("/Images/Backgrounds/LOTR.jpg");
+    background-position: center;
 }
 
-#Mtg {
-  background-image: url("/Images/Backgrounds/MagicTheGathering.jpg");
-  background-position: center;
+#Mtg{
+    background-image: url("/Images/Backgrounds/MagicTheGathering.jpg");
+    background-position: center;
 }
 
-#Pokemon {
-  background-image: url("/Images/Backgrounds/Pokemon.jpg");
-  background-position: center;
+#Pokemon{
+    background-image: url("/Images/Backgrounds/Pokemon.jpg");
+    background-position: center;
 }
 
 /* ###################################*/
@@ -317,120 +258,94 @@ p {
 /*----------------Nav-----------------*/
 /* ###################################*/
 
-#nav {
-  display: flex;
-  background-color: #18181c;
-  padding: 0.5em;
-  align-items: center;
-  position: sticky;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+#nav{
+    display: flex;
+    background-color: #18181C;
+    padding: .5em;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
-#navLinksList,
-ul {
-  list-style: none;
-}
-
-#navLogoImage {
-  width: 5em;
+#navLinksList,ul{
+    list-style: none;
 }
 
-.navLinks {
-  text-decoration: none;
-  color: white;
-  padding-left: 2em;
+#navLogoImage{
+    width: 5em;  
 }
-.navLinks:hover {
-  color: lightslategrey;
+
+.navLinks{
+    text-decoration: none;
+    color: white;
+    padding-left: 2em;
 }
-.searchBar {
-  display: flex;
-  background: white;
-  border-radius: 25px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 0 0 0 2em;
-  padding-left: 0.5em;
+.navLinks:hover{
+    color: lightslategrey;
+}
+.searchBar{
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 0 0 2em;
+    padding-left: .5em ;
 }
 
 #searchBar {
-  border: none;
-  outline: none;
-  width: 200px;
-  border-radius: 25px;
+    border: none;
+    outline: none;
+    width: 200px;
+    border-radius: 25px;
 }
 
 #searchBtn {
-  border: none;
-  background: #007bff;
-  color: white;
-  padding: 0.5em;
-  border-radius: 50%;
-  cursor: pointer;
+    border: none;
+    background: #007BFF;
+    color: white;
+    padding: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 #searchBtn:hover {
-  background: #0056b3;
+    background: #0056b3;
 }
 
-#loginBtn {
-  background-color: rgb(247, 255, 25); /* Green background */
-  color: black; /* White text */
-  border: none; /* No border */
-  padding: 8px 16px; /* Padding for size */
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px; /* Font size */
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer; /* Cursor on hover */
-  transition: rgb(247, 255, 25) 0.3s, transform 0.3s ease-in-out;
+#loginBtn{
+    background-color: rgb(247,255,25); /* Green background */
+    color: black;  /* White text */
+    border: none;  /* No border */
+    padding: 8px 16px;  /* Padding for size */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Font size */
+    border-radius: 8px;  /* Rounded corners */
+    cursor: pointer;  /* Cursor on hover */
+    transition: rgb(247,255,25) 0.3s, transform 0.3s ease-in-out;
 }
 
-#accountImage {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+#accountImage{
+    width: 48px ;
+    height: 48px;
+    border-radius: 50%;
 }
 
-.navRight {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  right: 2em;
-  gap: 0.5em;
+.navRight{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 2em;
+    gap: .5em;
 }
 
 /* ###################################*/
 /*--------------Footer----------------*/
 /* ###################################*/
 
-footer {
-  background-color: #18181c;
-  color: white;
-  display: flex;
-  padding: 2em;
-}
 
-.footerLinks {
-  text-decoration: none;
-  color: white;
-  display: block;
-  margin-bottom: 0.75em; /* ruimte tussen de links.*/
-}
-.footerLinks:hover {
-  color: lightslategray;
-}
-
-.footerTitles {
-  color: gray;
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.footerArticles {
-  width: 30%;
-}
 
 /* ###################################*/
 /*--------------Media Queries----------*/
