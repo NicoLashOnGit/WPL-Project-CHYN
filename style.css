@@ -346,7 +346,60 @@ p{
 /* ###################################*/
 
 
+footer {
+    background-color: darkslategray;
+    font-family: sans-serif;
+    color: white;
 
+    margin: auto;
+    padding: 50px;
+    border-top: black;
+}
+
+.footerLinks{
+    display: inline-block;
+    margin: 10px;
+    width: 32%;
+    text-align: center;
+    border-top: #18181C;
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #f4f4f4;
+    text-decoration: underline;
+    font-weight: 1000;
+}
+
+li {
+    margin: 5px;
+}
+
+a {
+    color: lightgray;
+    text-decoration: none;
+    font-weight: 750;
+}
+
+#socials{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+#socialsIconsDiv{
+    display: flex;
+}
+
+#footerLogo>img{
+    height: 64px;
+}
+
+.socialsIcons{
+    width: 48px;
+}
 /* ###################################*/
 /*--------------Media Queries----------*/
 /* ###################################*/
