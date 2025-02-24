@@ -357,10 +357,10 @@ footer {
 }
 
 .footerLinks{
+    padding-top: 20px;
     display: inline-block;
     margin: 10px;
     width: 32%;
-    text-align: center;
     border-top: #18181C;
 }
 
@@ -398,8 +398,9 @@ a {
 }
 
 .socialsIcons{
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    height: 32px;
+    padding-left: 10px;
 }
 /* ###################################*/
 /*--------------Media Queries----------*/
