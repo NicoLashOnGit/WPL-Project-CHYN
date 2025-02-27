@@ -15,75 +15,46 @@ body{
 /* ###################################*/
 /*-----------Character Page------------*/
 /* ###################################*/
-#Characterpage{
-    height:70vh;
-    background-color: rgb(18, 18, 1);
-    color:white;
-    font-family: sans-serif;
-    align-items: center;
-}
 
-#Characterpage > #filter{
-    align-items:start;
-    margin-left: 3rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-#Characterpage > #Characterlist{
-    width: 60vw;
-    margin:auto;
+.characterArticlesGrid{
+    display: grid;
+    grid-template-areas: 
+    "img name "
+    "img info "
+    "img info ";
+    grid-template-columns: 3fr 5fr ;  /* 2 columns, img takes 3fr, name/info take 5fr */
+    grid-template-rows: auto auto auto;  /* 3 rows */
+    width: 40%;
     
+    padding: 1em;
+    border: black 1px solid;
 }
 
-#Characterpage > #Characterlist > li{
-    border:2px solid yellow;
-    background-color: rgb(69, 68, 68);
-    border-style:outset;
-    display:flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    color: white;
-    height: 80px;
+.characterArticles{
+    display: flex;
+    flex-direction: row;
 
 }
 
-#Characterpage > #Characterlist > li > img{
-    border:2px solid black;
-    border-radius: 30px;
-    height: 60px;
-    width: 60px;
-
+.characterImages{
+    grid-area: img;
+    width: 50%;
+    border: black 1px solid;
 }
-
-#Characterpage > #Characterlist > li > p{
-    
+.Btn{
+    grid-area: img;
+    width: 64px;
+    height: 64px;
+    border: black 1px solid;
 }
-
-#Characterpage > #Characterlist > li > section{
-    display:grid;
-    grid-template-rows: 1fr 1fr;
-    
+.characterName{
+    grid-area: name;
+    border: black 1px solid;
+    height: 64px;
 }
-
-#Characterpage > #Characterlist > li > section > #fav{
-
-    clip-path: polygon(
-                50% 0%, 61% 35%, 98% 35%, 
-                68% 57%, 79% 91%, 50% 70%, 
-                21% 91%, 32% 57%, 2% 35%, 39% 35%
-            );
-    color: gold;
-    background-color: gold;
-
-}
-
-#Characterpage > #Characterlist > li > section > #blacklist{
-    padding-top:6px;
-}
-
-#Characterpage > #Characterlist > li > section > #blacklist:hover{
-    color:red;
+.characterInfo{
+    grid-area: info;
+    border: black 1px solid;
 }
 
 /* ###################################*/
