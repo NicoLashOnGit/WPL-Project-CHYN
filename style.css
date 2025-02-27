@@ -6,6 +6,7 @@ body{
     background-color: #34343c;
     font-family: sans-serif;
     width: 100%;
+    height: 100%;
 }
 
 /* ###################################*/
@@ -15,46 +16,36 @@ body{
 /* ###################################*/
 /*-----------Character Page------------*/
 /* ###################################*/
-
-.characterArticlesGrid{
-    display: grid;
-    grid-template-areas: 
-    "img name "
-    "img info "
-    "img info ";
-    grid-template-columns: 3fr 5fr ;  /* 2 columns, img takes 3fr, name/info take 5fr */
-    grid-template-rows: auto auto auto;  /* 3 rows */
-    width: 40%;
-    
-    padding: 1em;
-    border: black 1px solid;
-}
-
-.characterArticles{
+#characterMain{
     display: flex;
-    flex-direction: row;
-
+    flex-wrap: wrap;
 }
 
-.characterImages{
-    grid-area: img;
-    width: 50%;
-    border: black 1px solid;
+.Characters{
+    padding: 2em;
+    display: flex;
+    justify-content: center;   
+    width: 40%;
 }
-.Btn{
-    grid-area: img;
-    width: 64px;
-    height: 64px;
+
+.characterPortraits{
+    display: flex;
     border: black 1px solid;
+    width: 300px;
 }
-.characterName{
-    grid-area: name;
+
+.characterText{
     border: black 1px solid;
-    height: 64px;
+    width: 70%;
+    padding-left: .4em;
+    font-size: 1.3em;
 }
-.characterInfo{
-    grid-area: info;
-    border: black 1px solid;
+
+.characterNames{
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 0.4em 0em 0.4em 0em;
+    text-decoration: underline;
 }
 
 /* ###################################*/
