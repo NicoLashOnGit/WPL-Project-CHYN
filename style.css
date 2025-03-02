@@ -65,7 +65,6 @@ body {
 /* ###################################*/
 /*-----------Character Page------------*/
 /* ###################################*/
-<<<<<<< HEAD
 #Characterpage {
   height: 70vh;
   width: 100vw;
@@ -73,14 +72,6 @@ body {
   color: white;
   font-family: sans-serif;
   align-items: center;
-=======
-#Characterpage{
-    height:70vh;
-    background-color: rgb(18, 18, 1);
-    color:white;
-    font-family: sans-serif;
-    align-items: center;
->>>>>>> 858c5553104738b3d3d8b08894f105b660cab212
 }
 
 #Characterpage > #filter {
@@ -95,6 +86,9 @@ body {
   margin: auto;
 }
 
+.fav.liked {
+  color: yellow;
+}
 #Characterpage > #Characterlist > li {
   border: 2px solid yellow;
   background-color: rgb(69, 68, 68);
@@ -119,23 +113,6 @@ body {
 #Characterpage > #Characterlist > li > section {
   display: grid;
   grid-template-rows: 1fr 1fr;
-}
-
-#Characterpage > #Characterlist > li > section > #fav {
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-  color: gold;
-  background-color: gold;
 }
 
 #Characterpage > #Characterlist > li > section > #blacklist {
