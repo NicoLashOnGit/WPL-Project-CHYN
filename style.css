@@ -22,28 +22,33 @@ body{
 }
 
 .Characters{
-    padding: 2em;
+    margin: .5em;
+    padding: 1em;
     display: flex;
-    justify-content: center;   
-    width: 40%;
+    justify-content: space-between;   
+    
+    width: 42%;
 }
 
 .characterPortraits{
     display: flex;
     border: black 1px solid;
-    width: 300px;
+    width: 200px;
+    height: 200px;
+}
+
+.characterDescriptions{
+    font-size: 1em;
 }
 
 .characterText{
-    border: black 1px solid;
-    width: 70%;
-    padding-left: .4em;
-    font-size: 1.3em;
+    width: auto;
+    padding-left: 0.6em;
 }
 
 .characterNames{
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 0.4em 0em 0.4em 0em;
     text-decoration: underline;
 }
@@ -226,7 +231,6 @@ p{
     padding: .5em;
     align-items: center;
     position: sticky;
-    width: 100%;
     top: 0;
     z-index: 1000;
 }
@@ -242,7 +246,7 @@ p{
 .navLinks{
     text-decoration: none;
     color: white;
-    padding-left: 2em;
+    padding-left: 1em;
 }
 .navLinks:hover{
     color: lightslategrey;
@@ -252,7 +256,7 @@ p{
     background: white;
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 0 0 2em;
+    margin: 0 0 0 1em;
     padding-left: .5em ;
 }
 
@@ -262,7 +266,6 @@ p{
     width: 200px;
     border-radius: 25px;
 }
-
 #searchBtn {
     border: none;
     background: #007BFF;
@@ -275,35 +278,26 @@ p{
 #searchBtn:hover {
     background: #0056b3;
 }
-
 #loginBtn{
-    background-color: rgb(247,255,25); /* Green background */
-    color: black;  /* White text */
-    border: none;  /* No border */
-    padding: 8px 16px;  /* Padding for size */
-    text-align: center;
+    background-color: rgb(247,255,25); 
+    border: none;  
+    padding: 8px 16px;  
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px; /* Font size */
-    border-radius: 8px;  /* Rounded corners */
-    cursor: pointer;  /* Cursor on hover */
+    border-radius: 8px;  
+    cursor: pointer;  
     transition: rgb(247,255,25) 0.3s, transform 0.3s ease-in-out;
 }
-
 #accountImage{
     width: 48px ;
     height: 48px;
     border-radius: 50%;
 }
-
 .navRight{
+    padding-left: .3em;
     display: flex;
-    align-items: center;
-    position: absolute;
-    right: 2em;
+    margin-left: auto;
     gap: .5em;
 }
-
 /* ###################################*/
 /*--------------Footer----------------*/
 /* ###################################*/
@@ -369,6 +363,10 @@ a {
     height: 32px;
     padding-left: 10px;
 }
+#socialsIconsDiv{
+    display: flex;
+    justify-content: space-between;
+}
 
 /* ###################################*/
 /*--------------Media Queries----------*/
@@ -377,28 +375,102 @@ a {
 /* Default styles for larger screens (desktop) */
 
 /* Large Devices (Large Desktop) */
-@media only screen and (min-width: 1200px) {
-    
+@media only screen and (max-width: 1024px) {
+/* NAV */
+#searchBar{
+    width: 150px;
+}
+#navLinks{
+    padding-left: .5em;
+}
+/*##################*/
+/* CHARACTER PAGE*/
+.characterNames{
+    font-size: 1em;
+}
+.characterDescriptions{
+    font-size: 0.8em;
+}
+/*##################*/
 }
 
 /* Medium Devices (Tablets) */
-@media only screen and (max-width: 768px) {
-    
+@media only screen and (max-width: 768px) {    
+/* NAV */
+    .navLinks{
+        display: none;
+    }
+    #searchBar{
+        width: 100px;
+    }
+    #loginBtn{
+        height: 48px;
+    }
+/*##################*/      
+/*##################*/   
+/* CHARACTER PAGE*/
+    .Characters{
+        width: 100%;
+        margin: .3em;
+    }
+    .characterPortraits{
+        width: 100px;
+        height: 100px;
+    }   
+
+    .characterDescriptions{
+        font-size: .8em;
+    }
+    .characterNames{
+        font-size: 1.1em;
+    }
+    #loginBtn{
+        height: 32px;
+        margin-top: 10px;
+        font-size: .5em;
+    }
+/*##################*/
 }
 
 /* Small Devices (Phones) */
 @media only screen and (max-width: 480px) {
-    /*FOOTER SECTION */
+/* NAV */
+    .navLinks{
+        display: none;
+    }
+    #searchBar{
+        width: 100px;
+    }
+    #loginBtn{
+        height: 32px;
+        margin-top: 10px;
+        font-size: .5em;
+    }
+    #navRight{
+        margin-right: 10px;
+    }
+/*##################*/    
+/*FOOTER SECTION */
     .socialsIcons {
         width: 24px;
         height: 24px;
-        padding-left: 5px;
+        padding-left: 1px;
     }
 
     #footerLogo{
         height: 64px;
         width: 128px;
     }
-    /* ############# */
+/* ############# */
+/* CHARACTER PAGE*/
+    .Characters{
+        width: 80%;
+    }
+    .characterPortraits{
+        width: 150px;
+        height: 150px;
+    }   
+
+/*##################*/
 }
 
