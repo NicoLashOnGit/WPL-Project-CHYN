@@ -89,6 +89,9 @@ body {
 .fav.liked {
   color: yellow;
 }
+.blacklist.liked {
+  color: red;
+}
 #Characterpage > #Characterlist > li {
   border: 2px solid yellow;
   background-color: rgb(69, 68, 68);
