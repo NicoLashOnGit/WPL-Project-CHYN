@@ -1,3 +1,4 @@
 function toggleBlacklist(blacklist) {
-    blacklist.classList.toggle('liked');
+    var liElement = blacklist.closest('li');
+    liElement.style.display = 'none';
 }
