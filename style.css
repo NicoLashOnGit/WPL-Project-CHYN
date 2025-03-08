@@ -19,36 +19,27 @@ body{
 #characterMain{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .Characters{
     margin: .5em;
     padding: 1em;
-    display: flex;
-    justify-content: space-between;   
-    
-    width: 42%;
+    display: flex; 
+    flex-direction: column;
 }
 
 .characterPortraits{
     display: flex;
     border: black 1px solid;
-    width: 200px;
-    height: 200px;
-}
-
-.characterDescriptions{
-    font-size: 1em;
-}
-
-.characterText{
-    width: auto;
-    padding-left: 0.6em;
+    width: 400px;
+    height: auto;
 }
 
 .characterNames{
+    text-align: center;
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.5em;
     padding: 0.4em 0em 0.4em 0em;
     text-decoration: underline;
 }
@@ -386,7 +377,7 @@ a {
 /*##################*/
 /* CHARACTER PAGE*/
 .characterNames{
-    font-size: 1em;
+    font-size: 1.3em;
 }
 .characterDescriptions{
     font-size: 0.8em;
@@ -409,20 +400,12 @@ a {
 /*##################*/      
 /*##################*/   
 /* CHARACTER PAGE*/
-    .Characters{
-        width: 100%;
-        margin: .3em;
-    }
-    .characterPortraits{
-        width: 100px;
-        height: 100px;
-    }   
 
-    .characterDescriptions{
-        font-size: .8em;
-    }
     .characterNames{
         font-size: 1.1em;
+    }
+    .characterPortraits{
+        width: 250px;
     }
     #loginBtn{
         height: 32px;
@@ -463,12 +446,12 @@ a {
     }
 /* ############# */
 /* CHARACTER PAGE*/
-    .Characters{
-        width: 80%;
-    }
     .characterPortraits{
-        width: 150px;
-        height: 150px;
+        width: 300px;
+        height: 300px;
+    }
+    .characterNames{
+        font-size: 1.3em;
     }   
 
 /*##################*/
