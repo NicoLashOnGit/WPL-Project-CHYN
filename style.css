@@ -7,6 +7,7 @@ body{
     font-family: sans-serif;
     width: 100%;
     height: 100%;
+    color: white;
 }
 
 /* ###################################*/
@@ -78,55 +79,44 @@ body{
 /*Favorites*/
 
 /*Blacklist*/
-h1{
-    text-transform: uppercase;
-    position: relative;
-    font-size: 50px;
-    color: white;
-    left: 25%;
-}
-h2{
-    text-transform: uppercase;
-    color: white;
-    font-size: 50px;
-}
-p{
-    font-size: 25px;
-    color: white;
-}
-.char1{
-    border: solid ;
-    position: relative;
-    /*left: 25%;*/
-    top: 50px;
+
+#blacklistedCharacterSection{
     display: flex;
-    align-items: flex-start;
-    #char1Img{
-        margin-right: 100px;
-    }
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: space-evenly;
+    padding: 1em;
 }
-.char2{
-    border: solid ;
-    position: relative;
-    /*left: 25%;*/
-    top: 55px;
+
+.blacklistedCharacters{
+    border: white 1px solid;
     display: flex;
-    align-items: flex-start;
-    #char1Img{
-        margin-right: 100px;
-    }
+    width: 40%;
 }
-.char3{
-    border: solid ;
-    position: relative;
-    /*left: 25%;*/
-    top: 60px;
+
+.blacklistedCharactersImages{
+    width: 30%;
+    border: 1px white solid;
+}
+
+.blacklistedCharactersText{
     display: flex;
-    align-items: flex-start;
-    #char1Img{
-        margin-right: 100px;
-    }
+    flex-direction: column;
 }
+
+.blacklistedCharacterNames{
+    border-bottom: 1px white solid;
+    height: 20%;
+    text-align: center;
+    margin-top: .5em;
+}
+
+.blacklistReasons{
+    height: 80%;
+    padding: 0em 1em 0em 1em;
+}
+
+
 /* ###################################*/
 /*---------------Landing--------------*/
 /* ###################################*/
