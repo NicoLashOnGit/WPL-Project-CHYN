@@ -84,7 +84,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     width: 90%;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: 1em;
 }
 
@@ -92,6 +92,8 @@ body{
     border: white 1px solid;
     display: flex;
     width: 40%;
+    position: relative;
+    margin: 1em;
 }
 
 .blacklistedCharactersImages{
@@ -102,6 +104,8 @@ body{
 .blacklistedCharactersText{
     display: flex;
     flex-direction: column;
+    position: relative;
+    width: 70%;
 }
 
 .blacklistedCharacterNames{
@@ -112,8 +116,28 @@ body{
 }
 
 .blacklistReasons{
-    height: 80%;
-    padding: 0em 1em 0em 1em;
+    height: auto;
+    padding: 0em 1.5em 1em 1em;
+    position: relative;
+}
+
+#BlacklistReasonEditBtn{
+    bottom: 0px;
+    right: 0px;
+}
+
+#RemoveBlacklistBtn{
+    top: 2px;
+    left: 0px;
+}
+.blacklistBtns{
+    background: none;
+    border: none;
+    position: absolute;
+}
+.blacklistBtnImages{
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -288,7 +312,7 @@ footer {
     font-family: sans-serif;
     color: white;
     margin: auto;
-    padding: 50px;
+    padding: 10px;
 }
 
 /* Styling and spacing of the link sections */
@@ -310,7 +334,7 @@ footer {
 
 /* LinksSections title */
 h3 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 1.5em;
     color: #f4f4f4;
     font-weight: 1000;
@@ -373,6 +397,11 @@ a {
     font-size: 0.8em;
 }
 /*##################*/
+/* BLACKLIST PAGE*/
+    .blacklistedCharacters{
+        width: 100%;
+    }
+/*##################*/
 }
 
 /* Medium Devices (Tablets) */
@@ -430,6 +459,17 @@ a {
         padding-left: 1px;
     }
 
+    #LinkSection{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 0px;
+    }
+
+    .footerLinks{
+        padding-top: 0em;
+    }
+
     #footerLogo{
         height: 64px;
         width: 128px;
@@ -444,6 +484,20 @@ a {
         font-size: 1.3em;
     }   
 
+/*##################*/
+/* BLACKLIST PAGE*/
+.blacklistedCharacterNames{
+    font-size: 1em;
+}
+
+.blacklistReasons{
+    font-size: 0.7em;
+}
+
+.blacklistBtnImages{
+    width: 16px;
+    height: 16px;
+}
 /*##################*/
 }
 
