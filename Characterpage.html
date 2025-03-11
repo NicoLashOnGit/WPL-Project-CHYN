@@ -4,53 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href= "style.css">
     <script src="JavaScript/favorite.js" defer></script>
     <script src="JavaScript/blacklist.js" defer></script>
 </head>
 <body>
-    <main id="Characterpage">
-        <select id="filter">
-            <option></option>
-            <option></option>
-            <option></option>
-        </select>
 
-        <ul id="Characterlist">
-            <li id="char">
-                <img src = "Images/Characters/placeholder.jpg">
-                <p>Lorem Ipsum Text 1</p>
-                <section>
-                    <span class="fav" onclick="toggleFavorite(this)">&#9733;</span>
-                <span class = "blacklist" onclick="toggleBlacklist(this)">&#10005;</span>
-                </section>
-                
-            </li>
-            <li id="char">
-                <img src = "Images/Characters/placeholder.jpg">
-                <p>Lorem Ipsum Text 2</p>
-                <section>
-                    <span class="fav" onclick="toggleFavorite(this)">&#9733;</span>
-                    <span class = "blacklist" onclick="toggleBlacklist(this)">&#10005;</span>
-                </section>
-            </li>
-            <li id="char">
-                <img src = "Images/Characters/placeholder.jpg">
-                <p>Lorem Ipsum Text 3</p>
-                <section>
-                    <span class="fav" onclick="toggleFavorite(this)">&#9733;</span>
-                    <span class = "blacklist" onclick="toggleBlacklist(this)">&#10005;</span>
-                </section>
-            </li>
-            <li id="char">
-                <img src = "Images/Characters/placeholder.jpg">
-                <p>Lorem Ipsum Text 4</p>
-                <section>
-                    <span class="fav" onclick="toggleFavorite(this)">&#9733;</span>
-                    <span class = "blacklist" onclick="toggleBlacklist(this)">&#10005;</span>
-                </section>
-            </li>
-        </ul>
-    </main>
+    <div id="navGrid">
+        <nav id="nav">
+            <a href="#"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="navLogoImage"></a>
+        
+        <a href="#" id="charactersLink" class="navLinks">Characters</a>
+        <a href="#" id="favoritesLink" class="navLinks">Favorites</a>
+        <a href="#" id="blacklistLink" class="navLinks">Blacklist</a>
+        
+        <form action="searchBar" class="searchBar">
+            <input type="text" id="searchBar" placeholder="Type to search...">
+            <button id="searchBtn">🔍</button>
+        </form>
+            
+            <div class="navRight">
+            <button id="loginBtn" class="">Log In!</button>
+            <a href="#" class=""><img src="/Images/Logos/Placeholder logo.png" alt="" id="accountImage"></a>
+            </div>
+        </nav>
+        </div> 
+
+        <main id="characterMain">
+            <article id="character1" class="Characters">
+                <img src="/Images/Characters/DefaultCharacterPortrait.png" alt="" id="character1portrait" class="characterPortraits">
+                <h2 class="characterNames" id="characterName1">Default Character</h2>
+            </article>
+
+            <article id="character2" class="Characters">
+                <img src="/Images/Characters/DefaultCharacterPortrait.png" alt="" id="character2portrait" class="characterPortraits">
+                <h2 class="characterNames" id="characterName2">Default Character</h2>
+            </article>
+
+            <article id="character3" class="Characters">
+                <img src="/Images/Characters/DefaultCharacterPortrait.png" alt="" id="character3portrait" class="characterPortraits">
+                <h2 class="characterNames" id="characterName3">Default Character</h2>
+            </article>
+
+            <article id="character4" class="Characters">
+                <img src="/Images/Characters/DefaultCharacterPortrait.png" alt="" id="character4portrait" class="characterPortraits">
+                <h2 class="characterNames" id="characterName4">Default Character</h2>
+            </article>
+
+            <article id="character5" class="Characters">
+                <img src="/Images/Characters/DefaultCharacterPortrait.png" alt="" id="character5portrait" class="characterPortraits">
+                <h2 class="characterNames" id="characterName5">Default Character</h2>
+            </article>
+
+            <article id="character6" class="Characters">
+                <img src="/Images/Characters/DefaultCharacterPortrait.png" alt="" id="character6portrait" class="characterPortraits">
+                <h2 class="characterNames" id="characterName6">Default Character</h2>
+            </article>
+
+            <article id="character7" class="Characters">
+                <img src="/Images/Characters/DefaultCharacterPortrait.png" alt="" id="character7portrait" class="characterPortraits">
+                <h2 class="characterNames" id="characterName7">Default Character</h2>
+            </article>
+
+            <article id="character8" class="Characters">
+                <img src="/Images/Characters/DefaultCharacterPortrait.png" alt="" id="character8portrait" class="characterPortraits">
+                <h2 class="characterNames" id="characterName8">Default Character</h2>
+            </article>
+
+        </main>
+
+    <footer>
+        <section id="socials">
+            <a href="#" id="footerLogo"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" ></a>
+            <div id="socialsIconsDiv">
+                <a href="#"><img src="/Images/Icons/Transparent Icons/Facebook 64 transparent.png" alt="Facebook" class="socialsIcons"></a>
+                <a href="#"><img src="/Images/Icons/Transparent Icons/X 64 transparent.png" alt="Twitter" class="socialsIcons" id="SocialsIconTwitter"></a>
+                <a href="#"><img src="/Images/Icons/Transparent Icons/Instagram 64 transparent.png" alt="Instagram" class="socialsIcons"></a>
+                <a href="#"><img src="/Images/Icons/Transparent Icons/Youtube 64 transparent.png" alt="Youtube" class="socialsIcons"></a>
+                <a href="#"><img src="/Images/Icons/Transparent Icons/Whatsapp 64 transparent.png" alt="WhatsApp" class="socialsIcons"></a>
+                <a href="#"><img src="/Images/Icons/Transparent Icons/Snapchat 64 transparent.png" alt="Snapchat" class="socialsIcons"></a>
+                <a href="#"><img src="/Images/Icons/Transparent Icons/Tiktok 64 transparent.png" alt="TikTok" class="socialsIcons"></a>
+            </div>
+        </section>
+    
+        <section id="LinkSection">
+            <article class="footerLinks">
+                <h3>Main</h3>
+                <ul>
+                    <li><a href="#">Lorem</a></li>
+                    <li><a href="#">Ipsum</a></li>
+                    <li><a href="#">Dolor</a></li>
+                </ul>
+            </article>
+    
+            <article class="footerLinks">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="#">Sit Amet</a></li>
+                    <li><a href="#">Consectetur</a></li>
+                    <li><a href="#">Adipiscing</a></li>
+                </ul>
+            </article>
+    
+            <article class="footerLinks">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </article>
+        </section>
+    </footer>
 </body>
 </html>
