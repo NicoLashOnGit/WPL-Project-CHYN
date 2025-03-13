@@ -146,7 +146,6 @@ body{
     width: 350px;
     padding: 10px;
 }
-/*Favorites*/
 
 /*Blacklist*/
 
@@ -320,6 +319,17 @@ body{
 /* ###################################*/
 /*-------------Favourites--------------*/
 /* ###################################*/
+
+.favoritedBtns{
+    background: none;
+    border: none;
+    position: absolute;
+}
+
+.favoritedCharactersImages{
+    width: 300px;
+    height: 400px;
+}
 
 /* ###################################*/
 /*-------------Blacklist--------------*/
