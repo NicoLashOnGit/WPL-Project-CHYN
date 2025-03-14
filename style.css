@@ -323,16 +323,20 @@ body{
 .favoritedBtns{
     right: 0px;
 }
+
+.favoriteCharacterCosmeticImages{
+    width: 48px;
+    height: 48px;
+    border: black 1.5px solid;
+}
 .favoriteCharacterCosmeticBtns{
     bottom: 0px;
-    width: 64px;
-    height: 64px;
 }
 #favoriteCharacterCosmeticBtn1{
-    right: 25%;
+    right: 27%;
 }
 #favoriteCharacterCosmeticBtn2{
-    left: 25%;
+    left: 27%;
 }
 
 /* BUTTONS*/
@@ -340,6 +344,7 @@ body{
     width: 250px;
     height: 250px;
     border: white 1px solid;
+    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
 }
 
 .favouritedCharacterTexts{
@@ -351,7 +356,6 @@ body{
 
 .favoriteCharacterNames{
     font-weight: 1000;
-    text-decoration: underline 2px;
     text-underline-offset: 2px;
     font-size: 2em;
     margin-right: .5em;
@@ -363,7 +367,7 @@ body{
     font-size: 1.4em;
 }
 .label{
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 
@@ -451,6 +455,8 @@ body{
 /* ###################################*/
 /*----------------FAQ-----------------*/
 /* ###################################*/
+/* nav en footer niet aanpassen foor specifieke paginas want deze zijn gelinkt met elke andere pagina en de andere nav/footer styling -nico*/
+/* 
 .nav,
 .footer {
   background-color: #222;
@@ -458,7 +464,7 @@ body{
   text-align: center;
   padding: 10px 0;
 }
-
+*/
 .container {
   width: 50%;
   margin: auto;
@@ -566,7 +572,7 @@ h1 {
     display: flex;
     margin-left: auto;
     gap: .5em;
-    padding-right: 1em;
+    padding-right: 5%;
 }
 
 
@@ -638,8 +644,9 @@ a {
 }
 #socialsIconsDiv{
     display: flex;
-    justify-content: space-between;
-    padding-right: 2em;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-right: 7%;
 }
 
 /* ###################################*/
@@ -730,8 +737,8 @@ a {
     .navLinks{
         display: none;
     }
-    #searchBar{
-        width: 100px;
+    #searchBar,#searchBtn{
+        display: none;
     }
     #loginBtn{
         height: 32px;
@@ -745,10 +752,12 @@ a {
         width: 24px;
         height: 24px;
         padding-left: auto;
+
     }
 
     #LinkSection{
-        width: 50%;
+        flex-direction: column;
+        text-align: center;
     }
 
 
@@ -763,8 +772,8 @@ a {
 /* ############# */
 /* CHARACTER PAGE*/
     .characterPortraits{
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
     .characterNames{
         font-size: 1.3em;
