@@ -3,6 +3,7 @@
 /* ###################################*/
 
 body{
+    overflow-x: hidden;
     background-color: #34343c;
     font-family: sans-serif;
     width: 100%;
@@ -77,6 +78,7 @@ body{
 }
 
 .Characters{
+    position: relative;
     margin: .5em;
     padding: 1em;
     display: flex; 
@@ -88,6 +90,7 @@ body{
     border: black 1px solid;
     width: 400px;
     height: auto;
+
 }
 
 .characterNames{
@@ -137,6 +140,24 @@ body{
   color: red;
 }
 
+.characterPageBtns {
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer;
+    position: absolute;
+}
+
+#favouriteBtn{
+    right: 15px;
+}
+#blacklistBtn{
+    left: 15px;
+}
+.characterPageBtnImages{
+    width: 32px;
+}
+
+
 /* ###################################*/
 /*------------Chacter Info-------------*/
 /* ###################################*/
@@ -168,70 +189,6 @@ body{
     width: 350px;
     padding: 10px;
 }
-/*Favorites*/
-
-/*Blacklist*/
-
-#blacklistedCharacterSection{
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    justify-content: space-around;
-    padding: 1em;
-}
-
-.blacklistedCharacters{
-    border: white 1px solid;
-    display: flex;
-    width: 40%;
-    position: relative;
-    margin: 1em;
-}
-
-.blacklistedCharactersImages{
-    width: 30%;
-    border: 1px white solid;
-}
-
-.blacklistedCharactersText{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 70%;
-}
-
-.blacklistedCharacterNames{
-    border-bottom: 1px white solid;
-    height: 20%;
-    text-align: center;
-    margin-top: .5em;
-}
-
-.blacklistReasons{
-    height: auto;
-    padding: 0em 1.5em 1em 1em;
-    position: relative;
-}
-
-#BlacklistReasonEditBtn{
-    bottom: 0px;
-    right: 0px;
-}
-
-#RemoveBlacklistBtn{
-    top: 2px;
-    left: 0px;
-}
-.blacklistBtns{
-    background: none;
-    border: none;
-    position: absolute;
-}
-.blacklistBtnImages{
-    width: 24px;
-    height: 24px;
-}
-
 
 /* ###################################*/
 /*---------------Landing--------------*/
@@ -339,9 +296,149 @@ body{
 /*-------------Favourites--------------*/
 /* ###################################*/
 
+#favoriteCharactersMain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.favoritedCharacters{
+    display: flex;
+    padding: 1em;
+}
+
+.FavoriteCharacterPortraitsAndCosmeticsSections{
+    position: relative;
+}
+
+/* BUTTONS*/
+.favoritedBtns,.favoriteCharacterCosmeticBtns{
+    position: absolute;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.favoritedBtns{
+    right: 0px;
+}
+.favoriteCharacterCosmeticBtns{
+    bottom: 0px;
+    width: 64px;
+    height: 64px;
+}
+#favoriteCharacterCosmeticBtn1{
+    right: 25%;
+}
+#favoriteCharacterCosmeticBtn2{
+    left: 25%;
+}
+
+/* BUTTONS*/
+.favoriteCharacterPortraits{
+    width: 250px;
+    height: 250px;
+    border: white 1px solid;
+}
+
+.favouritedCharacterTexts{
+    border: white 1px solid;
+    width: 90%;
+    height: 250px;
+    padding-left: .5em;
+}
+
+.favoriteCharacterNames{
+    font-weight: 1000;
+    text-decoration: underline 2px;
+    text-underline-offset: 2px;
+    font-size: 2em;
+    margin-right: .5em;
+}
+
+.favoriteCharactersStatictics{
+    display: flex;
+    margin-bottom: .3em;
+    font-size: 1.4em;
+}
+.label{
+    text-decoration: underline;
+}
+
+
+
 /* ###################################*/
 /*-------------Blacklist--------------*/
 /* ###################################*/
+
+
+/*Blacklist*/
+
+#blacklistedCharacterSection{
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 1em;
+    overflow: auto;
+    min-height: 100vh;
+}
+
+.blacklistedCharacters{
+    border: white 1px solid;
+    display: flex;
+    width: 40%;
+    height: 30%;
+    position: relative;
+    margin: 1em;
+}
+
+.blacklistedCharactersImages{
+    width: 300px;
+    border: 1px white solid;
+}
+
+.blacklistedCharactersText{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 70%;
+}
+
+.blacklistedCharacterNames{
+    border-bottom: 1px white solid;
+    font-size: 1.5em;
+    text-align: center;
+    
+}
+
+.blacklistReasons{
+    height: auto;
+    padding: 0em 1.5em 1em 1em;
+    position: relative;
+}
+
+#BlacklistReasonEditBtn{
+    bottom: 0px;
+    right: 0px;
+}
+
+#RemoveBlacklistBtn{
+    top: 2px;
+    left: 0px;
+}
+.blacklistBtns{
+    background: none;
+    border: none;
+    position: absolute;
+}
+.blacklistBtnImages{
+    width: 24px;
+    height: 24px;
+}
+
 
 /* ###################################*/
 /*----------------Landing-----------------*/
@@ -394,6 +491,7 @@ h1 {
 /*----------------Nav-----------------*/
 /* ###################################*/
 
+<<<<<<< HEAD
 #nav {
   display: flex;
   background-color: rgba(0, 0, 0, 0.5);
@@ -405,12 +503,26 @@ h1 {
   width: 100%;
   top: 0;
   z-index: 1000;
+=======
+nav{
+    width: 100%;
+    display: flex;
+    background-color: #18181C;
+    padding: .5em 0em 0.5em 0em;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+>>>>>>> f8bfe54ba81133c88fc204f890fbc399b4c4ddf3
 }
+
 #navLinksList,ul{
     list-style: none;
 }
 
 #navLogoImage{
+    padding-left: .5em;
     width: 128px;  
     height: 48px;
 }
@@ -435,7 +547,6 @@ h1 {
 #searchBar {
     border: none;
     outline: none;
-    width: 200px;
     border-radius: 25px;
 }
 #searchBtn {
@@ -465,20 +576,23 @@ h1 {
     border-radius: 50%;
 }
 .navRight{
-    padding-left: .3em;
     display: flex;
     margin-left: auto;
     gap: .5em;
+    padding-right: 1em;
 }
+
+
 /* ###################################*/
 /*--------------Footer----------------*/
 /* ###################################*/
 /* General footer styling such as bg color, font, text color*/
 footer {
+    width: 100%;
     background-color: #18181C;
     font-family: sans-serif;
     color: white;
-    margin: auto;
+    margin-top: auto;
     padding: 10px;
 }
 
@@ -538,6 +652,7 @@ a {
 #socialsIconsDiv{
     display: flex;
     justify-content: space-between;
+    padding-right: 2em;
 }
 
 /* ###################################*/
@@ -545,6 +660,17 @@ a {
 /* ###################################*/
 
 /* Default styles for larger screens (desktop) */
+
+/* Medium Devices (Tablets) */
+@media only screen and (max-width: 1440px) {   
+
+/* BLACKLIST PAGE*/
+.blacklistedCharacters{
+    width: 70%;
+}
+/*##################*/
+}
+
 
 /* Large Devices (Large Desktop) */
 @media only screen and (max-width: 1024px) {
@@ -565,9 +691,7 @@ a {
 }
 /*##################*/
 /* BLACKLIST PAGE*/
-    .blacklistedCharacters{
-        width: 100%;
-    }
+
 /*##################*/
 }
 
@@ -583,7 +707,19 @@ a {
     #loginBtn{
         height: 48px;
     }
-/*##################*/      
+/*##################*/  
+/* BLACKLIST*/ 
+    .blacklistedCharactersImages{
+        width: 150px;
+        height: auto;
+    }
+    .blacklistedCharacterNames{
+        font-size: 1.3em;
+    }
+    .blacklistReasons{
+        font-size: .7em;
+    }
+/*##################*/  
 /*##################*/   
 /* CHARACTER PAGE*/
 
@@ -615,23 +751,19 @@ a {
         margin-top: 10px;
         font-size: .5em;
     }
-    #navRight{
-        margin-right: 10px;
-    }
+
 /*##################*/    
 /*FOOTER SECTION */
     .socialsIcons {
         width: 24px;
         height: 24px;
-        padding-left: 1px;
+        padding-left: auto;
     }
 
     #LinkSection{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        gap: 0px;
+        width: 50%;
     }
+
 
     .footerLinks{
         padding-top: 0em;
@@ -653,18 +785,65 @@ a {
 
 /*##################*/
 /* BLACKLIST PAGE*/
+
+#blacklistedCharacterSection{
+    width: 80%;
+    justify-content: center;
+}
+
 .blacklistedCharacterNames{
     font-size: 1em;
 }
 
-.blacklistReasons{
-    font-size: 0.7em;
+.blacklistedCharacters{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
 }
 
+.blacklistedCharactersImages{
+    width: 100%;
+}
+
+.blacklistedCharactersText{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.blacklistedCharacterNames{
+    padding: .3em 0em .3em 0em;
+    font-size: 1.3em;
+    width: 100%;
+    border-bottom: white 1px solid;
+}
+
+.blacklistReasons{
+    font-size: 1em;
+    text-align: center;
+    padding: 0.3em 1.5em 1.5em 0.3em;
+    position: relative;
+}
+
+#BlacklistReasonEditBtn{
+    bottom: 0px;
+    right: 0px;
+}
+
+#RemoveBlacklistBtn{
+    top: 2px;
+    left: 0px;
+}
+.blacklistBtns{
+    background: none;
+    border: none;
+    position: absolute;
+}
 .blacklistBtnImages{
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
 }
 /*##################*/
 }
-
