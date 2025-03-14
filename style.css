@@ -68,13 +68,10 @@ body{
 /* ###################################*/
 /*-----------Character Page------------*/
 /* ###################################*/
-#Characterpage {
-  height: 70vh;
-  width: 100vw;
-  background-color: rgb(18, 18, 1);
-  color: white;
-  font-family: sans-serif;
-  align-items: center;
+#characterMain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .Characters{
@@ -100,45 +97,6 @@ body{
     padding: 0.4em 0em 0.4em 0em;
     text-decoration: underline;
 }
-.fav.liked {
-  color: yellow;
-}
-.blacklist.liked {
-  color: red;
-}
-#Characterpage > #Characterlist > li {
-  border: 2px solid yellow;
-  background-color: rgb(69, 68, 68);
-  border-style: outset;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  color: white;
-  height: 80px;
-}
-
-#Characterpage > #Characterlist > li > img {
-  border: 2px solid black;
-  border-radius: 30px;
-  height: 60px;
-  width: 60px;
-}
-
-#Characterpage > #Characterlist > li > p {
-}
-
-#Characterpage > #Characterlist > li > section {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-#Characterpage > #Characterlist > li > section > #blacklist {
-  padding-top: 6px;
-}
-
-#Characterpage > #Characterlist > li > section > #blacklist:hover {
-  color: red;
-}
 
 .characterPageBtns {
     background-color: transparent; 
@@ -156,6 +114,7 @@ body{
 .characterPageBtnImages{
     width: 32px;
 }
+
 
 
 /* ###################################*/
