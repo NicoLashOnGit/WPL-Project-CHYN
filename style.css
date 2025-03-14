@@ -3,6 +3,7 @@
 /* ###################################*/
 
 body{
+    overflow-x: hidden;
     background-color: #34343c;
     font-family: sans-serif;
     width: 100%;
@@ -253,6 +254,76 @@ body{
 /*-------------Favourites--------------*/
 /* ###################################*/
 
+#favoriteCharactersMain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.favoritedCharacters{
+    display: flex;
+    padding: 1em;
+}
+
+.FavoriteCharacterPortraitsAndCosmeticsSections{
+    position: relative;
+}
+
+/* BUTTONS*/
+.favoritedBtns,.favoriteCharacterCosmeticBtns{
+    position: absolute;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.favoritedBtns{
+    right: 0px;
+}
+.favoriteCharacterCosmeticBtns{
+    bottom: 0px;
+    width: 64px;
+    height: 64px;
+}
+#favoriteCharacterCosmeticBtn1{
+    right: 25%;
+}
+#favoriteCharacterCosmeticBtn2{
+    left: 25%;
+}
+
+/* BUTTONS*/
+.favoriteCharacterPortraits{
+    width: 250px;
+    height: 250px;
+    border: white 1px solid;
+}
+
+.favouritedCharacterTexts{
+    border: white 1px solid;
+    width: 90%;
+    height: 250px;
+    padding-left: .5em;
+}
+
+.favoriteCharacterNames{
+    font-weight: 1000;
+    text-decoration: underline 2px;
+    text-underline-offset: 2px;
+    font-size: 2em;
+    margin-right: .5em;
+}
+
+.favoriteCharactersStatictics{
+    display: flex;
+    margin-bottom: .3em;
+    font-size: 1.4em;
+}
+.label{
+    text-decoration: underline;
+}
+
 
 
 /* ###################################*/
@@ -387,6 +458,7 @@ nav{
     position: sticky;
     top: 0;
     z-index: 1000;
+    
 }
 
 #navLinksList,ul{
@@ -451,8 +523,10 @@ nav{
     display: flex;
     margin-left: auto;
     gap: .5em;
-    padding-right: .5em;
+    padding-right: 1em;
 }
+
+
 /* ###################################*/
 /*--------------Footer----------------*/
 /* ###################################*/
