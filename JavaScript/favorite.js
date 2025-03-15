@@ -1,14 +1,17 @@
-const star = document.getElementsByClassName("characterPageBtnImages");
-const button = document.getElementById('blacklistBtn');
+// Get the button element by its ID
+const blacklistBtn = document.getElementById("blacklistBtn");
 
-let isFirstImage = true;
+// Add an event listener to the button to listen for the 'click' event
+blacklistBtn.addEventListener("click", function() {
+  // Get the image element inside the button
+  const imgElement = blacklistBtn.querySelector("img");
 
-button.addEventListener("click", function() {
-    console.log('test')
-    if (isFirstImage) {
-        star.src = "/Images/ButtonImages/FilledGoldFavouriteStar.png";
-    } else {
-        star.src = "/Images/ButtonImages/blackEmptyFavouriteStar.png"
-    }
-    isFirstImage = !isFirstImage
+  // Check the current image and toggle it
+  if (imgElement.src.includes("blackEmptyFavouriteStar.png")) {
+    // Change to the filled version of the star
+    imgElement.src = "/Images/ButtonImages/FilledGoldFavouriteStar.png";
+  } else {
+    // Change back to the empty version
+    imgElement.src = "/Images/ButtonImages/blackEmptyFavouriteStar.png";
+  }
 });
