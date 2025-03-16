@@ -17,6 +17,7 @@ body{
 
 #homepage {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center; 
     width: 100%;
@@ -55,6 +56,7 @@ body{
     width: 50%;
     padding: 1rem;
     border: 6px solid rgb(181, 178, 178);
+    margin-top: 3%;
 }
 
 #recentsec > h2{
@@ -74,6 +76,7 @@ body{
     width: 50%;
     border-radius: 15px;
     border: 6px solid rgb(181, 178, 178);
+    margin-top: 3%;
 }
 
 #statsec > div > p{
@@ -85,7 +88,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 78%;
-   
+    margin-top: 3%;
     border-radius: 15px;
     border: 6px solid rgb(181, 178, 178);    
 }
@@ -102,11 +105,8 @@ body{
     margin:1rem 0rem;
 }
 
-
-#newcharsec > div:nth-child(2){
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    padding: 8rem;
+#buttondiv {
+margin-left: 5%;
 }
 
 #newcharsec > div:nth-child(2) > button{
@@ -835,7 +835,17 @@ a {
 }
 
 /* Medium Devices (Tablets) */
-@media only screen and (max-width: 768px) {    
+@media only screen and (max-width: 768px) {   
+/* Homepagina */
+    #seccontainer{
+        flex-direction: column;
+    }
+
+    #news{
+        width: 60%;
+        margin-left: -10%;
+    }
+
 /* NAV */
     .navLinks{
         display: none;
@@ -902,14 +912,6 @@ width: 100%
 #favoriteCharacterCosmeticBtn2{
     left: 32.5%;
 }
-/*##################*/
-/*HOMEPAGE*/
-
-#seccontainer{
-
-}
-
-
 
 /*##################*/
 /* FOOTER */
@@ -1145,20 +1147,5 @@ width: 100%;
     }
 }
 
-@media (min-width: 480px) and (max-width: 1024px) {
-    #seccontainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        gap: 20px;
-        justify-content: center;
-        margin-left: 0;
-    }
-    
-    #news {
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
-}
+
 
