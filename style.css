@@ -12,6 +12,155 @@ body{
 }
 
 /* ###################################*/
+/*------------Home Page-------------*/
+/* ###################################*/
+
+#homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    margin: 0 auto;
+}
+
+#introsec > h1{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    width: 700px;
+    color:white;
+    text-align: center;
+    margin-left: 500;
+}
+
+#introsec > p{
+    margin-bottom: 4rem;
+    padding: 1rem;
+    text-align: center;
+    width: 1200px;
+}
+
+#seccontainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: -15rem;
+    margin-bottom: 60px;
+}
+
+#recentsec{
+    border-radius: 10px;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 6px solid rgb(181, 178, 178);
+}
+
+#recentsec > h2{
+    width: 440px;
+    font-weight: 600;
+    font-size:xx-large;
+}
+
+#recentsec div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 1rem;
+}
+
+#recentsec div p{
+    padding: 1rem;
+}
+
+
+#recentsec img {
+    border-radius: 200px;    
+    padding-top: 1rem;
+}
+
+#statsec{
+    border-radius: 10px;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 6px solid rgb(181, 178, 178);
+}
+
+#statsec > h2{
+    width: 440px;
+    font-weight: 600;
+    font-size:xx-large;
+}
+
+#statsec div{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#statsec div p{
+    margin-top: 1rem;
+    padding-top: 3rem;
+}
+
+#newcharsec{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 660px;
+    height:600px ;
+    border-radius: 15px;
+    border: 6px solid rgb(181, 178, 178);
+    
+}
+
+#newcharsec h2{
+    width: 440px;
+    font-weight: 600;
+    font-size:xx-large;
+}
+
+#newcharsec img{
+border-radius: 225px;
+padding-top: 1rem;
+}
+
+#newcharsec > div:nth-child(2){
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 8rem;
+    margin-top: 4rem;
+    margin-left: -5rem;
+}
+
+#newcharsec > div:nth-child(2) > button{
+    margin-top: 1rem;
+    height: 60px;
+    width: 150px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: yellow;
+}
+
+#newcharsec > div > p{
+    margin-top: 1rem;
+}
+
+#news {
+    width:500px;
+margin-left: 1000px;
+margin-bottom: 60px;
+}
+
+#news > button {
+    align-items: center;
+    width: 200px;
+    background-color: yellow;
+    color:black;
+    height: 70px;
+    font-weight: 800;
+    font-size: large;
+    margin-top: 10px;
+}
+/* ###################################*/
 /*------------Account Page-------------*/
 /* ###################################*/
 .container {
@@ -87,7 +236,7 @@ body{
     border: black 1px solid;
     width: 400px;
     height: auto;
-
+    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
 }
 
 .characterNames{
@@ -96,6 +245,7 @@ body{
     font-size: 1.5em;
     padding: 0.4em 0em 0.4em 0em;
     text-decoration: underline;
+    
 }
 
 .characterPageBtns {
@@ -155,59 +305,164 @@ body{
 
 #Mainlanding{
     height:70%;
-    width: 100vw;
-    background-color: rgb(18, 18, 1);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    font-family: sans-serif;
-
+    padding-left: 30rem;
+    padding-bottom: 80px;
 }
 
 #Mainlanding > section{
 
     margin: 2.5rem 2.5rem;
     padding: 4rem;
-    height: 400px;
-    width: 300px;
-    border-width: 4px;
+    height: 800px;
+    width: 600px;
+    align-items: center;
+    color: red;
+    
+}
+
+#Mainlanding > section > a{
+    display: block;
+    color: white;
+    font-size: medium;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-left: 170px;
+    color: black;
+    background-color: yellow;
+    border-radius: 15px;
+    padding: 10px 0px;
+    text-decoration: none;
+    width: 280px;
+    height: 90px;
+    font-size: xx-large;
+    font-weight: 800;
+}
+
+#Fifa{
+    background-color: #34343c;
+}
+
+#Fifa > img{
+    object-fit:cover;
+    height: 100%;
+    width: 100%;
+    border-width: 8px;
     border-color: yellow;
     border-style:outset;
 }
 
-#Mainlanding > section > h1{
-    text-align: center;
-    padding-top: 1rem;
-    color: white;
+#Fortnite > img{
+    object-fit:cover;
+    height: 100%;
+    width: 100%;
+    border-width: 8px;
+    border-color: yellow;
+    border-style:outset;
 }
 
-#Fifa{
-    background-image: url("/Images/Backgrounds/Fifa.jpg");
-    background-position: center;
+#LegoMasters > img{
+    object-fit:cover;
+    height: 100%;
+    width: 100%;
+    border-width: 8px;
+    border-color: yellow;
+    border-style:outset;
 }
 
-#Fortnite{
-    background-image: url("/Images/Backgrounds/Fortnite.jpg");
-    background-position: center;
+#Lotr > img{
+    object-fit:cover;
+    height: 100%;
+    width: 100%;
+    border-width: 8px;
+    border-color: yellow;
+    border-style:outset;
 }
 
-#LegoMasters{
-    background-image: url("/Images/Backgrounds/LegoMasters.jpg");
-    background-position: center;
+#Mtg > img{
+    object-fit:cover;
+    height: 100%;
+    width: 100%;
+    border-width: 8px;
+    border-color: yellow;
+    border-style:outset;
 }
 
-#Lotr{
-    background-image: url("/Images/Backgrounds/LOTR.jpg");
-    background-position: center;
+#Pokemon > img{
+    object-fit:cover;
+    height: 100%;
+    width: 100%;
+    border-width: 8px;
+    border-color: yellow;
+    border-style:outset;
 }
 
-#Mtg{
-    background-image: url("/Images/Backgrounds/MagicTheGathering.jpg");
-    background-position: center;
+/* ###################################*/
+/*----------------Login---------------*/
+/* ###################################*/
+
+#Login{
+background-color: black;
+height: 100%;
 }
 
-#Pokemon{
-    background-image: url("/Images/Backgrounds/Pokemon.jpg");
-    background-position: center;
+#Login > form{
+    background-color: rgba(72, 72, 72, 0.379);
+    border-radius: 15px;
+    margin:1.5rem auto;
+    height: 800px;
+    display: grid;  
+    padding:1.5rem;
+    color: lightgray;
+}
+
+#Login > form > a{
+    margin-top: -100px;
+}
+
+#Login > form > label{
+padding-bottom: 1rem;
+}
+
+#Login > form > input{
+height: 40px;
+background-color: rgb(64, 64, 75);
+border-radius: 15px;
+border-color: lightgray;
+margin-top: -80px;
+}
+
+#Login > form > button{
+    height: 60px;
+    background-color: rgb(64, 64, 75);
+    border-radius: 15px;
+    border-color: lightgray;
+    color: black;
+    font-size: medium;
+    font-weight: 500;
+}
+
+#socials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    margin-top: 10px;
+    height: 100px;
+}
+
+#socials > button{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#socials > button > img{
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
 }
 
 /* ###################################*/
@@ -217,7 +472,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     padding: 20px;
   }
   
@@ -231,6 +485,8 @@ body{
     max-width: 100%;
     height: auto;
     border-radius: 15px;
+    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
+
   }
   
   .text-container {
@@ -272,6 +528,15 @@ body{
 }
 
 /* BUTTONS*/
+.WinLossBtns{
+    background: transparent;
+    border: none;
+}
+.WinLossBtnsImages{
+    width: 20px;
+    cursor: pointer;
+}
+
 .favoritedBtns,.favoriteCharacterCosmeticBtns{
     position: absolute;
     background: transparent;
@@ -459,7 +724,6 @@ h1 {
 #nav {
   display: flex;
   background-color: rgba(0, 0, 0, 0.5);
-  background: transparent;
   backdrop-filter: blur(10px);
   padding: 0.5em;
   align-items: center;
@@ -531,7 +795,7 @@ h1 {
     display: flex;
     margin-left: auto;
     gap: .5em;
-    padding-right: 5%;
+    padding-right: 2%;
 }
 
 
@@ -605,7 +869,7 @@ a {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding-right: 7%;
+    padding-right: 3%;
 }
 
 /* ###################################*/
@@ -687,6 +951,40 @@ a {
         margin-top: 10px;
         font-size: .5em;
     }
+/*##################*/
+/* FAVORITE PAGE*/
+
+.favoritedCharacters{
+    flex-direction: column;
+}
+
+.favoriteCharacterPortraits{
+width: 100%;
+}
+
+.favouritedCharacterTexts{
+padding: 0em;
+width: 100%
+}
+.favoriteCharacterNames{
+    font-size: 1.5em;
+    padding-left: 1em;
+}
+.favoriteCharactersStatictics{
+    padding-left: .5em
+}
+
+#favoriteCharacterCosmeticBtn1{
+    right: 32.5%;
+}
+#favoriteCharacterCosmeticBtn2{
+    left: 32.5%;
+}
+/*##################*/
+/* FOOTER */
+#socialsIconsDiv{
+    padding-right: 13%;
+}
 /*##################*/
 }
 
@@ -801,4 +1099,134 @@ a {
     height: 24px;
 }
 /*##################*/
+
+
+/* FAVORITE PAGE*/
+
+.favoritedCharacters{
+    flex-direction: column;
 }
+
+.favoriteCharacterPortraits{
+width: 100%;
+}
+
+.favouritedCharacterTexts{
+width: 100%;
+}
+.favoriteCharacterNames{
+    font-size: 1.5em;
+    padding-left: .5em;
+}
+.favoriteCharactersStatictics{
+    padding-left: .5em;
+    padding-right: .3em;
+    font-size: 1.25em;
+}
+
+#favoriteCharacterCosmeticBtn1{
+    right: 30%;
+}
+#favoriteCharacterCosmeticBtn2{
+    left: 30%;
+}
+/*##################*/
+}
+
+/* Login Queries */
+
+@media (max-width: 480px) {
+    #socials {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 15px;
+    }
+    
+}
+
+/* Landingpage Queries */
+
+@media (max-width: 480px) {
+    #Mainlanding {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+    #Mainlanding > section {
+        width: 100%;
+        height: auto;
+        padding: 2rem;
+        margin: 1rem 0;
+    }
+    #Mainlanding > section > a {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+    #Mainlanding {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 5rem;
+    }
+    #Mainlanding > section {
+        width: 90%;
+        height: 600px;
+        padding: 3rem;
+    }
+    #Mainlanding > section > a {
+        width: 240px;
+        height: 80px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+    #Mainlanding {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-left: 10rem;
+    }
+    #Mainlanding > section {
+        width: 500px;
+        height: 700px;
+        padding: 3.5rem;
+    }
+    #Mainlanding > section > a {
+        width: 260px;
+        height: 85px;
+    }
+}
+
+/* Homepage Queries */
+
+@media (max-width: 480px) {
+    #seccontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+    
+    #news {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+    #seccontainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
+        justify-content: center;
+        margin-left: 0;
+    }
+    
+    #news {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
