@@ -20,12 +20,19 @@ winDecreaseButton.addEventListener('click', () =>{
     else {
         winCount--;
     }
-        winCountElement.textContent = `Wins: ${winCount}`
+    winCountElement.textContent = `Wins: ${winCount}`
 });
 
 loseIncreaseButton.addEventListener('click', () => {
     loseCount++;
+    console.log(winCount)
+    console.log(loseCount)
     loseCountElement.textContent = `Losses: ${loseCount}`
+    if (loseCount == (winCount * 3)) {
+        var liElement = loseCountElement.closest('article');
+        liElement.style.display = 'none';
+        console.debug("test")
+    }
 });
 loseDecreaseButton.addEventListener('click', () =>{
     if (loseCount == 0)
