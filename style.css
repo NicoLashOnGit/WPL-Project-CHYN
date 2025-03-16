@@ -44,15 +44,15 @@ body{
 #seccontainer{
     display: flex;
     flex-wrap: nowrap; 
-    gap: 20px;
+    gap: 2%;
     width: 90%;
     height:100%;
+    margin-left: 5%;
 }
 
 #recentsec{
     border-radius: 10px;
-    width: 85%;
-
+    width: 50%;
     padding: 1rem;
     border: 6px solid rgb(181, 178, 178);
 }
@@ -63,7 +63,7 @@ body{
 }
 
 #recentsec > img{
-    width:90%;
+    width:60%;
     height: 50%;
     margin:1rem 0rem;
 }
@@ -71,8 +71,7 @@ body{
 
 #statsec{
     padding: 1rem;
-    width: 85%;
-    
+    width: 50%;
     border-radius: 15px;
     border: 6px solid rgb(181, 178, 178);
 }
@@ -281,7 +280,7 @@ body{
 #Mainlanding{
     display: flex;
     flex-wrap: wrap;
-    height:80%;
+    height:100%;
 }
 
 #Mainlanding > .projectsections{
@@ -299,63 +298,24 @@ body{
     padding: 1rem;
 }
 
-
-
-#Fifa > button{
-    background-image: url("/Images/Backgrounds/Fifa.jpg");
+.projectbuttons{
     height: 90%;
     width: 80%;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.projectimages{
+    width:100%;
+    height: 100%;
 }
 
 #Fifa > a {
     margin-left: 30%;
 }
 
-#Fortnite > button{
-    background-image: url("/Images/Backgrounds/Fortnite.jpg");
-    height: 90%;
-    width: 80%;
-    background-position: center;
-    background-repeat: no-repeat;   
-}
-
 #Fortnite > a {
     margin-left: 25%;
-}
-
-#LegoMasters > button{
-    background-image: url("/Images/Backgrounds/LegoMasters.jpg");
-    height: 90%;
-    width: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#Lotr > button{
-    background-image: url("/Images/Backgrounds/LOTR.jpg");
-    height: 90%;
-    width: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#Mtg > button{
-    background-image: url("/Images/Backgrounds/MagicTheGathering.jpg");
-    height: 90%;
-    width: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#Pokemon > button{
-    background-image: url("/Images/Backgrounds/Pokemon.jpg");
-    height: 90%;
-    width: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-position-y:-60rem;
 }
 
 /* ###################################*/
@@ -940,6 +900,15 @@ width: 100%
 #favoriteCharacterCosmeticBtn2{
     left: 32.5%;
 }
+/*##################*/
+/*HOMEPAGE*/
+
+#seccontainer{
+
+}
+
+
+
 /*##################*/
 /* FOOTER */
 #socialsIconsDiv{
