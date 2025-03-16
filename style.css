@@ -981,6 +981,12 @@ width: 100%
     left: 32.5%;
 }
 /*##################*/
+/* FOOTER */
+#socialsIconsDiv{
+
+    padding-right: 13%;
+}
+/*##################*/
 }
 
 /* Small Devices (Phones) */
