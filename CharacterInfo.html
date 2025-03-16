@@ -4,34 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fortnite Inspired Page</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
+    
+  <nav id="nav">
+      <a href="Landingpage.html"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="navLogoImage"></a>
+      
+      <a href="Characterpage.html" id="charactersLink" class="navLinks">Characters</a>
+      <a href="favoritePage.html" id="favoritesLink" class="navLinks">Favorites</a>
+      <a href="blacklist.html" id="blacklistLink" class="navLinks">Blacklist</a>
+      
+      <form action="searchBar" class="searchBar">
+          <input type="text" id="searchBar" placeholder="Type to search...">
+          <button id="searchBtn">🔍</button>
+      </form>
+          
+      <div class="navRight">
+          <button id="loginBtn" class="">Log In!</button>
+          <a href="#" class=""><img src="/Images/Logos/Placeholder logo.png" alt="" id="accountImage"></a>
+      </div>
+  </nav>
+    
+    <main>
     <div class="containerCI">
       <div class="image-container">
-        <img src="Images/Characters/DefaultCharacterPortrait.png" alt="Character" class="character-image" />
+        <img src="Images/Characters/FN_CHAR1.png" alt="Character" class="character-image" />
       </div>
       <div class="text-container">
         <h1 class="title">About this character:</h1>
         <p class="subtext">
-          Jonesy is one of the most iconic and versatile characters in Fortnite,
-          known for his ever-evolving appearances and roles within the game’s
-          lore. Originally introduced as a default (or "no-skin") character,
-          Jonesy quickly became a fan favorite for his approachable and
-          adaptable look.<br />
-          <br />
-          Over the seasons, Jonesy has taken on many different personas, from
-          "Bunker Jonesy" with his rugged, survivalist vibe to "Agent Jones"
-          playing a crucial role in the Zero Point storyline. His
-          transformations often reflect the shifting themes of each Fortnite
-          season, making him a symbol of the game's dynamic nature. <br />
-          <br />
-          Jonesy’s charm lies in his everyman appeal, making him a relatable
-          avatar for both new and veteran players. Whether he’s saving reality
-          or just dropping into the battlefield, Jonesy remains a timeless and
-          integral part of Fortnite's ever-expanding universe.
+          John Wick is one of the most legendary and feared characters in Fortnite, renowned for his cold-blooded efficiency and unparalleled combat skills. Originally introduced as a collaboration with the iconic action movie franchise, John Wick quickly became a fan-favorite character, known for his sharp suit, stoic demeanor, and fierce fighting style.<br /><br />
+
+          When John Wick entered Fortnite, he brought a sense of sophistication and precision to the battlefield, blending his deadly skills with the game’s fast-paced action. His character comes with a refined look, featuring his signature black suit and a sharp sense of focus, representing the culmination of years of intense training and relentless determination.<br /><br />
+
+          With a history of being a top-tier warrior, John Wick’s persona has become synonymous with no-nonsense combat, making him a favorite for players who enjoy a methodical, calculated approach to victory. Whether he's taking down enemies in solo missions or teaming up for a squad battle, John Wick’s legacy in Fortnite remains a powerful testament to his reputation as one of the deadliest players in the game.
         </p>
       </div>
     </div>
+  </main>
+
+  <footer>
+    <section id="socials">
+        <a href="#" id="footerLogo"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" ></a>
+        <div id="socialsIconsDiv">
+            <a href="#"><img src="/Images/Icons/Transparent Icons/Facebook 64 transparent.png" alt="Facebook" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/Transparent Icons/X 64 transparent.png" alt="Twitter" class="socialsIcons" id="SocialsIconTwitter"></a>
+            <a href="#"><img src="/Images/Icons/Transparent Icons/Instagram 64 transparent.png" alt="Instagram" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/Transparent Icons/Youtube 64 transparent.png" alt="Youtube" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/Transparent Icons/Whatsapp 64 transparent.png" alt="WhatsApp" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/Transparent Icons/Snapchat 64 transparent.png" alt="Snapchat" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/Transparent Icons/Tiktok 64 transparent.png" alt="TikTok" class="socialsIcons"></a>
+        </div>
+    </section>
+    
+    <section id="LinkSection">
+        <article class="footerLinks">
+            <h3>Main</h3>
+            <ul>
+                <li><a href="#">Lorem</a></li>
+                <li><a href="#">Ipsum</a></li>
+                <li><a href="#">Dolor</a></li>
+            </ul>
+        </article>
+    
+        <article class="footerLinks">
+            <h3>More</h3>
+            <ul>
+                <li><a href="#">Sit Amet</a></li>
+                <li><a href="#">Consectetur</a></li>
+                <li><a href="#">Adipiscing</a></li>
+            </ul>
+        </article>
+    
+        <article class="footerLinks">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Help Center</a></li>
+            </ul>
+        </article>
+    </section>
+</footer>
   </body>
 </html>

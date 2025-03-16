@@ -236,7 +236,7 @@ margin-bottom: 60px;
     border: black 1px solid;
     width: 400px;
     height: auto;
-
+    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
 }
 
 .characterNames{
@@ -245,6 +245,7 @@ margin-bottom: 60px;
     font-size: 1.5em;
     padding: 0.4em 0em 0.4em 0em;
     text-decoration: underline;
+    
 }
 
 .characterPageBtns {
@@ -471,7 +472,6 @@ margin-top: -80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     padding: 20px;
   }
   
@@ -485,6 +485,8 @@ margin-top: -80px;
     max-width: 100%;
     height: auto;
     border-radius: 15px;
+    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
+
   }
   
   .text-container {
@@ -961,16 +963,15 @@ width: 100%;
 }
 
 .favouritedCharacterTexts{
-    favoritedCharacters
 padding: 0em;
-
+width: 100%
 }
 .favoriteCharacterNames{
     font-size: 1.5em;
     padding-left: 1em;
 }
 .favoriteCharactersStatictics{
-    padding-left: 1em;
+    padding-left: .5em
 }
 
 #favoriteCharacterCosmeticBtn1{
@@ -1107,8 +1108,6 @@ width: 100%;
 
 .favouritedCharacterTexts{
 width: 100%;
-height: 300px;
-
 }
 .favoriteCharacterNames{
     font-size: 1.5em;
@@ -1117,6 +1116,7 @@ height: 300px;
 .favoriteCharactersStatictics{
     padding-left: .5em;
     padding-right: .3em;
+    font-size: 1.25em;
 }
 
 #favoriteCharacterCosmeticBtn1{
