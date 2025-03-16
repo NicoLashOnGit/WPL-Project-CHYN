@@ -8,76 +8,59 @@
     <link rel="stylesheet" href= "style.css">
     <link rel="stylesheet" href="nav.css">
 </head>
-<div id="navGrid">
+
 <nav id="nav">
-    <a href="#"><img src="/Images/Logos/Placeholder logo.png" alt="" id="navLogoImage"></a>
+    <a href="Landingpage.html"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="navLogoImage"></a>
 
-<a href="#" id="charactersLink" class="navLinks">Characters</a>
-<a href="#" id="favoritesLink" class="navLinks">Favorites</a>
-<a href="#" id="blacklistLink" class="navLinks">Blacklist</a>
+    <a href="Characterpage.html" id="charactersLink" class="navLinks">Characters</a>
+    <a href="favoritePage.html" id="favoritesLink" class="navLinks">Favorites</a>
+    <a href="blacklist.html" id="blacklistLink" class="navLinks">Blacklist</a>
 
-<form class="searchBar">
-    <input type="text" id="searchBar" placeholder="Type to search...">
-    <button id="searchBtn" type="submit">🔍</button>
-</form>
-<script src="/JavaScript/searchbar.js"></script>
+    <form action="searchBar" class="searchBar">
+        <input type="text" id="searchBar" placeholder="Type to search...">
+        <button onclick = "search()" id="searchBtn">🔍</button>
+    </form>
     
     <div class="navRight">
-        <button onclick="window.location.href='Loginpage.html'" id="loginBtn" class="">Log In!</button>
-    <a href="#" class=""><img src="/Images/Logos/Placeholder logo.png" alt="" id="accountImage"></a>
+        <button id="loginBtn" class="">Log In!</button>
+        <a href="#" class=""><img src="/Images/Logos/Placeholder logo.png" alt="" id="accountImage"></a>
     </div>
 </nav>
-</div>
 
 <body>
     <main id = "Mainlanding">
-        <section id = "Fifa" class="projectsections">
-            <button class="projectbuttons">
-                <img src="/Images/Backgrounds/Fifa.jpg" class = "projectimages">
-            </button>
-            <a href="#" class = "projecttitles">Fifa</a>
+        <article class="projectArticles">
+            <a href="#"><img src="Images/Backgrounds/Fifa.jpg" alt="" class="ProjectImages"></a>
+            <a href="http://" class="ProjectTitles">Fifa</a>
+        </article>
+        
+        <article class="projectArticles">
+            <a href="Homepage.html"><img src="Images/Backgrounds/Fortnite Wallpaper.png" alt="" class="ProjectImages"></a>
+            <a href="Homepage.html" class="ProjectTitles">Fortnite</a>
+        </article>
 
-        </section>
-        <section id = "Fortnite" class="projectsections">
-            <button onclick="window.location.href='Homepage.html'" class="projectbuttons">
-                <img src="/Images/Backgrounds/Fortnite.jpg" class = "projectimages">
-            </button>
-            <a href="/Homepage.html" class = "projecttitles">Fortnite</a>
-                
-            
-        </section>
-        <section id = "LegoMasters" class="projectsections">
-            <button class="projectbuttons">
-                <img src="/Images/Backgrounds/LegoMasters.jpg" class = "projectimages">
-            </button>
-            <a href="#" class = "projecttitles">Lego Masters</a>
+        <article class="projectArticles">
+            <a href="#"><img src="Images/Backgrounds/LegoMasters.jpg" alt="" class="ProjectImages"></a>
+            <a href="http://" class="ProjectTitles">Lego Masters</a>
+        </article>
 
-        </section>
-        <section id = "Lotr" class="projectsections">
-            <button class="projectbuttons">
-                <img src="/Images/Backgrounds/LOTR.jpg" class = "projectimages">
-            </button>
-            <a href="#" class = "projecttitles">Lord of the Rings</a>
+        <article class="projectArticles">
+            <a href="#"><img src="Images/Backgrounds/LOTR.jpg" alt="" class="ProjectImages"></a>
+            <a href="http://" class="ProjectTitles">Lord of the Rings</a>
+        </article>
 
+        <article class="projectArticles">
+            <a href="#"><img src="Images/Backgrounds/MagicTheGathering.jpg" alt="" class="ProjectImages"></a>
+            <a href="http://" class="ProjectTitles">Magic the Gathering</a>
+        </article>
 
-        </section>
-        <section id = "Mtg" class="projectsections">
-            <button class="projectbuttons">
-                <img src="/Images/Backgrounds/MagicTheGathering.jpg" class = "projectimages">
-            </button>
-            <a href="#" class = "projecttitles">Magic the Gathering</a>
-
-        </section>
-        <section id = "Pokemon" class="projectsections">
-            <button class="projectbuttons">
-                <img src="/Images/Backgrounds/Pokemon.jpg" class = "projectimages">
-            </button>
-            <a href="#" class = "projecttitles">Pokemon</a>
-
-        </section>
+        <article class="projectArticles">
+            <a href="#"><img src="Images/Backgrounds/Pokemon.jpg" alt="" class="ProjectImages"></a>
+            <a href="http://" class="ProjectTitles">Pokemon</a>
+        </article>
     </main>
-    <footer>
-        <section id="socials">
+<footer>
+    <section id="socials">
             <a href="#" id="footerLogo"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" ></a>
             <div id="socialsIconsDiv">
                 <a href="#"><img src="/Images/Icons/Transparent Icons/Facebook 64 transparent.png" alt="Facebook" class="socialsIcons"></a>
@@ -88,36 +71,36 @@
                 <a href="#"><img src="/Images/Icons/Transparent Icons/Snapchat 64 transparent.png" alt="Snapchat" class="socialsIcons"></a>
                 <a href="#"><img src="/Images/Icons/Transparent Icons/Tiktok 64 transparent.png" alt="TikTok" class="socialsIcons"></a>
             </div>
-        </section>
+    </section>
         
-        <section id="LinkSection">
-            <article class="footerLinks">
+    <section id="LinkSection">
+        <article class="footerLinks">
                 <h3>Main</h3>
                 <ul>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
                     <li><a href="#">Change Language</a></li>
                 </ul>
-            </article>
+        </article>
         
-            <article class="footerLinks">
+        <article class="footerLinks">
                 <h3>More</h3>
                 <ul>
                     <li><a href="#">Payment Options</a></li>
                     <li><a href="#">Newsletter</a></li>
                     <li><a href="#">Chyn+</a></li>
                 </ul>
-            </article>
+        </article>
         
-            <article class="footerLinks">
+        <article class="footerLinks">
                 <h3>Support</h3>
                 <ul>
                     <li><a href="#">FAQ</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Help Center</a></li>
                 </ul>
-            </article>
-        </section>
-    </footer>
+        </article>
+    </section>
+</footer>
 </body>
 </html>

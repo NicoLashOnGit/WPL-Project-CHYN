@@ -279,45 +279,26 @@ margin-left: 5%;
 
 #Mainlanding{
     display: flex;
-    flex-wrap: wrap;
-    height:100%;
-
-}
-
-#Mainlanding > .projectsections{
-    display:flex;
-    flex-direction: column;
-    border: black 1px solid;
-    width: 30%;
-}
-
-.projecttitles{
-    margin-top: 3%;
-    text-align: center;
-    font-size:xx-large;
-    font-weight:700;
-    color: white;
-    
-}
-
-.projectbuttons{
-    height: 90%;
+    margin: 2em 0em 2em 0em;
     width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
-
-.projectimages{
-    width:100%;
-    height: 100%;
+.projectArticles{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
 }
-
-#Fifa > a {
-    
+.ProjectImages{
+    width: 100%;
+    height: 250px;
 }
-
-#Fortnite > a {
-    margin-left: 25%;
+.ProjectTitles{
+    text-align: center;
+    padding-top: .5em;
+    font-size: 2em;
+    font-weight: 1000;
 }
 
 /* ###################################*/
@@ -829,8 +810,10 @@ a {
     font-size: 0.8em;
 }
 /*##################*/
-/* BLACKLIST PAGE*/
-
+/* LANDING PAGE*/
+.projectArticles{
+    width: 40%;
+}
 /*##################*/
 }
 
@@ -1077,60 +1060,6 @@ width: 100%;
     }
     
 }
-
-/* Landingpage Queries */
-
-@media (max-width: 480px) {
-    #Mainlanding {
-        grid-template-columns: 1fr;
-        padding-left: 0;
-    }
-    #Mainlanding > section {
-        width: 100%;
-        height: auto;
-        padding: 2rem;
-        margin: 1rem 0;
-    }
-    #Mainlanding > section > a {
-        width: 100%;
-        margin-left: 0;
-    }
-}
-
-@media (min-width: 480px) and (max-width: 1024px) {
-    #Mainlanding {
-        grid-template-columns: 1fr 1fr;
-        padding-left: 5rem;
-    }
-    #Mainlanding > section {
-        width: 90%;
-        height: 600px;
-        padding: 3rem;
-    }
-    #Mainlanding > section > a {
-        width: 240px;
-        height: 80px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media (min-width: 1024px) and (max-width: 1920px) {
-    #Mainlanding {
-        grid-template-columns: 1fr 1fr 1fr;
-        padding-left: 10rem;
-    }
-    #Mainlanding > section {
-        width: 500px;
-        height: 700px;
-        padding: 3.5rem;
-    }
-    #Mainlanding > section > a {
-        width: 260px;
-        height: 85px;
-    }
-}
-
 /* Homepage Queries */
 
 @media (max-width: 480px) {
