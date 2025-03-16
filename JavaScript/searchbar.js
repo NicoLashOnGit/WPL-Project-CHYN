@@ -2,7 +2,7 @@ function search(){
     let input = documentgetElementbyId("searchbar").value.toLowerCase();
     
     let pages = {
-      "john wick": "characterInfo.html" 
+      "john wick": "CharacterInfo.html" 
     }
 
     if (pages[input]){
