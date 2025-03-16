@@ -579,6 +579,15 @@ margin-top: -80px;
 }
 
 /* BUTTONS*/
+.WinLossBtns{
+    background: transparent;
+    border: none;
+}
+.WinLossBtnsImages{
+    width: 20px;
+    cursor: pointer;
+}
+
 .favoritedBtns,.favoriteCharacterCosmeticBtns{
     position: absolute;
     background: transparent;
@@ -994,6 +1003,36 @@ a {
         font-size: .5em;
     }
 /*##################*/
+/* FAVORITE PAGE*/
+
+.favoritedCharacters{
+    flex-direction: column;
+}
+
+.favoriteCharacterPortraits{
+width: 100%;
+}
+
+.favouritedCharacterTexts{
+    favoritedCharacters
+padding: 0em;
+
+}
+.favoriteCharacterNames{
+    font-size: 1.5em;
+    padding-left: 1em;
+}
+.favoriteCharactersStatictics{
+    padding-left: 1em;
+}
+
+#favoriteCharacterCosmeticBtn1{
+    right: 32.5%;
+}
+#favoriteCharacterCosmeticBtn2{
+    left: 32.5%;
+}
+/*##################*/
 }
 
 /* Small Devices (Phones) */
@@ -1107,7 +1146,41 @@ a {
     height: 24px;
 }
 /*##################*/
+
+
+/* FAVORITE PAGE*/
+
+.favoritedCharacters{
+    flex-direction: column;
 }
+
+.favoriteCharacterPortraits{
+width: 100%;
+}
+
+.favouritedCharacterTexts{
+width: 100%;
+height: 300px;
+
+}
+.favoriteCharacterNames{
+    font-size: 1.5em;
+    padding-left: .5em;
+}
+.favoriteCharactersStatictics{
+    padding-left: .5em;
+    padding-right: .3em;
+}
+
+#favoriteCharacterCosmeticBtn1{
+    right: 30%;
+}
+#favoriteCharacterCosmeticBtn2{
+    left: 30%;
+}
+/*##################*/
+}
+
 /* Login Queries */
 
 @media (max-width: 480px) {
@@ -1117,9 +1190,6 @@ a {
         gap: 15px;
     }
     
-    #socials > button {
-         
-    }
 }
 
 /* Landingpage Queries */

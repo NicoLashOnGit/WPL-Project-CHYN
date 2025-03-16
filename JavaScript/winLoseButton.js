@@ -1,17 +1,39 @@
 const winCountElement = document.getElementById('win-count');
 const loseCountElement = document.getElementById('lose-count');
-const winButton = document.getElementById('win-button');
-const loseButton = document.getElementById('lose-button');
+const winIncreaseButton = document.getElementById('IncreaseWinBtn1');
+const loseIncreaseButton = document.getElementById('IncreaseLossnBtn1');
+const winDecreaseButton = document.getElementById('DecreaseWinBtn1')
+const loseDecreaseButton = document.getElementById('DecreaseLossBtn1')
 
 let winCount = 0;
 let loseCount = 0;
 
-winButton.addEventListener('click', () => {
+winIncreaseButton.addEventListener('click', () => {
     winCount++;
     winCountElement.textContent = `Wins: ${winCount}`
 });
+winDecreaseButton.addEventListener('click', () =>{
+    if (winCount == 0)
+    {
+        winCount = 0;
+    }
+    else {
+        winCount--;
+    }
+        winCountElement.textContent = `Wins: ${winCount}`
+});
 
-loseButton.addEventListener('click', () => {
+loseIncreaseButton.addEventListener('click', () => {
     loseCount++;
     loseCountElement.textContent = `Losses: ${loseCount}`
+});
+loseDecreaseButton.addEventListener('click', () =>{
+    if (loseCount == 0)
+    {
+        loseCount = 0;
+    }
+    else {
+        loseCount--;
+    }
+        loseCountElement.textContent = `Losses: ${loseCount}`
 });
