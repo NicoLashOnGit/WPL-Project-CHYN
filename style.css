@@ -530,7 +530,7 @@ h1 {
     display: flex;
     margin-left: auto;
     gap: .5em;
-    padding-right: 5%;
+    padding-right: 2%;
 }
 
 
@@ -604,7 +604,7 @@ a {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding-right: 7%;
+    padding-right: 3%;
 }
 
 /* ###################################*/
