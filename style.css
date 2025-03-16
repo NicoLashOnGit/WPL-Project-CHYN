@@ -2,13 +2,13 @@
 /*----------------Body----------------*/
 /* ###################################*/
 
-body{
-    overflow-x: hidden;
-    background-color: #34343c;
-    font-family: sans-serif;
-    width: 100%;
-    height: 100vh;
-    color: white;
+body {
+  overflow-x: hidden;
+  background-color: #34343c;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100vh;
+  color: white;
 }
 
 /* ###################################*/
@@ -16,565 +16,524 @@ body{
 /* ###################################*/
 
 #homepage {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center; 
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-#introsec > h1{
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    width: 50%;
-    color:white;
-    text-align: center;
-    margin-left: 25%;
-    font-weight: 700;
-    font-size: xx-large;
+#introsec > h1 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 50%;
+  color: white;
+  text-align: center;
+  margin-left: 25%;
+  font-weight: 700;
+  font-size: xx-large;
 }
 
-#introsec > p{
-    margin-bottom: 4rem;
-    padding: 1rem;
-    text-align: center;
-    width: 80%;
-    margin-left: 10%;
+#introsec > p {
+  margin-bottom: 4rem;
+  padding: 1rem;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
 }
 
-#seccontainer{
-    display: flex;
-    flex-wrap: nowrap; 
-    gap: 2%;
-    width: 90%;
-    height:100%;
-    margin-left: 5%;
+#seccontainer {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2%;
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
 }
 
-#recentsec{
-    border-radius: 10px;
-    width: 50%;
-    padding: 1rem;
-    border: 6px solid rgb(181, 178, 178);
-    margin-top: 3%;
+#recentsec {
+  border-radius: 10px;
+  width: 50%;
+  padding: 1rem;
+  border: 6px solid rgb(181, 178, 178);
+  margin-top: 3%;
 }
 
-#recentsec > h2{
-    font-size: x-large;
-    font-weight: 700;
+#recentsec > h2 {
+  font-size: x-large;
+  font-weight: 700;
 }
 
-#recentsec > img{
-    width:60%;
-    height: 50%;
-    margin:1rem 0rem;
-    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
+#recentsec > img {
+  width: 60%;
+  height: 50%;
+  margin: 1rem 0rem;
+  background: radial-gradient(circle, lightblue, rgb(0, 132, 255));
 }
 
-
-#statsec{
-    padding: 1rem;
-    width: 50%;
-    border-radius: 15px;
-    border: 6px solid rgb(181, 178, 178);
-    margin-top: 3%;
+#statsec {
+  padding: 1rem;
+  width: 50%;
+  border-radius: 15px;
+  border: 6px solid rgb(181, 178, 178);
+  margin-top: 3%;
 }
 
-#statsec > div > p{
-    padding-top: 1rem;
+#statsec > div > p {
+  padding-top: 1rem;
 }
 
-#newcharsec{
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 78%;
-    margin-top: 3%;
-    border-radius: 15px;
-    border: 6px solid rgb(181, 178, 178);    
+#newcharsec {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 78%;
+  margin-top: 3%;
+  border-radius: 15px;
+  border: 6px solid rgb(181, 178, 178);
 }
 
-#newcharsec > div > h2{
-    width: 80%;
-    font-weight: 700;
-    font-size:x-large;
+#newcharsec > div > h2 {
+  width: 80%;
+  font-weight: 700;
+  font-size: x-large;
 }
 
-#newcharsec > div > img{
-    width:100%;
-    height:50%;
-    margin:1rem 0rem;
-    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
+#newcharsec > div > img {
+  width: 100%;
+  height: 50%;
+  margin: 1rem 0rem;
+  background: radial-gradient(circle, lightblue, rgb(0, 132, 255));
 }
 
 #buttondiv {
-margin-left: 5%;
+  margin-left: 5%;
 }
 
-#newcharsec > div:nth-child(2) > button{
-    margin-top: 1rem;
-    border-radius: 10px;
-    font-weight: 600;
-    background-color: yellow;
+#newcharsec > div:nth-child(2) > button {
+  margin-top: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: yellow;
 }
 
-#newcharsec > div > p{
-    margin-top: 1rem;
+#newcharsec > div > p {
+  margin-top: 1rem;
 }
 
 #news {
-    width:20%;
-    margin-left: 60%;
-    margin-top: 3%;
+  width: 20%;
+  margin-left: 60%;
+  margin-top: 3%;
 }
 
 #news > button {
-    align-items: center;    
-    background-color: yellow;
-    color:black;
-    height: 20%;
-    font-weight: 800;
-    font-size: large;
-    margin-bottom: 5%;
-
+  align-items: center;
+  background-color: yellow;
+  color: black;
+  height: 20%;
+  font-weight: 800;
+  font-size: large;
+  margin-bottom: 5%;
 }
 /* ###################################*/
 /*------------Account Page-------------*/
 /* ###################################*/
-.container {
-    width: 50%;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-  }
-  .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  .profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid white;
-  }
-  .subtext {
-    color: lightgray;
-  }
-  .info {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    padding: 10px;
-  }
-  .info p {
-    text-align: left;
-    border: solid rgba(255, 255, 255, 0.568);
-    border-width: 1px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    min-width: 120px;
-    place-content: center;
-  }
-  .change-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 20px;
-    margin-top: 10px;
-    border: none;
-    background-color: yellow;
-    color: black;
-    font-weight: bold;
-    border-radius: 10px;
-    height: 35px;
-  }
-  
+.AccountPageMain {
+  width: 70%;
+}
+.profile img {
+  width: 120px;
+  height: 120px;
+}
+.info {
+  flex-direction: row;
+  text-align: left;
+}
+.formFAQ {
+  justify-content: flex-start;
+}
+.change-btn {
+  padding: 10px 20px;
+}
+
 /* ###################################*/
 /*-----------Character Page------------*/
 /* ###################################*/
-#characterMain{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+#characterMain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.Characters{
-    position: relative;
-    margin: .5em;
-    padding: 1em;
-    display: flex; 
-    flex-direction: column;
+.Characters {
+  position: relative;
+  margin: 0.5em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
-.characterPortraits{
-    display: flex;
-    border: black 1px solid;
-    width: 400px;
-    height: auto;
-    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
+.characterPortraits {
+  display: flex;
+  border: black 1px solid;
+  width: 400px;
+  height: auto;
+  background: radial-gradient(circle, lightblue, rgb(0, 132, 255));
 }
 
-.characterNames{
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5em;
-    padding: 0.4em 0em 0.4em 0em;
+.characterNames {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 0.4em 0em 0.4em 0em;
 }
 
 .characterPageBtns {
-    background-color: transparent; 
-    border: none; 
-    cursor: pointer;
-    position: absolute;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
 }
 
-#favouriteBtn{
-    right: 15px;
+#favouriteBtn {
+  right: 15px;
 }
-#blacklistBtn{
-    left: 15px;
+#blacklistBtn {
+  left: 15px;
 }
-.characterPageBtnImages{
-    width: 32px;
+.characterPageBtnImages {
+  width: 32px;
 }
-
-
 
 /* ###################################*/
 /*------------Chacter Info-------------*/
 /* ###################################*/
 
-.charInfoContainer{
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
+.charInfoContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
-.aboutContainer{
-    display: flex;
-    flex-direction: column;
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
 }
-.winLoseContainer{
-    display: flex;
-    align-items: center;
-    color: white;
-    #button{
-        font-size: 100px;
-    }
-    p{
-        font-size: 100px;
-    }
+.winLoseContainer {
+  display: flex;
+  align-items: center;
+  color: white;
+  #button {
+    font-size: 100px;
+  }
+  p {
+    font-size: 100px;
+  }
 }
-.aboutTitle, .about{
-    color: white;
+.aboutTitle,
+.about {
+  color: white;
 }
 .charImg {
-    width: 350px;
-    padding: 10px;
+  width: 350px;
+  padding: 10px;
 }
 
 /* ###################################*/
 /*---------------Landing--------------*/
 /* ###################################*/
 
-#Mainlanding{
-    display: flex;
-    margin: 2em 0em 2em 0em;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+#Mainlanding {
+  display: flex;
+  margin: 2em 0em 2em 0em;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-.projectArticles{
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
+.projectArticles {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
 }
-.ProjectImages{
-    width: 100%;
-    height: 250px;
+.ProjectImages {
+  width: 100%;
+  height: 250px;
 }
-.ProjectTitles{
-    text-align: center;
-    padding-top: .5em;
-    font-size: 2em;
-    font-weight: 1000;
+.ProjectTitles {
+  text-align: center;
+  padding-top: 0.5em;
+  font-size: 2em;
+  font-weight: 1000;
 }
 
 /* ###################################*/
 /*----------------Login---------------*/
 /* ###################################*/
 
-#Login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2em;
+#Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
 }
-#LoginMenu{
-    background-color: rgba(72,72,72,0379);
-    border: black 1px solid;
-    border-radius: 5%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 1em;
-    margin: 0em 0em 2em 0em;
-}
-
-#loginLogo{
-    margin-bottom: 2em;
-}
-#LoginMenuTitle{
-    margin-bottom: 1.5em;
-    font-size: 1.5em;
-}
-#loginForm{
-    margin-bottom: 1.5em;
-}
-#email{
-    margin-bottom: 1em;
-}
-#loginForm>input{
-    font-size: 1.5em;
-    border-radius: 5px;
-    width: 90%;
-    
+#LoginMenu {
+  background-color: rgba(72, 72, 72, 0379);
+  border: black 1px solid;
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1em;
+  margin: 0em 0em 2em 0em;
 }
 
-#LogInButton{
-    width: 40%;
-    padding: .3em;
-    font-size: 1.3em;
-    margin-top: 1em;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+#loginLogo {
+  margin-bottom: 2em;
+}
+#LoginMenuTitle {
+  margin-bottom: 1.5em;
+  font-size: 1.5em;
+}
+#loginForm {
+  margin-bottom: 1.5em;
+}
+#email {
+  margin-bottom: 1em;
+}
+#loginForm > input {
+  font-size: 1.5em;
+  border-radius: 5px;
+  width: 90%;
 }
 
-.loginLink{
-    text-decoration: lightblue underline;
-    color: lightblue;
-    padding-bottom: 1em;
-}
-.SocialsLoginBtns{
-    background: none;
-    border: none;
-}
-
-#socialsLogins{
-    padding-top: 1em;
+#LogInButton {
+  width: 40%;
+  padding: 0.3em;
+  font-size: 1.3em;
+  margin-top: 1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-.SocialsLoginImages{
-    width: 48px;
+.loginLink {
+  text-decoration: lightblue underline;
+  color: lightblue;
+  padding-bottom: 1em;
+}
+.SocialsLoginBtns {
+  background: none;
+  border: none;
+}
+
+#socialsLogins {
+  padding-top: 1em;
+}
+
+.SocialsLoginImages {
+  width: 48px;
 }
 
 /* ###################################*/
 /*-----------Character Info-----------*/
 /* ###################################*/
 .containerCI {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .character-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
-  }
-  
-  .text-container {
-    flex: 1;
-    padding: 20px;
-    color: lightgrey;
-  }
-  
-  .title {
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 20px;
-  }
-  
-  .subtext {
-    font-size: 1.5rem;
-    color: lightgrey;
-    margin: 10px 0;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.character-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  background: radial-gradient(circle, lightblue, rgb(0, 132, 255));
+}
+
+.text-container {
+  flex: 1;
+  padding: 20px;
+  color: lightgrey;
+}
+
+.title {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.subtext {
+  font-size: 1.5rem;
+  color: lightgrey;
+  margin: 10px 0;
+}
+
 /* ###################################*/
 /*-------------Favourites--------------*/
 /* ###################################*/
 
-#favoriteCharactersMain{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100%;
+#favoriteCharactersMain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
-.favoritedCharacters{
-    display: flex;
-    padding: 1em;
+.favoritedCharacters {
+  display: flex;
+  padding: 1em;
 }
 
-.FavoriteCharacterPortraitsAndCosmeticsSections{
-    position: relative;
-}
-
-/* BUTTONS*/
-.WinLossBtns{
-    background: transparent;
-    border: none;
-}
-.WinLossBtnsImages{
-    width: 20px;
-    cursor: pointer;
-}
-
-.favoritedBtns,.favoriteCharacterCosmeticBtns{
-    position: absolute;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.favoritedBtns{
-    right: 0px;
-}
-
-.favoriteCharacterCosmeticImages{
-    width: 48px;
-    height: 48px;
-    border: black 1.5px solid;
-}
-.favoriteCharacterCosmeticBtns{
-    bottom: 0px;
-}
-#favoriteCharacterCosmeticBtn1{
-    right: 27%;
-}
-#favoriteCharacterCosmeticBtn2{
-    left: 27%;
+.FavoriteCharacterPortraitsAndCosmeticsSections {
+  position: relative;
 }
 
 /* BUTTONS*/
-.favoriteCharacterPortraits{
-    width: 250px;
-    height: 250px;
-    border: white 1px solid;
-    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
+.WinLossBtns {
+  background: transparent;
+  border: none;
+}
+.WinLossBtnsImages {
+  width: 20px;
+  cursor: pointer;
 }
 
-.favouritedCharacterTexts{
-    border: white 1px solid;
-    width: 90%;
-    height: 250px;
-    padding-left: .5em;
+.favoritedBtns,
+.favoriteCharacterCosmeticBtns {
+  position: absolute;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.favoriteCharacterNames{
-    font-weight: 1000;
-    text-underline-offset: 2px;
-    font-size: 2em;
-    margin-right: .5em;
+.favoritedBtns {
+  right: 0px;
 }
 
-.favoriteCharactersStatictics{
-    display: flex;
-    margin-bottom: .3em;
-    font-size: 1.4em;
+.favoriteCharacterCosmeticImages {
+  width: 48px;
+  height: 48px;
+  border: black 1.5px solid;
 }
-.label{
-    font-weight: bold;
+.favoriteCharacterCosmeticBtns {
+  bottom: 0px;
+}
+#favoriteCharacterCosmeticBtn1 {
+  right: 27%;
+}
+#favoriteCharacterCosmeticBtn2 {
+  left: 27%;
 }
 
+/* BUTTONS*/
+.favoriteCharacterPortraits {
+  width: 250px;
+  height: 250px;
+  border: white 1px solid;
+  background: radial-gradient(circle, lightblue, rgb(0, 132, 255));
+}
 
+.favouritedCharacterTexts {
+  border: white 1px solid;
+  width: 90%;
+  height: 250px;
+  padding-left: 0.5em;
+}
+
+.favoriteCharacterNames {
+  font-weight: 1000;
+  text-underline-offset: 2px;
+  font-size: 2em;
+  margin-right: 0.5em;
+}
+
+.favoriteCharactersStatictics {
+  display: flex;
+  margin-bottom: 0.3em;
+  font-size: 1.4em;
+}
+.label {
+  font-weight: bold;
+}
 
 /* ###################################*/
 /*-------------Blacklist--------------*/
 /* ###################################*/
 
-
 /*Blacklist*/
 
-#blacklistedCharacterSection{
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-evenly;
-    padding: 1em;
-    overflow: auto;
-    
+#blacklistedCharacterSection {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 1em;
+  overflow: auto;
 }
 
-.blacklistedCharacters{
-    border: white 1px solid;
-    display: flex;
-    width: 40%;
-    height: 30%;
-    position: relative;
-    margin: 1em;
+.blacklistedCharacters {
+  border: white 1px solid;
+  display: flex;
+  width: 40%;
+  height: 30%;
+  position: relative;
+  margin: 1em;
 }
 
-.blacklistedCharactersImages{
-    width: 300px;
-    border: 1px white solid;
-    background: radial-gradient(circle,lightblue,rgb(0, 132, 255));
+.blacklistedCharactersImages {
+  width: 300px;
+  border: 1px white solid;
+  background: radial-gradient(circle, lightblue, rgb(0, 132, 255));
 }
 
-.blacklistedCharactersText{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 70%;
+.blacklistedCharactersText {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 70%;
 }
 
-.blacklistedCharacterNames{
-    border-bottom: 1px white solid;
-    font-size: 1.5em;
-    text-align: center;
-    padding: .3em;
+.blacklistedCharacterNames {
+  border-bottom: 1px white solid;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0.3em;
 }
 
-.blacklistReasons{
-    height: auto;
-    padding: 0em 1.5em 1em 1em;
-    position: relative;
+.blacklistReasons {
+  height: auto;
+  padding: 0em 1.5em 1em 1em;
+  position: relative;
 }
 
-#BlacklistReasonEditBtn{
-    bottom: 0px;
-    right: 0px;
+#BlacklistReasonEditBtn {
+  bottom: 0px;
+  right: 0px;
 }
 
-#RemoveBlacklistBtn{
-    top: 2px;
-    left: 0px;
+#RemoveBlacklistBtn {
+  top: 2px;
+  left: 0px;
 }
-.blacklistBtns{
-    background: none;
-    border: none;
-    position: absolute;
+.blacklistBtns {
+  background: none;
+  border: none;
+  position: absolute;
 }
-.blacklistBtnImages{
-    width: 24px;
-    height: 24px;
+.blacklistBtnImages {
+  width: 24px;
+  height: 24px;
 }
-
 
 /* ###################################*/
 /*----------------Landing-----------------*/
@@ -587,30 +546,21 @@ margin-left: 5%;
 /* ###################################*/
 /*----------------FAQ-----------------*/
 /* ###################################*/
-/* nav en footer niet aanpassen foor specifieke paginas want deze zijn gelinkt met elke andere pagina en de andere nav/footer styling -nico*/
-/* 
-.nav,
-.footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-}
-*/
-.container {
+.mainFAQ {
   width: 50%;
   margin: auto;
   padding: 20px;
+  margin-top: 20vh;
 }
 
-h1 {
+.FAQh1 {
   text-align: center;
   margin-bottom: 30px;
 }
 
 .faq-item {
-  margin: 20px 0;
-  padding: 10px;
+  margin: 5px 0;
+  padding: 0px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 8px;
 }
@@ -623,7 +573,18 @@ h1 {
 .answer {
   color: lightgray;
   margin: 0;
+  height: 100%;
 }
+/* nav en footer niet aanpassen foor specifieke paginas want deze zijn gelinkt met elke andere pagina en de andere nav/footer styling -nico*/
+/* 
+.nav,
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+*/
 
 /* ###################################*/
 /*----------------Nav-----------------*/
@@ -641,140 +602,140 @@ h1 {
   z-index: 1000;
 }
 
-#navLinksList,ul{
-    list-style: none;
+#navLinksList,
+ul {
+  list-style: none;
 }
 
-#navLogoImage,#loginLogo{
-    padding-left: .5em;
-    width: 128px;  
-    height: 48px;
+#navLogoImage,
+#loginLogo {
+  padding-left: 0.5em;
+  width: 128px;
+  height: 48px;
 }
 
-.navLinks{
-    text-decoration: none;
-    color: white;
-    padding-left: 1em;
+.navLinks {
+  text-decoration: none;
+  color: white;
+  padding-left: 1em;
 }
-.navLinks:hover{
-    color: lightslategrey;
+.navLinks:hover {
+  color: lightslategrey;
 }
-.searchBar{
-    display: flex;
-    background: white;
-    border-radius: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 0 0 1em;
-    padding-left: .5em ;
+.searchBar {
+  display: flex;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 0 0 1em;
+  padding-left: 0.5em;
 }
 
 #searchBar {
-    border: none;
-    outline: none;
-    border-radius: 25px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
 }
 #searchBtn {
-    border: none;
-    background: #007BFF;
-    color: white;
-    padding: 0.5em;
-    border-radius: 50%;
-    cursor: pointer;
+  border: none;
+  background: #007bff;
+  color: white;
+  padding: 0.5em;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 #searchBtn:hover {
-    background: #0056b3;
+  background: #0056b3;
 }
-#loginBtn{
-    background-color: rgb(247,255,25); 
-    border: none;  
-    padding: 8px 16px;  
-    text-decoration: none;
-    border-radius: 8px;  
-    cursor: pointer;  
-    transition: rgb(247,255,25) 0.3s, transform 0.3s ease-in-out;
+#loginBtn {
+  background-color: rgb(247, 255, 25);
+  border: none;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: rgb(247, 255, 25) 0.3s, transform 0.3s ease-in-out;
 }
-#accountImage{
-    width: 48px ;
-    height: 48px;
-    border-radius: 50%;
+#accountImage {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
 }
-.navRight{
-    display: flex;
-    margin-left: auto;
-    gap: .5em;
-    padding-right: 2%;
+.navRight {
+  display: flex;
+  margin-left: auto;
+  gap: 0.5em;
+  padding-right: 2%;
 }
-
 
 /* ###################################*/
 /*--------------Footer----------------*/
 /* ###################################*/
 /* General footer styling such as bg color, font, text color*/
 footer {
-    width: 100%;
-    background-color: #18181C;
-    font-family: sans-serif;
-    color: white;
-    margin-top: auto;
-    padding: 10px;
+  width: 100%;
+  background-color: #18181c;
+  font-family: sans-serif;
+  color: white;
+  margin-top: auto;
+  padding: 10px;
 }
 
 .footerLinks {
-    padding-top: 20px;
-    margin: 10px;
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
+  padding-top: 20px;
+  margin: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 #LinkSection {
-    display: flex;
-    flex-direction: row;
-    gap: 30px; 
-    
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
 h3 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
-    color: #f4f4f4;
-    font-weight: 1000;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #f4f4f4;
+  font-weight: 1000;
 }
 
 li {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 a {
-    color: lightgray;
-    text-decoration: none;
-    font-weight: 750;
+  color: lightgray;
+  text-decoration: none;
+  font-weight: 750;
 }
 
 #socials {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
-    border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
 }
 
 #footerLogo > img {
-    height: 64px;
-    width: 128px;
+  height: 64px;
+  width: 128px;
 }
 
 .socialsIcons {
-    width: 32px;
-    height: 32px;
-    padding-left: 10px;
+  width: 32px;
+  height: 32px;
+  padding-left: 10px;
 }
-#socialsIconsDiv{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding-right: 3%;
+#socialsIconsDiv {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-right: 3%;
 }
 
 /* ###################################*/
@@ -784,299 +745,382 @@ a {
 /* Default styles for larger screens (desktop) */
 
 /* Medium Devices (Tablets) */
-@media only screen and (max-width: 1440px) {   
-
-/* BLACKLIST PAGE*/
-.blacklistedCharacters{
+@media only screen and (max-width: 1440px) {
+  /* BLACKLIST PAGE*/
+  .blacklistedCharacters {
     width: 70%;
-}
-/*##################*/
-}
+  }
+  /*##################*/
 
+  /* Account page */
+  .AccountPageMain {
+    width: 60%;
+  }
+  .profile img {
+    width: 120px;
+    height: 120px;
+  }
+  .info {
+    flex-direction: row;
+    text-align: left;
+  }
+  .formFAQ {
+    justify-content: flex-start;
+  }
+  .change-btn {
+    padding: 12px 20px;
+  }
+  /* ##########################*/
+}
 
 /* Large Devices (Large Desktop) */
 @media only screen and (max-width: 1024px) {
-/* NAV */
-#searchBar{
+  /* NAV */
+  #searchBar {
     width: 150px;
-}
-#navLinks{
-    padding-left: .5em;
-}
-/*##################*/
-/* CHARACTER PAGE*/
-.characterNames{
+  }
+  #navLinks {
+    padding-left: 0.5em;
+  }
+  /*##################*/
+  /* CHARACTER PAGE*/
+  .characterNames {
     font-size: 1.3em;
-}
-.characterDescriptions{
+  }
+  .characterDescriptions {
     font-size: 0.8em;
-}
-/*##################*/
-/* LANDING PAGE*/
-.projectArticles{
+  }
+  /*##################*/
+  /* LANDING PAGE*/
+  .projectArticles {
     width: 40%;
-}
-/*##################*/
+  }
+  /*##################*/
+
+  /*Account page */
+  .AccountPageMain {
+    width: 70%;
+  }
+  .profile img {
+    width: 120px;
+    height: 120px;
+  }
+  .info {
+    flex-direction: row;
+    text-align: left;
+  }
+  .formFAQ {
+    justify-content: flex-start;
+  }
+  .change-btn {
+    padding: 10px 20px;
+  }
+  /* ######################*/
 }
 
 /* Medium Devices (Tablets) */
-@media only screen and (max-width: 768px) {   
-/* Homepagina */
-    #seccontainer{
-        flex-direction: column;
-    }
-
-    #news{
-        width: 60%;
-        margin-left: -10%;
-    }
-
-/* NAV */
-    .navLinks{
-        display: none;
-    }
-    #searchBar{
-        width: 100px;
-    }
-    #loginBtn{
-        height: 48px;
-    }
-/*##################*/  
-/* BLACKLIST*/ 
-    .blacklistedCharactersImages{
-        width: 150px;
-        height: auto;
-    }
-    .blacklistedCharacterNames{
-        font-size: 1.3em;
-    }
-    .blacklistReasons{
-        font-size: .7em;
-    }
-/*##################*/  
-/*##################*/   
-/* CHARACTER PAGE*/
-
-    .characterNames{
-        font-size: 1.1em;
-    }
-    .characterPortraits{
-        width: 250px;
-    }
-    #loginBtn{
-        height: 32px;
-        margin-top: 10px;
-        font-size: .5em;
-    }
-/*##################*/
-/* FAVORITE PAGE*/
-
-.favoritedCharacters{
+@media only screen and (max-width: 768px) {
+  /* Homepagina */
+  #seccontainer {
     flex-direction: column;
-}
+  }
 
-.favoriteCharacterPortraits{
-width: 100%;
-}
+  #news {
+    width: 60%;
+    margin-left: -10%;
+  }
 
-.favouritedCharacterTexts{
-padding: 0em;
-width: 100%
-}
-.favoriteCharacterNames{
+  /* NAV */
+  .navLinks {
+    display: none;
+  }
+  #searchBar {
+    width: 100px;
+  }
+  #loginBtn {
+    height: 48px;
+  }
+  /*##################*/
+  /* BLACKLIST*/
+  .blacklistedCharactersImages {
+    width: 150px;
+    height: auto;
+  }
+  .blacklistedCharacterNames {
+    font-size: 1.3em;
+  }
+  .blacklistReasons {
+    font-size: 0.7em;
+  }
+  /*##################*/
+  /*##################*/
+  /* CHARACTER PAGE*/
+
+  .characterNames {
+    font-size: 1.1em;
+  }
+  .characterPortraits {
+    width: 250px;
+  }
+  #loginBtn {
+    height: 32px;
+    margin-top: 10px;
+    font-size: 0.5em;
+  }
+  /*##################*/
+  /* FAVORITE PAGE*/
+
+  .favoritedCharacters {
+    flex-direction: column;
+  }
+
+  .favoriteCharacterPortraits {
+    width: 100%;
+  }
+
+  .favouritedCharacterTexts {
+    padding: 0em;
+    width: 100%;
+  }
+  .favoriteCharacterNames {
     font-size: 1.5em;
     padding-left: 1em;
-}
-.favoriteCharactersStatictics{
-    padding-left: .5em
-}
+  }
+  .favoriteCharactersStatictics {
+    padding-left: 0.5em;
+  }
 
-#favoriteCharacterCosmeticBtn1{
+  #favoriteCharacterCosmeticBtn1 {
     right: 32.5%;
-}
-#favoriteCharacterCosmeticBtn2{
+  }
+  #favoriteCharacterCosmeticBtn2 {
     left: 32.5%;
-}
+  }
 
-/*##################*/
-/* FOOTER */
-#socialsIconsDiv{
+  /*##################*/
+  /* Account page */
+  .AccountPageMain {
+    width: 80%;
+  }
+  .profile img {
+    width: 110px;
+    height: 110px;
+  }
+  .info {
+    flex-direction: row;
+    text-align: left;
+  }
+  .formFAQ {
+    justify-content: center;
+  }
+  .change-btn {
+    padding: 10px 15px;
+  }
+  /* ###############*/
 
+  /* FOOTER */
+  #socialsIconsDiv {
     padding-right: 13%;
-}
-/*##################*/
+  }
+  /*##################*/
 }
 
 /* Small Devices (Phones) */
 @media only screen and (max-width: 480px) {
-/* NAV */
-    .navLinks{
-        display: none;
-    }
-    #searchBar,#searchBtn{
-        display: none;
-    }
-    #loginBtn{
-        height: 32px;
-        margin-top: 10px;
-        font-size: .5em;
-    }
+  /* NAV */
+  .navLinks {
+    display: none;
+  }
+  #searchBar,
+  #searchBtn {
+    display: none;
+  }
+  #loginBtn {
+    height: 32px;
+    margin-top: 10px;
+    font-size: 0.5em;
+  }
 
-/*##################*/    
-/*FOOTER SECTION */
-    .socialsIcons {
-        width: 24px;
-        height: 24px;
-        padding-left: auto;
+  /*##################*/
+  /*FOOTER SECTION */
+  .socialsIcons {
+    width: 24px;
+    height: 24px;
+    padding-left: auto;
+  }
 
-    }
+  #LinkSection {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    #LinkSection{
-        flex-direction: column;
-        text-align: center;
-    }
+  .footerLinks {
+    padding-top: 0em;
+  }
 
+  #footerLogo {
+    height: 64px;
+    width: 128px;
+  }
+  /* ############# */
+  /* CHARACTER PAGE*/
+  .characterPortraits {
+    width: 250px;
+    height: 250px;
+  }
+  .characterNames {
+    font-size: 1.3em;
+  }
 
-    .footerLinks{
-        padding-top: 0em;
-    }
+  /*##################*/
+  /* BLACKLIST PAGE*/
 
-    #footerLogo{
-        height: 64px;
-        width: 128px;
-    }
-/* ############# */
-/* CHARACTER PAGE*/
-    .characterPortraits{
-        width: 250px;
-        height: 250px;
-    }
-    .characterNames{
-        font-size: 1.3em;
-    }   
-
-/*##################*/
-/* BLACKLIST PAGE*/
-
-#blacklistedCharacterSection{
+  #blacklistedCharacterSection {
     width: 100%;
     justify-content: center;
-}
+  }
 
-.blacklistedCharacterNames{
+  .blacklistedCharacterNames {
     font-size: 1em;
-}
+  }
 
-.blacklistedCharacters{
+  .blacklistedCharacters {
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
 
-}
-
-.blacklistedCharactersImages{
+  .blacklistedCharactersImages {
     width: 100%;
-}
+  }
 
-.blacklistedCharactersText{
+  .blacklistedCharactersText {
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
-}
+  }
 
-.blacklistedCharacterNames{
-    padding: .3em 0em .3em 0em;
+  .blacklistedCharacterNames {
+    padding: 0.3em 0em 0.3em 0em;
     font-size: 1.3em;
     width: 100%;
     border-bottom: white 1px solid;
-}
+  }
 
-.blacklistReasons{
+  .blacklistReasons {
     font-size: 1em;
     text-align: center;
     padding: 0.3em 1.5em 1.5em 0.3em;
     position: relative;
-}
+  }
 
-#BlacklistReasonEditBtn{
+  #BlacklistReasonEditBtn {
     bottom: 0px;
     right: 0px;
-}
+  }
 
-#RemoveBlacklistBtn{
+  #RemoveBlacklistBtn {
     top: 2px;
     left: 0px;
-}
-.blacklistBtns{
+  }
+  .blacklistBtns {
     background: none;
     border: none;
     position: absolute;
-}
-.blacklistBtnImages{
+  }
+  .blacklistBtnImages {
     width: 24px;
     height: 24px;
-}
-/*##################*/
+  }
+  /*##################*/
 
+  /* FAVORITE PAGE*/
 
-/* FAVORITE PAGE*/
-
-.favoritedCharacters{
+  .favoritedCharacters {
     flex-direction: column;
-}
+  }
 
-.favoriteCharacterPortraits{
-width: 100%;
-}
+  .favoriteCharacterPortraits {
+    width: 100%;
+  }
 
-.favouritedCharacterTexts{
-width: 100%;
-}
-.favoriteCharacterNames{
+  .favouritedCharacterTexts {
+    width: 100%;
+  }
+  .favoriteCharacterNames {
     font-size: 1.5em;
-    padding-left: .5em;
-}
-.favoriteCharactersStatictics{
-    padding-left: .5em;
-    padding-right: .3em;
+    padding-left: 0.5em;
+  }
+  .favoriteCharactersStatictics {
+    padding-left: 0.5em;
+    padding-right: 0.3em;
     font-size: 1.25em;
-}
+  }
 
-#favoriteCharacterCosmeticBtn1{
+  #favoriteCharacterCosmeticBtn1 {
     right: 30%;
-}
-#favoriteCharacterCosmeticBtn2{
+  }
+  #favoriteCharacterCosmeticBtn2 {
     left: 30%;
-}
-/*##################*/
+  }
+  /*##################*/
 }
 
 /* Login Queries */
 
 @media (max-width: 480px) {
-    #socials {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 15px;
-    }
-    
+  #socials {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+  }
 }
 /* Homepage Queries */
 
 @media (max-width: 480px) {
-    #seccontainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-left: 0;
-    }
-    
-    #news {
-        margin-left: 0;
-        text-align: center;
-    }
+  #seccontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  #news {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+/* Account page Queries */
+.AccountPageMain {
+  width: 90%;
+  padding: 10px;
+}
+.profile img {
+  width: 100px;
+  height: 100px;
+}
+.info {
+  flex-direction: column;
+  text-align: center;
+}
+.info p {
+  text-align: center;
+  min-width: auto;
+}
+.formFAQ {
+  justify-content: center;
+  padding-right: 0;
+}
+.change-btn {
+  width: 100%;
+  padding: 10px 0;
 }
 
-
-
+.formFAQ {
+  margin-bottom: 35px;
+}
+.change-btn {
+  width: 25vh;
+}
+/* ############################*/
