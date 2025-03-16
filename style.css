@@ -526,6 +526,11 @@ margin-top: -80px;
 }
 
 /* BUTTONS*/
+.WinLossBtns{
+    background: transparent;
+    border: none;
+}
+
 .favoritedBtns,.favoriteCharacterCosmeticBtns{
     position: absolute;
     background: transparent;
@@ -1064,9 +1069,6 @@ a {
         gap: 15px;
     }
     
-    #socials > button {
-         
-    }
 }
 
 /* Landingpage Queries */
