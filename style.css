@@ -281,22 +281,23 @@ body{
 #Mainlanding{
     display: flex;
     flex-wrap: wrap;
-    height:80%;
+
 }
 
 #Mainlanding > .projectsections{
-
     display:flex;
     flex-direction: column;
+    border: black 1px solid;
+    width: 30%;
 }
 
 .projecttitles{
     margin-top: 3%;
-    margin-left: 20%;
+    text-align: center;
     font-size:xx-large;
     font-weight:700;
     color: white;
-    padding: 1rem;
+    
 }
 
 
@@ -304,13 +305,13 @@ body{
 #Fifa > button{
     background-image: url("/Images/Backgrounds/Fifa.jpg");
     height: 90%;
-    width: 80%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #Fifa > a {
-    margin-left: 30%;
+    
 }
 
 #Fortnite > button{
