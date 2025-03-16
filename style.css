@@ -284,23 +284,24 @@ body{
 }
 
 #Mainlanding > .projectsections{
-
     display:flex;
     flex-direction: column;
+    border: black 1px solid;
+    width: 30%;
 }
 
 .projecttitles{
     margin-top: 3%;
-    margin-left: 20%;
+    text-align: center;
     font-size:xx-large;
     font-weight:700;
     color: white;
-    padding: 1rem;
+    
 }
 
 .projectbuttons{
     height: 90%;
-    width: 80%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -311,7 +312,7 @@ body{
 }
 
 #Fifa > a {
-    margin-left: 30%;
+    
 }
 
 #Fortnite > a {
