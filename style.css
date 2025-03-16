@@ -318,83 +318,136 @@ margin-bottom: 60px;
     width: 600px;
     align-items: center;
     color: red;
+    margin-left: 15rem;
+}
+
+#Fifa > button{
+    background-image: url("/Images/Backgrounds/Fifa.jpg");
+    height: 680px;
+    width: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#Fifa > a{
+    background-color: yellow;
+    font-size: x-large;
+    font-weight: 800;
+    padding: 1rem;
+    width: 200px;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    margin-left: 9rem;
+    margin-top: 1rem;
+}
+
+#Fortnite > button{
+    background-image: url("/Images/Backgrounds/Fortnite.jpg");
+    height: 680px;
+    width: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
     
 }
 
-#Mainlanding > section > a{
-    display: block;
-    color: white;
-    font-size: medium;
-    text-align: center;
-    margin-top: 1.5rem;
-    margin-left: 170px;
-    color: black;
+#Fortnite > a{
     background-color: yellow;
-    border-radius: 15px;
-    padding: 10px 0px;
-    text-decoration: none;
-    width: 280px;
-    height: 90px;
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: 800;
+    padding: 1rem;
+    width: 200px;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    margin-left: 9rem;
+    margin-top: 1rem;
+    text-decoration: none;
 }
 
-#Fifa{
-    background-color: #34343c;
+#LegoMasters > button{
+    background-image: url("/Images/Backgrounds/LegoMasters.jpg");
+    height: 680px;
+    width: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#Fifa > img{
-    object-fit:cover;
-    height: 100%;
-    width: 100%;
-    border-width: 8px;
-    border-color: yellow;
-    border-style:outset;
+#LegoMasters > a{
+    background-color: yellow;
+    font-size: x-large;
+    font-weight: 800;
+    padding: 1rem;
+    width: 200px;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    margin-left: 9rem;
+    margin-top: 1rem;
 }
 
-#Fortnite > img{
-    object-fit:cover;
-    height: 100%;
-    width: 100%;
-    border-width: 8px;
-    border-color: yellow;
-    border-style:outset;
+#Lotr > button{
+    background-image: url("/Images/Backgrounds/LOTR.jpg");
+    height: 680px;
+    width: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#LegoMasters > img{
-    object-fit:cover;
-    height: 100%;
-    width: 100%;
-    border-width: 8px;
-    border-color: yellow;
-    border-style:outset;
+#Lotr > a{
+    background-color: yellow;
+    font-size: x-large;
+    font-weight: 800;
+    padding: 1rem;
+    width: 200px;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    margin-left: 9rem;
+    margin-top: 1rem;
 }
 
-#Lotr > img{
-    object-fit:cover;
-    height: 100%;
-    width: 100%;
-    border-width: 8px;
-    border-color: yellow;
-    border-style:outset;
+#Mtg > button{
+    background-image: url("/Images/Backgrounds/MagicTheGathering.jpg");
+    height: 680px;
+    width: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#Mtg > img{
-    object-fit:cover;
-    height: 100%;
-    width: 100%;
-    border-width: 8px;
-    border-color: yellow;
-    border-style:outset;
+#Mtg > a{
+    background-color: yellow;
+    font-size: x-large;
+    font-weight: 800;
+    padding: 1rem;
+    width: 200px;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    margin-left: 9rem;
+    margin-top: 1rem;
 }
 
-#Pokemon > img{
-    object-fit:cover;
-    height: 100%;
-    width: 100%;
-    border-width: 8px;
-    border-color: yellow;
-    border-style:outset;
+#Pokemon > button{
+    background-image: url("/Images/Backgrounds/Pokemon.jpg");
+    height: 680px;
+    width: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y:-60rem;
+}
+
+#Pokemon > a{
+    background-color: yellow;
+    font-size: x-large;
+    font-weight: 800;
+    padding: 1rem;
+    width: 200px;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    margin-left: 9rem;
+    margin-top: 1rem;
 }
 
 /* ###################################*/
