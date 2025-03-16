@@ -244,8 +244,6 @@ margin-bottom: 60px;
     font-weight: bold;
     font-size: 1.5em;
     padding: 0.4em 0em 0.4em 0em;
-    text-decoration: underline;
-    
 }
 
 .characterPageBtns {
@@ -452,12 +450,12 @@ margin-bottom: 60px;
 }
 
 /* ###################################*/
-/*----------------Login---------------*/
+/*----------------z---------------*/
 /* ###################################*/
 
 #Login{
 background-color: black;
-height: 100%;
+
 }
 
 #Login > form{
@@ -466,8 +464,8 @@ height: 100%;
     border-radius: 15px;
     margin:1.5rem 30rem;
     margin-left: 70rem;
-    height: 1200px;
-    width:800px;
+    height: 600px;
+    width:400px;
     display: grid;  
     padding:1.5rem;
     color: lightgray;
@@ -696,6 +694,7 @@ margin-top: -80px;
     border-bottom: 1px white solid;
     font-size: 1.5em;
     text-align: center;
+    padding: .3em;
 }
 
 .blacklistReasons{
