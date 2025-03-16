@@ -28,7 +28,7 @@ winDecreaseButton.addEventListener('click', () =>{
     gameCount.textContent = `\xA0 ${winCount+loseCount}`
     winCountElement.textContent = `\xA0 ${winCount}`
     winPercent = winCount/(winCount+loseCount)
-    WinRate.textContent = `\xA0 ${(winPercent100).toFixed(2)}%`
+    WinRate.textContent = `\xA0 ${(winPercent*100).toFixed(2)}%`
 });
 
 loseIncreaseButton.addEventListener('click', () => {
