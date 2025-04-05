@@ -18,5 +18,9 @@
   "homepage": "https://github.com/NicoLashOnGit/WPL-Project-CHYN#readme",
   "devDependencies": {
     "@types/node": "^22.13.1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "typescript": "^5.8.3"
   }
 }
