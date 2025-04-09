@@ -4,7 +4,7 @@
 
 body {
   overflow-x: hidden;
-  background-color: #34343c;
+  background-color: #101014;
   font-family: sans-serif;
   width: 100%;
   height: 100vh;
@@ -292,7 +292,7 @@ body {
 #loginLogo {
   margin-bottom: 2em;
 }
-#LoginMenuTitle {
+#LoginMenuTitle,#RegistrationMenuTitle {
   margin-bottom: 1.5em;
   font-size: 1.5em;
 }
@@ -335,6 +335,99 @@ body {
 .SocialsLoginImages {
   width: 48px;
 }
+
+
+/* ###################################*/
+/*-------------REGISTRATIE------------*/
+/* ###################################*/
+
+#Registration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-image: url(./Images/Backgrounds/Fortnite\ Wallpaper.png);
+  background-position: center;  /* centers the image */
+  background-size: cover;       /* makes image cover the whole screen */
+}
+#RegistrationMenu {
+  backdrop-filter: blur(10px);
+  border: black 2px solid;
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1em;
+  
+}
+
+#RegistrationButton{
+  padding: 0.3em;
+  font-size: 1.3em;
+  margin-top: 1em;
+  border: black 1px solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#RegistrationForm > input {
+  border: none;
+  height: 1.5em;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-top: .2em;
+  margin-bottom: 1.3em;
+  width: 80%;
+  background-color: lightblue;
+  color: black;
+  
+}
+
+.form-control{
+  height: 2em;
+  border-radius: 5px;
+  margin-top: .2em;
+  margin-bottom: 1.3em;
+  width: 80%;
+  background-color: lightblue;
+  color: black;
+}
+
+.newsAndTos {
+  display: flex;
+  align-items: flex-start; 
+  gap: 10px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  width: 80%;
+}
+
+.newsAndTos input[type="checkbox"] {
+  
+  accent-color: #ffffff;
+  cursor: pointer;
+}
+
+.newsAndTos span {
+  line-height: 1.4;
+}
+
+.newsAndTos a {
+  color: #b0d6ff;
+  text-decoration: underline;
+}
+
+.newsAndTos a:hover {
+  color: #ffffff;
+}
+
+
+
+
+
+
+
 
 /* ###################################*/
 /*-----------Character Info-----------*/
