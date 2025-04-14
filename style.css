@@ -271,23 +271,8 @@ body {
 /*----------------Login---------------*/
 /* ###################################*/
 
-#Login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2em;
-}
-#LoginMenu {
-  background-color: rgba(72, 72, 72, 0379);
-  border: black 1px solid;
-  border-radius: 5%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 1em;
-  margin: 0em 0em 2em 0em;
-}
+
+
 
 #loginLogo {
   margin-bottom: 2em;
@@ -303,9 +288,15 @@ body {
   margin-bottom: 1em;
 }
 #loginForm > input {
-  font-size: 1.5em;
+  border: none;
+  height: 1.5em;
   border-radius: 5px;
-  width: 90%;
+  border: 1px solid grey;
+  margin-top: .2em;
+  margin-bottom: 1.3em;
+  width: 100%;
+  background-color: lightblue;
+  color: black;
 }
 
 #LogInButton {
@@ -341,7 +332,7 @@ body {
 /*-------------REGISTRATIE------------*/
 /* ###################################*/
 
-#Registration {
+#Registration,#Login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -350,7 +341,7 @@ body {
   background-position: center;  /* centers the image */
   background-size: cover;       /* makes image cover the whole screen */
 }
-#RegistrationMenu {
+#RegistrationMenu,#LoginMenu {
   backdrop-filter: blur(10px);
   border: black 2px solid;
   border-radius: 5%;
@@ -359,7 +350,7 @@ body {
   flex-direction: column;
   text-align: center;
   padding: 1em;
-  
+  max-width: 80%;
 }
 
 #RegistrationButton{
