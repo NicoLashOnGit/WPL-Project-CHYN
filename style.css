@@ -245,12 +245,13 @@ body {
 
 #Mainlanding {
   display: flex;
-  margin: 2em 0em 2em 0em;
   width: 100%;
+  height: 100%;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .projectArticles {
+  margin-top: 1em;
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -258,7 +259,7 @@ body {
 }
 .ProjectImages {
   width: 100%;
-  height: 250px;
+  height: 300px;
 }
 .ProjectTitles {
   text-align: center;
@@ -811,8 +812,7 @@ a {
 }
 
 .socialsIcons {
-  width: 32px;
-  height: 32px;
+
   padding-left: 10px;
 }
 #socialsIconsDiv {
