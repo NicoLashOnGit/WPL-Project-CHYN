@@ -660,16 +660,7 @@ body {
   margin: 0;
   height: 100%;
 }
-/* nav en footer niet aanpassen foor specifieke paginas want deze zijn gelinkt met elke andere pagina en de andere nav/footer styling -nico*/
-/* 
-.nav,
-.footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-}
-*/
+
 
 /* ###################################*/
 /*----------------Nav-----------------*/
@@ -763,7 +754,6 @@ footer {
   background-color: #18181c;
   font-family: sans-serif;
   color: white;
-  margin-top: auto;
   padding: 10px;
 }
 
@@ -821,6 +811,8 @@ a {
   flex-wrap: wrap;
   padding-right: 3%;
 }
+
+
 
 /* ###################################*/
 /*--------------Media Queries----------*/
@@ -1175,6 +1167,8 @@ a {
     text-align: center;
   }
 }
+
+
 /* Account page Queries */
 .AccountPageMain {
   width: 90%;
@@ -1208,3 +1202,4 @@ a {
   width: 25vh;
 }
 /* ############################*/
+
