@@ -1,0 +1,50 @@
+<%- include("partials/header") %>
+<form action="/Homepage" method="POST">
+    <main id="homepage">
+        <section id="introsec">
+            <h1>Welkom bij het Fortnite project!</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </section>
+
+        <div id = "seccontainer">
+        <section id="recentsec">
+            <h2>Recently played character</h2>
+            <img src="/Images/Characters/FN_CHAR1.png">
+            <div>
+                <p>Name: Character 1</p>
+                <p>Wins: x Losses: y</p>
+            </div>
+        </section>
+
+        <section id="statsec">
+            <h2>Your statistics</h2>
+            <div>
+                <p>Total Wins: 110</p>
+                <p>Total Losses: 55</p>
+                <p>Win/Loss ratio: 2.00</p>
+                <p>Total chests opened: 15966</p>
+                <p>Hours played: 87h</p>
+            </div>
+        </section>
+
+        <section id="newcharsec">
+            <div>
+                <h2>Discover a new Character!</h2>
+                <img src="/Images/Characters/FN_CHAR2.png">
+                <p>Name: Random Character</p>
+            </div>
+            <div id = "buttondiv">
+                <button>Check</button>
+                <button>Use as Character</button>
+            </div>
+        </section>
+        </div>
+
+        <section id="news">
+            <h2>Subscribe to our newsletter for weekly updates.</h2>
+            <button>Click Here!</button>
+        </section>
+
+    </main>
+</form>
+<%- include("partials/footer") %>
