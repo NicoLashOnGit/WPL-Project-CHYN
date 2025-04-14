@@ -27,6 +27,7 @@
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "node": "^23.11.0",
     "node-html-parser": "^7.0.1",
     "readline-sync": "^1.4.10",
     "typescript": "^5.8.3"
