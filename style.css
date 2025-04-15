@@ -831,7 +831,6 @@ a {
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 16px;
-  padding: 10px 0;
 }
 
 .carousel::-webkit-scrollbar {
@@ -844,7 +843,7 @@ a {
   border-radius: 16px;
   padding: 16px;
   color: white;
-  flex-shrink: 0;
+  
   max-width: 250px;
 }
 
@@ -880,15 +879,27 @@ a {
 }
 
 .carousel-arrow.left {
-  left: 10px;
+  left: 2%;
 }
 
 .carousel-arrow.right {
-  right: 10px;
+  right: 2%;
 }
 
 .spotlightSection{
-  background-image: ;
+  background-image: url(./Images/Characters/QassidyQuickSpotlightWallpaper.png);
+  height: 700px;
+  display: flex;
+}
+.spotlightSection > img{
+  height: 700px;
+}
+.spotlightText{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .itemBundles{
