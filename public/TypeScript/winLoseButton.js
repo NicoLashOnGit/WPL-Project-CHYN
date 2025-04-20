@@ -1,60 +1,57 @@
-const winCountElement = document.getElementById('win-count');
-const loseCountElement = document.getElementById('lose-count');
-const winIncreaseButton = document.getElementById('IncreaseWinBtn1');
-const loseIncreaseButton = document.getElementById('IncreaseLossnBtn1');
-const winDecreaseButton = document.getElementById('DecreaseWinBtn1');
-const loseDecreaseButton = document.getElementById('DecreaseLossBtn1');
-const gameCount = document.getElementById('gameCount');
-const WinRate = document.getElementById('WinRate');
-
+"use strict";
+function getElement(id) {
+    const el = document.getElementById(id);
+    if (!el)
+        throw new Error(`Element with ID "${id}" not found`);
+    return el;
+}
+const winCountElement = getElement('win-count');
+const loseCountElement = getElement('lose-count');
+const winIncreaseButton = getElement('IncreaseWinBtn1');
+const loseIncreaseButton = getElement('IncreaseLossnBtn1');
+const winDecreaseButton = getElement('DecreaseWinBtn1');
+const loseDecreaseButton = getElement('DecreaseLossBtn1');
+const gameCount = getElement('gameCount');
+const WinRate = getElement('WinRate');
 let winCount = 0;
 let loseCount = 0;
-let winPercent = 0;
-winIncreaseButton.addEventListener('click', () => {
+function updateStats() {
+    const totalGames = winCount + loseCount;
+    const winPercent = totalGames > 0 ? winCount / totalGames : 0;
+    winCountElement.textContent = `\xA0 ${winCount}`;
+    loseCountElement.textContent = `\xA0 ${loseCount}`;
+    gameCount.textContent = `\xA0 ${totalGames}`;
+    WinRate.textContent = `\xA0 ${(winPercent * 100).toFixed(2)}`;
+}
+winIncreaseButton.addEventListener("click", () => {
     winCount++;
-    winCountElement.textContent = `\xA0 ${winCount}`
-    gameCount.textContent = `\xA0 ${winCount+loseCount}`
-    winPercent = winCount/(winCount+loseCount)
-    WinRate.textContent = `\xA0 ${(winPercent*100).toFixed(2)}%`
+    updateStats();
 });
-winDecreaseButton.addEventListener('click', () =>{
-    if (winCount == 0)
-    {
+winDecreaseButton.addEventListener('click', () => {
+    if (winCount == 0) {
         winCount = 0;
     }
     else {
         winCount--;
     }
-    gameCount.textContent = `\xA0 ${winCount+loseCount}`
-    winCountElement.textContent = `\xA0 ${winCount}`
-    winPercent = winCount/(winCount+loseCount)
-    WinRate.textContent = `\xA0 ${(winPercent*100).toFixed(2)}%`
+    ;
+    updateStats();
 });
-
 loseIncreaseButton.addEventListener('click', () => {
-    loseCount++;
-    console.log(winCount)
-    console.log(loseCount)
-    loseCountElement.textContent = `\xA0 ${loseCount}`
     if (loseCount == (winCount * 3)) {
-        var liElement = loseCountElement.closest('article');
-        liElement.style.display = 'none';
-        console.debug("test")
+        const parentArticle = loseCountElement.closest('article');
+        if (parentArticle) {
+            parentArticle.style.display = 'none';
+        }
     }
-    gameCount.textContent = `\xA0 ${winCount+loseCount}`
-    winPercent = winCount/(winCount+loseCount)
-    WinRate.textContent = `\xA0 ${(winPercent*100).toFixed(2)}%`
+    updateStats();
 });
-loseDecreaseButton.addEventListener('click', () =>{
-    if (loseCount == 0)
-    {
+loseDecreaseButton.addEventListener('click', () => {
+    if (loseCount == 0) {
         loseCount = 0;
     }
     else {
         loseCount--;
     }
-    gameCount.textContent = `\xA0 ${winCount+loseCount}`
-        loseCountElement.textContent = `\xA0 ${loseCount}`
-    winPercent = winCount/(winCount+loseCount)
-    WinRate.textContent = `\xA0 ${(winPercent*100).toFixed(2)}%`
+    updateStats();
 });

@@ -4,7 +4,9 @@
   "description": "fortnite project WPL",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "build": "tsc",
+    "test": "test",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

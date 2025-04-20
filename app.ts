@@ -1,7 +1,13 @@
 import express from "express"
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static("public", {
+    setHeaders: (res, path) => {
+        if (path.endsWith(".js")) {
+            res.setHeader("Content-Type", "application/javasc")
+        }
+    }
+}));
 app.use(express.json({limit: "1mb"}));
 app.use(express.urlencoded({extended:true}));
 app.set("view engine", "ejs");

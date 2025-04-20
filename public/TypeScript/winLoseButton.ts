@@ -27,6 +27,7 @@ function updateStats(): void {
 }
 
 winIncreaseButton.addEventListener("click", () => {
+    console.log("Win button clicked")
     winCount++;
     updateStats();
 });
