@@ -888,6 +888,7 @@ a {
 
 .spotlightSection{
   background-image: url(./Images/Characters/QassidyQuickSpotlightWallpaper.png);
+  background-size: 100%;
   height: 700px;
   display: flex;
 }
