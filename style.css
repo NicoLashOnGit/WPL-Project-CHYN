@@ -141,23 +141,7 @@ body {
 /* ###################################*/
 /*------------Account Page-------------*/
 /* ###################################*/
-.AccountPageMain {
-  width: 70%;
-}
-.profile img {
-  width: 120px;
-  height: 120px;
-}
-.info {
-  flex-direction: row;
-  text-align: left;
-}
-.formFAQ {
-  justify-content: flex-start;
-}
-.change-btn {
-  padding: 10px 20px;
-}
+
 
 /* ###################################*/
 /*-----------Character Page------------*/
