@@ -747,16 +747,17 @@ ul {
   border-radius: 20%;
   padding: 0em 0.4em 0em 0.4em;
   background-color: #00141D;
+  align-items: center;
 }
 
+
 #vbucksCounterImage{
-  width: 64px;
-  height: 48px;
+  height: 32px;
 }
 
 #vbucksCounter{
-  display: flex;
-  align-items: center;
+  font-family: Impact,'Arial Narrow Bold', sans-serif;
+  font-size: 1.5em;
 }
 
 .navRight {
