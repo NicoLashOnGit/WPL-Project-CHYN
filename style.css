@@ -143,25 +143,28 @@ body {
 /* ###################################*/
 
 .AccountPageMain{
+  padding: 3em 0em 3em 0em;
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-image: url(./Images/Backgrounds/Fortnite\ Wallpaper.png);
+  background-image: url(./Images/Backgrounds/Fortnite4kwallpaper.png);
   background-position: center;
   background-size: 100% 100%;
 }
 
 .AccountPageMain>h2,.accPageSections>h2{
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: 800;
   padding-bottom: 1em;
+
 }
 
 .AccountPageMain>h3,.accPageSections>p{
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 0;
   color: lightgrey;
   padding-bottom: 1em;
+
 }
 
 #accountID{
@@ -175,10 +178,14 @@ body {
 .accForms > article > input{
 padding: .5em;
 margin: .3em;
-border: none;
+
 background-color: #EFEFEF;
+border: black 1px solid;
 }
 
+#language{
+ 
+}
 /* ###################################*/
 /*-----------Character Page------------*/
 /* ###################################*/
@@ -995,23 +1002,7 @@ a {
   /*##################*/
 
   /* Account page */
-  .AccountPageMain {
-    width: 60%;
-  }
-  .profile img {
-    width: 120px;
-    height: 120px;
-  }
-  .info {
-    flex-direction: row;
-    text-align: left;
-  }
-  .formFAQ {
-    justify-content: flex-start;
-  }
-  .change-btn {
-    padding: 12px 20px;
-  }
+
   /* ##########################*/
 }
 
@@ -1040,23 +1031,7 @@ a {
   /*##################*/
 
   /*Account page */
-  .AccountPageMain {
-    width: 70%;
-  }
-  .profile img {
-    width: 120px;
-    height: 120px;
-  }
-  .info {
-    flex-direction: row;
-    text-align: left;
-  }
-  .formFAQ {
-    justify-content: flex-start;
-  }
-  .change-btn {
-    padding: 10px 20px;
-  }
+ 
   /* ######################*/
 }
 
@@ -1141,23 +1116,7 @@ a {
 
   /*##################*/
   /* Account page */
-  .AccountPageMain {
-    width: 80%;
-  }
-  .profile img {
-    width: 110px;
-    height: 110px;
-  }
-  .info {
-    flex-direction: row;
-    text-align: left;
-  }
-  .formFAQ {
-    justify-content: center;
-  }
-  .change-btn {
-    padding: 10px 15px;
-  }
+ 
   /* ###############*/
 
   /* FOOTER */
@@ -1335,37 +1294,5 @@ a {
 }
 
 
-/* Account page Queries */
-.AccountPageMain {
-  width: 90%;
-  padding: 10px;
-}
-.profile img {
-  width: 100px;
-  height: 100px;
-}
-.info {
-  flex-direction: column;
-  text-align: center;
-}
-.info p {
-  text-align: center;
-  min-width: auto;
-}
-.formFAQ {
-  justify-content: center;
-  padding-right: 0;
-}
-.change-btn {
-  width: 100%;
-  padding: 10px 0;
-}
-
-.formFAQ {
-  margin-bottom: 35px;
-}
-.change-btn {
-  width: 25vh;
-}
 /* ############################*/
 
