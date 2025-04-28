@@ -740,11 +740,31 @@ ul {
   height: 48px;
   border-radius: 50%;
 }
+
+#vbucksCounterArticle{
+  display: flex;
+  border: 1px solid transparent;
+  border-radius: 20%;
+  padding: 0em 0.4em 0em 0.4em;
+  background-color: #00141D;
+}
+
+#vbucksCounterImage{
+  width: 64px;
+  height: 48px;
+}
+
+#vbucksCounter{
+  display: flex;
+  align-items: center;
+}
+
 .navRight {
   display: flex;
   margin-left: auto;
   gap: 0.5em;
   padding-right: 2%;
+  
 }
 
 /* ###################################*/
