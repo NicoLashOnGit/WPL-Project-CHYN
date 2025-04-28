@@ -142,6 +142,42 @@ body {
 /*------------Account Page-------------*/
 /* ###################################*/
 
+.AccountPageMain{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-image: url(./Images/Backgrounds/Fortnite\ Wallpaper.png);
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.AccountPageMain>h2,.accPageSections>h2{
+  font-size: 1.5em;
+  font-weight: 800;
+  padding-bottom: 1em;
+}
+
+.AccountPageMain>h3,.accPageSections>p{
+  font-size: 1em;
+  font-weight: 0;
+  color: lightgrey;
+  padding-bottom: 1em;
+}
+
+#accountID{
+  padding-bottom: 1em;
+}
+
+#accIDspan{
+  font-weight: 1000;
+}
+
+.accForms > article > input{
+padding: .5em;
+margin: .3em;
+border: none;
+background-color: #EFEFEF;
+}
 
 /* ###################################*/
 /*-----------Character Page------------*/
@@ -274,7 +310,7 @@ body {
 #email {
   margin-bottom: 1em;
 }
-#loginForm > input {
+#loginForm>input {
   border: none;
   height: 1.5em;
   border-radius: 5px;
@@ -325,8 +361,8 @@ body {
   align-items: center;
   height: 100%;
   background-image: url(./Images/Backgrounds/Fortnite\ Wallpaper.png);
-  background-position: center;  /* centers the image */
-  background-size: cover;       /* makes image cover the whole screen */
+  background-position: center;  
+  background-size: cover;       
 }
 #RegistrationMenu,#LoginMenu {
   backdrop-filter: blur(10px);
@@ -778,7 +814,7 @@ footer {
   gap: 30px;
 }
 
-h3 {
+.LinkSection>h3 {
   margin-bottom: 10px;
   font-size: 1.5em;
   color: #f4f4f4;
