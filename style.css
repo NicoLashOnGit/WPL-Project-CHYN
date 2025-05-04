@@ -491,42 +491,32 @@ border: black 1px solid;
 /* ###################################*/
 /*-----------Character Info-----------*/
 /* ###################################*/
-.containerCI {
+
+#characterInfoMain{
   display: flex;
+  width: 90%;
+  text-align: center;
+  height: 100%;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
 }
 
-.image-container {
-  flex: 1;
+#charInfoImg{
+  width: 600px;
+  height: 600px;
+  
+}
+
+#charInfoText{
+  width: 50%;
   display: flex;
-  justify-content: center;
-}
+  flex-direction: column;
 
-.character-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-  background: radial-gradient(circle, lightblue, rgb(0, 132, 255));
+  font-size: 1.4em;
 }
-
-.text-container {
-  flex: 1;
-  padding: 20px;
-  color: lightgrey;
-}
-
-.title {
-  font-size: 3rem;
-  color: white;
-  margin-bottom: 20px;
-}
-
-.subtext {
-  font-size: 1.5rem;
-  color: lightgrey;
-  margin: 10px 0;
+#charInfoText>h2{
+  font-weight: 800;
+  margin-bottom: .5em;
 }
 
 /* ###################################*/
