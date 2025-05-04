@@ -143,20 +143,24 @@ body {
 /* ###################################*/
 
 .AccountPageMain{
-  padding: 3em 0em 3em 0em;
+  padding: 2em 0em 3em 0em;
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-image: url(./Images/Backgrounds/S4wallpaper4k.png);
+  background-image: url(./Images/Backgrounds/Fortnite4kwallpaper.png);
   background-position: center;
-  background-size: 100% 100%;
+  width: 100%;
 }
 
 .AccountPageMain>h2,.accPageSections>h2{
   font-size: 1.6em;
   font-weight: 800;
-  padding-bottom: 1em;
-
+  padding-bottom: .4em;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
 }
 
 .AccountPageMain>h3,.accPageSections>p{
@@ -164,8 +168,13 @@ body {
   font-weight: 0;
   color: lightgrey;
   padding-bottom: 1em;
-
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
 }
+
 
 #accountID{
   padding-bottom: 1em;
@@ -191,6 +200,29 @@ border: black 1px solid;
   color: white;
   font-size: 1.2em;
   font-weight: 1000;
+}
+
+#deleteArticle{
+  padding-top: 1em;
+}
+#deleteArticle>p{
+  padding-bottom: 1em;
+}
+#saveChangesBtn{
+  background-color: #7FB9F1;
+  padding: 1em;
+  border: none;
+  border-radius: 5%;
+  font-weight: 500;
+  color: white;
+}
+#deleteAccBtn{
+  background-color:#DE3341;
+  padding: 1em;
+  border: none;
+  border-radius: 5%;
+  font-weight: 500;
+  color: white;
 }
 /* ###################################*/
 /*-----------Character Page------------*/
@@ -628,22 +660,24 @@ border: black 1px solid;
   font-size: 1.5em;
   text-align: center;
   padding: 0.3em;
+  font-weight: 600;
 }
 
 .blacklistReasons {
-  height: auto;
-  padding: 0em 1.5em 1em 1em;
-  position: relative;
+  text-align: center;
+  padding: .4em 0em .4em 0em;
 }
 
 #BlacklistReasonEditBtn {
   bottom: 0px;
   right: 0px;
+  cursor: pointer;
 }
 
 #RemoveBlacklistBtn {
   top: 2px;
   left: 0px;
+  cursor: pointer;
 }
 .blacklistBtns {
   background: none;
