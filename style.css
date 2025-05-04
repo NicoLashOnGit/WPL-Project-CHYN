@@ -878,6 +878,14 @@ a {
   align-items: center;
   overflow: hidden;
   padding: 20px;
+  
+}
+
+#wrapperTitle{
+  font-size: 2em;
+  text-align: center;
+  font-weight: 800;
+  padding-top: 1em;
 }
 
 .carousel {
@@ -885,6 +893,7 @@ a {
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 16px;
+  padding-bottom: 1em;
 }
 
 .carousel::-webkit-scrollbar {
@@ -897,7 +906,6 @@ a {
   border-radius: 16px;
   padding: 16px;
   color: white;
-  
   max-width: 250px;
 }
 
