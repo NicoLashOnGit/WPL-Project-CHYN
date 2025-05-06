@@ -33,7 +33,7 @@ export function favorite(): void {
             console.error("Mislukt om Favoriet ster toe te voegen");
         }
         } catch (error) {
-            console.error("Mislukt om Favotiet ster te toggelen", error)
+            console.error("Mislukt om Favoriet ster te toggelen", error)
         }
       });
     });
