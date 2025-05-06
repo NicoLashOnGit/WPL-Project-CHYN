@@ -89,7 +89,7 @@ app.get("/Characterpage", async (req, res) => {
         const data = await response.json();
 
         const characters = (data.data as Characters[]).filter (
-            (character) => character.type.value === "outfit"
+            (character) => character.type.value === "outfit" && character.introduction?.chapter === "2"
         );
 
         res.render("Characterpage", {title: "Character Page", characters})
