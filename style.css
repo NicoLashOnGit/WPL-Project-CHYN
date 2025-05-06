@@ -141,24 +141,89 @@ body {
 /* ###################################*/
 /*------------Account Page-------------*/
 /* ###################################*/
-.AccountPageMain {
-  width: 70%;
-}
-.profile img {
-  width: 120px;
-  height: 120px;
-}
-.info {
-  flex-direction: row;
-  text-align: left;
-}
-.formFAQ {
-  justify-content: flex-start;
-}
-.change-btn {
-  padding: 10px 20px;
+
+.AccountPageMain{
+  padding: 2em 0em 3em 0em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-image: url(./Images/Backgrounds/Fortnite4kwallpaper.png);
+  background-position: center;
+  width: 100%;
 }
 
+.AccountPageMain>h2,.accPageSections>h2{
+  font-size: 1.6em;
+  font-weight: 800;
+  padding-bottom: .4em;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
+
+.AccountPageMain>h3,.accPageSections>p{
+  font-size: 1.2em;
+  font-weight: 0;
+  color: lightgrey;
+  padding-bottom: 1em;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
+
+
+#accountID{
+  padding-bottom: 1em;
+}
+
+#accIDspan{
+  font-weight: 1000;
+}
+
+.accForms > article > input{
+padding: .5em;
+margin: .3em;
+
+background-color: #EFEFEF;
+border: black 1px solid;
+}
+
+#language{
+ width: 15%;
+}
+
+#languageLabel{
+  color: white;
+  font-size: 1.2em;
+  font-weight: 1000;
+}
+
+#deleteArticle{
+  padding-top: 1em;
+}
+#deleteArticle>p{
+  padding-bottom: 1em;
+}
+#saveChangesBtn{
+  background-color: #7FB9F1;
+  padding: 1em;
+  border: none;
+  border-radius: 5%;
+  font-weight: 500;
+  color: white;
+}
+#deleteAccBtn{
+  background-color:#DE3341;
+  padding: 1em;
+  border: none;
+  border-radius: 5%;
+  font-weight: 500;
+  color: white;
+}
 /* ###################################*/
 /*-----------Character Page------------*/
 /* ###################################*/
@@ -290,7 +355,7 @@ body {
 #email {
   margin-bottom: 1em;
 }
-#loginForm > input {
+#loginForm>input {
   border: none;
   height: 1.5em;
   border-radius: 5px;
@@ -341,8 +406,8 @@ body {
   align-items: center;
   height: 100%;
   background-image: url(./Images/Backgrounds/Fortnite\ Wallpaper.png);
-  background-position: center;  /* centers the image */
-  background-size: cover;       /* makes image cover the whole screen */
+  background-position: center;  
+  background-size: cover;       
 }
 #RegistrationMenu,#LoginMenu {
   backdrop-filter: blur(10px);
@@ -426,42 +491,31 @@ body {
 /* ###################################*/
 /*-----------Character Info-----------*/
 /* ###################################*/
-.containerCI {
+
+#characterInfoMain{
   display: flex;
+  width: 90%;
+  text-align: center;
+  height: 100%;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
 }
 
-.image-container {
-  flex: 1;
+#charInfoImg{
+  width: 600px;
+  height: 600px;
+}
+
+#charInfoText{
+  width: 50%;
   display: flex;
-  justify-content: center;
-}
+  flex-direction: column;
 
-.character-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-  background: radial-gradient(circle, lightblue, rgb(0, 132, 255));
+  font-size: 1.4em;
 }
-
-.text-container {
-  flex: 1;
-  padding: 20px;
-  color: lightgrey;
-}
-
-.title {
-  font-size: 3rem;
-  color: white;
-  margin-bottom: 20px;
-}
-
-.subtext {
-  font-size: 1.5rem;
-  color: lightgrey;
-  margin: 10px 0;
+#charInfoText>h2{
+  font-weight: 800;
+  margin-bottom: .5em;
 }
 
 /* ###################################*/
@@ -595,22 +649,24 @@ body {
   font-size: 1.5em;
   text-align: center;
   padding: 0.3em;
+  font-weight: 600;
 }
 
 .blacklistReasons {
-  height: auto;
-  padding: 0em 1.5em 1em 1em;
-  position: relative;
+  text-align: center;
+  padding: .4em 0em .4em 0em;
 }
 
 #BlacklistReasonEditBtn {
   bottom: 0px;
   right: 0px;
+  cursor: pointer;
 }
 
 #RemoveBlacklistBtn {
   top: 2px;
   left: 0px;
+  cursor: pointer;
 }
 .blacklistBtns {
   background: none;
@@ -634,33 +690,45 @@ body {
 /*----------------FAQ-----------------*/
 /* ###################################*/
 .mainFAQ {
-  width: 50%;
-  margin: auto;
-  padding: 20px;
-  margin-top: 20vh;
+width: 60%;
+margin: auto;
+}
+
+#FAQheaderSection{
+  margin: 2em 0em 5em 0em;
+  text-align: center;
+  font-family: Impact,'Arial Narrow Bold', sans-serif;
+}
+
+#FAQheaderSection>h1{
+  font-size: 3em;
+  font-weight: 400;
+}
+#FAQheaderSection>h2{
+  color: lightgrey;
+  margin-top: .3em;
 }
 
 .FAQh1 {
   text-align: center;
-  margin-bottom: 30px;
+  margin: 5px 5px 5px 5px;
+
 }
 
 .faq-item {
-  margin: 5px 0;
-  padding: 0px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
 }
 
 .question {
   font-weight: bold;
-  margin: 0 0 10px;
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
 }
 
 .answer {
   color: lightgray;
-  margin: 0;
-  height: 100%;
+
 }
 
 
@@ -747,16 +815,17 @@ ul {
   border-radius: 20%;
   padding: 0em 0.4em 0em 0.4em;
   background-color: #00141D;
+  align-items: center;
 }
 
+
 #vbucksCounterImage{
-  width: 64px;
-  height: 48px;
+  height: 32px;
 }
 
 #vbucksCounter{
-  display: flex;
-  align-items: center;
+  font-family: Impact,'Arial Narrow Bold', sans-serif;
+  font-size: 1.5em;
 }
 
 .navRight {
@@ -774,7 +843,6 @@ ul {
 footer {
   width: 100%;
   background-color: #18181c;
-  font-family: sans-serif;
   color: white;
   padding: 10px;
 }
@@ -793,7 +861,7 @@ footer {
   gap: 30px;
 }
 
-h3 {
+.LinkSection>h3 {
   margin-bottom: 10px;
   font-size: 1.5em;
   color: #f4f4f4;
@@ -844,6 +912,14 @@ a {
   align-items: center;
   overflow: hidden;
   padding: 20px;
+  
+}
+
+#wrapperTitle{
+  font-size: 2em;
+  text-align: center;
+  font-weight: 800;
+  padding-top: 1em;
 }
 
 .carousel {
@@ -851,6 +927,7 @@ a {
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 16px;
+  padding-bottom: 1em;
 }
 
 .carousel::-webkit-scrollbar {
@@ -863,7 +940,6 @@ a {
   border-radius: 16px;
   padding: 16px;
   color: white;
-  
   max-width: 250px;
 }
 
@@ -921,6 +997,8 @@ a {
   text-align: center;
   align-items: center;
   justify-content: center;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 .itemBundles{
@@ -974,23 +1052,7 @@ a {
   /*##################*/
 
   /* Account page */
-  .AccountPageMain {
-    width: 60%;
-  }
-  .profile img {
-    width: 120px;
-    height: 120px;
-  }
-  .info {
-    flex-direction: row;
-    text-align: left;
-  }
-  .formFAQ {
-    justify-content: flex-start;
-  }
-  .change-btn {
-    padding: 12px 20px;
-  }
+
   /* ##########################*/
 }
 
@@ -1019,23 +1081,7 @@ a {
   /*##################*/
 
   /*Account page */
-  .AccountPageMain {
-    width: 70%;
-  }
-  .profile img {
-    width: 120px;
-    height: 120px;
-  }
-  .info {
-    flex-direction: row;
-    text-align: left;
-  }
-  .formFAQ {
-    justify-content: flex-start;
-  }
-  .change-btn {
-    padding: 10px 20px;
-  }
+ 
   /* ######################*/
 }
 
@@ -1120,23 +1166,7 @@ a {
 
   /*##################*/
   /* Account page */
-  .AccountPageMain {
-    width: 80%;
-  }
-  .profile img {
-    width: 110px;
-    height: 110px;
-  }
-  .info {
-    flex-direction: row;
-    text-align: left;
-  }
-  .formFAQ {
-    justify-content: center;
-  }
-  .change-btn {
-    padding: 10px 15px;
-  }
+ 
   /* ###############*/
 
   /* FOOTER */
@@ -1314,37 +1344,5 @@ a {
 }
 
 
-/* Account page Queries */
-.AccountPageMain {
-  width: 90%;
-  padding: 10px;
-}
-.profile img {
-  width: 100px;
-  height: 100px;
-}
-.info {
-  flex-direction: column;
-  text-align: center;
-}
-.info p {
-  text-align: center;
-  min-width: auto;
-}
-.formFAQ {
-  justify-content: center;
-  padding-right: 0;
-}
-.change-btn {
-  width: 100%;
-  padding: 10px 0;
-}
-
-.formFAQ {
-  margin-bottom: 35px;
-}
-.change-btn {
-  width: 25vh;
-}
 /* ############################*/
 

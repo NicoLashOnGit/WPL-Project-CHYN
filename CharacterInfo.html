@@ -9,51 +9,52 @@
   </head>
   <body>
     
-  <nav id="nav">
+    <nav id="nav">
       <a href="Landingpage.html"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="navLogoImage"></a>
-      
-      <a href="Characterpage.html" id="charactersLink" class="navLinks">Characters</a>
-      <a href="favoritePage.html" id="favoritesLink" class="navLinks">Favorites</a>
+  
+      <a href="Characterpage.html" id="charactersLink" class="navLinks">Karakters</a>
+      <a href="favoritePage.html" id="favoritesLink" class="navLinks">Favorieten</a>
       <a href="blacklist.html" id="blacklistLink" class="navLinks">Blacklist</a>
+  
+      <form action="searchBar" class="searchBar">
+          <input type="text" id="searchBar" placeholder="Typ om te zoeken...">
+          <button onclick = "search()" id="searchBtn">🔍</button>
+      </form>
       
-      <form class="searchBar">
-        <input type="text" id="searchBar" placeholder="Type to search...">
-        <button id="searchBtn" type="submit">🔍</button>
-    </form>
-    <script src="/JavaScript/searchbar.js"></script>
-          
       <div class="navRight">
-        <button onclick="window.location.href='Loginpage.html'" id="loginBtn" class="">Log In!</button>
+          <article id="vbucksCounterArticle">
+              <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCounterImage">
+              <p id="vbucksCounter">800</p>
+          </article>
+          <button id="loginBtn" class="">Log In!</button>
           <a href="#" class=""><img src="/Images/Logos/Placeholder logo.png" alt="" id="accountImage"></a>
       </div>
   </nav>
     
-    <main>
-    <div class="containerCI">
-      <div class="image-container">
-        <img src="Images/Characters/FN_CHAR1.png" alt="Character" class="character-image" />
-      </div>
-      <div class="text-container">
-        <h1 class="title">Over dit karakter:</h1>
-        <p class="subtext">
-          John Wick is een van de meest legendarische en gevreesde personages in Fortnite, geroemd om zijn koelbloedige efficiëntie en ongeëvenaarde gevechtskunsten. Oorspronkelijk geïntroduceerd als een samenwerking met de iconische actiefilmfranchise, werd John Wick al snel een favoriet onder fans – bekend om zijn scherpe pak, stoïcijnse houding en felle vechtstijl.<br /><br />
-          Toen John Wick zijn intrede maakte in Fortnite, bracht hij een gevoel van verfijning en precisie met zich mee naar het strijdveld. Zijn dodelijke vaardigheden passen perfect bij de snelle actie van de game. Zijn verschijning is strak en stijlvol: het klassieke zwarte pak en een intense focus, wat symbool staat voor jarenlange training en meedogenloze vastberadenheid.<br /><br />
-        Met een reputatie als topklasse krijger is John Wicks personage synoniem geworden voor serieuze, doelgerichte gevechten. Hij is een populaire keuze voor spelers die houden van een methodische en berekende speelstijl. Of hij nu solo tegenstanders uitschakelt of samenwerkt in teamgevechten – de erfenis van John Wick in Fortnite is een krachtig bewijs van zijn status als een van de dodelijkste spelers in het spel.
-      </div>
-    </div>
+  <main id="characterInfoMain">
+    <img src="/Images/Characters/FN_CHAR1.png" alt="" id="charInfoImg">
+
+    <section id="charInfoText">
+    <h2>Over dit karakter!</h2>
+    <p>John Wick is een iconisch personage dat zijn intrede deed in Fortnite als onderdeel van een limited-time samenwerking met de populaire filmfranchise. De skin, gebaseerd op de gelijknamige huurmoordenaar gespeeld door Keanu Reeves, werd al snel een favoriet onder spelers dankzij zijn strakke pak, stoere uitstraling en directe herkenbaarheid.</p><br>
+    
+    <p>In Fortnite verscheen John Wick als onderdeel van de "Wick’s Bounty" LTM (Limited Time Mode), waarin spelers konden strijden in een speciaal evenement geïnspireerd op de films. Naast de standaard John Wick-outfit bevatte het pakket ook extra stijlen, een bijpassende rugaccessoire, en exclusieve cosmetische items zoals een wapenwrap en een glider.</p><br>
+      
+    <p>De samenwerking was een van de eerste keren dat een live-action filmkarakter zo realistisch in de game werd overgebracht, en het succes ervan heeft de deur geopend voor talloze andere crossovers in de Fortnite-wereld.</p><br>
+  </section>
+
   </main>
 
   <footer>
     <section id="socials">
         <a href="#" id="footerLogo"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" ></a>
         <div id="socialsIconsDiv">
-            <a href="#"><img src="/Images/Icons/Transparent Icons/Facebook 64 transparent.png" alt="Facebook" class="socialsIcons"></a>
-            <a href="#"><img src="/Images/Icons/Transparent Icons/X 64 transparent.png" alt="Twitter" class="socialsIcons" id="SocialsIconTwitter"></a>
-            <a href="#"><img src="/Images/Icons/Transparent Icons/Instagram 64 transparent.png" alt="Instagram" class="socialsIcons"></a>
-            <a href="#"><img src="/Images/Icons/Transparent Icons/Youtube 64 transparent.png" alt="Youtube" class="socialsIcons"></a>
-            <a href="#"><img src="/Images/Icons/Transparent Icons/Whatsapp 64 transparent.png" alt="WhatsApp" class="socialsIcons"></a>
-            <a href="#"><img src="/Images/Icons/Transparent Icons/Snapchat 64 transparent.png" alt="Snapchat" class="socialsIcons"></a>
-            <a href="#"><img src="/Images/Icons/Transparent Icons/Tiktok 64 transparent.png" alt="TikTok" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/FacebookV3.png" alt="Facebook" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/TwitterV3.png" alt="Twitter" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/InstagramV3.png" alt="Instagram" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/YoutubeV3.png" alt="Youtube" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/WhatsAppV3.png" alt="WhatsApp" class="socialsIcons"></a>
+            <a href="#"><img src="/Images/Icons/SnapchatV3.png" alt="Snapchat" class="socialsIcons"></a>
         </div>
     </section>
     
@@ -61,14 +62,14 @@
         <article class="footerLinks">
             <h3>Main</h3>
             <ul>
-                <li><a href="#">About Us</a></li>
+                <li><a href="#">Over Ons</a></li>
                 <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Change Language</a></li>
+                <li><a href="#">Verander Taal</a></li>
             </ul>
         </article>
     
         <article class="footerLinks">
-            <h3>More</h3>
+            <h3>Meer</h3>
             <ul>
                 <li><a href="#">Payment Options</a></li>
                 <li><a href="#">Newsletter</a></li>
@@ -81,7 +82,7 @@
             <ul>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Help Centrum</a></li>
             </ul>
         </article>
     </section>
