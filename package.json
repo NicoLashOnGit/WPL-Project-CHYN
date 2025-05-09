@@ -18,5 +18,11 @@
   "homepage": "https://github.com/NicoLashOnGit/WPL-Project-CHYN#readme",
   "devDependencies": {
     "@types/node": "^22.13.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "init": "^0.1.2",
+    "mongoose": "^8.14.1"
   }
 }
