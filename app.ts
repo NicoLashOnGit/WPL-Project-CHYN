@@ -33,24 +33,21 @@ app.get("/searchBar", (req, res) => {
         res.status(404).send("Page not found")
     }
 })
-// app.post("/Characterpage/toggleFavorite", (req, res) => {
-//     const {characterId} = req.body;
-
-//     if (!characterId) {
-//         return res.status(400).json({ error: "Character ID is verplicht"});
-//     }
-
-//     if (favoriteCharacters[characterId]) {
-//         delete favoriteCharacters[characterId];
-//     } else {
-//         favoriteCharacters[characterId] = true;
-//     }
-
-//     res.json({
-//         succes: true,
-//         favoriteCharacters,
-//     });
-// });
+app.post("/Characterpage/toggleFavorite", (req, res) => {
+    const blacklistBtns = document.querySelectorAll(".characterPageBtn");
+    console.log("knop is aangelklingt")
+    blacklistBtns.forEach(function(button) {
+      button.addEventListener("click", function() {
+        const imgElement = button.querySelector("img");
+        console.log("knop is aangelklingt")
+        if (imgElement?.src.includes("blackEmptyFavouriteStar.png")) {
+          imgElement.src = "/Images/ButtonImages/FilledGoldFavouriteStar.png";
+        } else if (imgElement?.src.includes("FilledGoldFavouriteStar.png")) {
+          imgElement.src = "/Images/ButtonImages/blackEmptyFavouriteStar.png";
+        }
+      });
+    });
+});
 app.get("/", (req, res) => {
     res.render("Landingpage", {title: "Landingpage"})
 });
@@ -89,7 +86,7 @@ app.get("/Characterpage", async (req, res) => {
         const data = await response.json();
 
         const characters = (data.data as Characters[]).filter (
-            (character) => character.type.value === "outfit" && character.introduction?.chapter === "2"
+            (character) => character.type.value === "outfit" && character.introduction?.chapter === "6" && character.introduction.season === "1"
         );
 
         res.render("Characterpage", {title: "Character Page", characters})
@@ -101,6 +98,10 @@ app.get("/Characterpage", async (req, res) => {
 app.get("/Landingpage", (req, res) => {
     res.render("Landingpage", {title: "Landingpage"})
 });
+
+app.get("/RegistrationPage", (req, res) => {
+    res.render("RegistrationPage", {title: "Registration Page"})
+} )
 
 app.listen(app.get("port"), async() => {
     console.log("[server] http://localhost:" + app.get("port"))

@@ -1,45 +1,5 @@
-<<<<<<< HEAD:blacklist.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Info</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<link rel="stylesheet" href="nav.css">
-
-<body>
-
-    <nav id="nav">
-        <a href="Landingpage.html"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="navLogoImage"></a>
-    
-        <a href="Characterpage.html" id="charactersLink" class="navLinks">Karakters</a>
-        <a href="favoritePage.html" id="favoritesLink" class="navLinks">Favorieten</a>
-        <a href="blacklist.html" id="blacklistLink" class="navLinks">Blacklist</a>
-    
-        <form action="searchBar" class="searchBar">
-            <input type="text" id="searchBar" placeholder="Typ om te zoeken...">
-            <button onclick = "search()" id="searchBtn">🔍</button>
-        </form>
-        
-        <div class="navRight">
-            <article id="vbucksCounterArticle">
-                <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCounterImage">
-                <p id="vbucksCounter">800</p>
-            </article>
-            <button id="loginBtn" class="">Log In!</button>
-            <a href="#" class=""><img src="/Images/Logos/Placeholder logo.png" alt="" id="accountImage"></a>
-        </div>
-    </nav>
-
-    <main>
-=======
 <%- include("partials/header") %>
 <form action="/blacklist" method="POST">
->>>>>>> TSenEJS2:views/blacklist.ejs
     <section id="blacklistedCharacterSection">
         <article class="blacklistedCharacters" id="blacklistedCharacter1">
             <button class="blacklistBtns" id="RemoveBlacklistBtn"><img src="/Images/ButtonImages/blackmarkButton.png" alt="" class="blacklistBtnImages"></button>
@@ -108,54 +68,5 @@
             </div>
         </article>
     </section>
-<<<<<<< HEAD:blacklist.html
-</main>
-    
-<footer>
-    <section id="socials">
-        <a href="#" id="footerLogo"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" ></a>
-        <div id="socialsIconsDiv">
-            <a href="#"><img src="/Images/Icons/FacebookV3.png" alt="Facebook" class="socialsIcons"></a>
-            <a href="#"><img src="/Images/Icons/TwitterV3.png" alt="Twitter" class="socialsIcons"></a>
-            <a href="#"><img src="/Images/Icons/InstagramV3.png" alt="Instagram" class="socialsIcons"></a>
-            <a href="#"><img src="/Images/Icons/YoutubeV3.png" alt="Youtube" class="socialsIcons"></a>
-            <a href="#"><img src="/Images/Icons/WhatsAppV3.png" alt="WhatsApp" class="socialsIcons"></a>
-            <a href="#"><img src="/Images/Icons/SnapchatV3.png" alt="Snapchat" class="socialsIcons"></a>
-        </div>
-    </section>
-    
-    <section id="LinkSection">
-        <article class="footerLinks">
-            <h3>Main</h3>
-            <ul>
-                <li><a href="#">Over Ons</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Verander Taal</a></li>
-            </ul>
-        </article>
-    
-        <article class="footerLinks">
-            <h3>Meer</h3>
-            <ul>
-                <li><a href="#">Payment Options</a></li>
-                <li><a href="#">Newsletter</a></li>
-                <li><a href="#">Chyn+</a></li>
-            </ul>
-        </article>
-    
-        <article class="footerLinks">
-            <h3>Support</h3>
-            <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Help Centrum</a></li>
-            </ul>
-        </article>
-    </section>
-</footer>
-</body>
-</html>
-=======
 </form>
 <%- include("partials/footer") %>
->>>>>>> TSenEJS2:views/blacklist.ejs

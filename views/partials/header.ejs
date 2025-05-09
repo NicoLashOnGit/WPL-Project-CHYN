@@ -7,24 +7,25 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href= "style.css">
     <link rel="stylesheet" href="nav.css">
-    <script src="/TypeScript/winLoseButton.ts" defer></script>
-    <script src="/Typescript/searchBar.ts" defer></script>
-    <script src="/Typescript/favorite.ts" defer></script>
 </head>
 
 <nav id="nav">
-    <a href="/Landingpage"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="navLogoImage"></a>
+    <a href="Landingpage.html"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="navLogoImage"></a>
 
-    <a href="/Characterpage" id="charactersLink" class="navLinks">Characters</a>
-    <a href="/favoritePage" id="favoritesLink" class="navLinks">Favorites</a>
-    <a href="/blacklist" id="blacklistLink" class="navLinks">Blacklist</a>
+    <a href="Characterpage.html" id="charactersLink" class="navLinks">Karakters</a>
+    <a href="favoritePage.html" id="favoritesLink" class="navLinks">Favorieten</a>
+    <a href="blacklist.html" id="blacklistLink" class="navLinks">Blacklist</a>
 
     <form action="searchBar" class="searchBar">
-        <input type="text" id="searchbar" placeholder="Type to search...">
-        <button type="submit" id="searchBtn">🔍</button>
+        <input type="text" id="searchBar" placeholder="Typ om te zoeken...">
+        <button onclick = "search()" id="searchBtn">🔍</button>
     </form>
     
     <div class="navRight">
+        <article id="vbucksCounterArticle">
+            <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCounterImage">
+            <p id="vbucksCounter">800</p>
+        </article>
         <button id="loginBtn" class="">Log In!</button>
         <a href="#" class=""><img src="/Images/Logos/Placeholder logo.png" alt="" id="accountImage"></a>
     </div>
