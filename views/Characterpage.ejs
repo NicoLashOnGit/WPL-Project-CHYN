@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+<main id="characterMain">
+    <% characters.forEach(character => { %>
+            <article id="<%= character.id %>" class="Characters">
+                <div class="characterBtnContainer">
+                    <button class="characterPageBtns" id="blacklistBtn">
+                        <img src="/Images/ButtonImages/blackEmptyFavouriteStar.png" alt="Favorite" class="characterPageBtnImages">
+                    </button>
+                    <button class="characterPageBtns" id="favouriteBtn">
+                        <img src="/Images/ButtonImages/blackmarkButton.png" alt="Blacklist" class="characterPageBtnImages">
+                    </button>
+                </div>
+                <img src="<%= character.images.icon %>" alt="<%= character.name %>" class="characterPortraits">
+                <h2 class="characterNames"><%= character.name %></h2>
+            </article>
+        <% }); %>
+</main>
+<%- include("partials/footer") %>

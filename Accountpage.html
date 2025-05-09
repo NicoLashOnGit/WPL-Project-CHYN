@@ -11,152 +11,153 @@
     
 
     <nav id="nav">
-      <a href="Landingpage.html"
-        ><img
-          src="/Images/Logos/fn_logo_met_hamer_copy.png"
-          alt=""
-          id="navLogoImage"
-      /></a>
-
-      <a href="Characterpage.html" id="charactersLink" class="navLinks"
-        >Characters</a
-      >
-      <a href="favoritePage.html" id="favoritesLink" class="navLinks"
-        >Favorites</a
-      >
+      <a href="Landingpage.html"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="navLogoImage"></a>
+  
+      <a href="Characterpage.html" id="charactersLink" class="navLinks">Karakters</a>
+      <a href="favoritePage.html" id="favoritesLink" class="navLinks">Favorieten</a>
       <a href="blacklist.html" id="blacklistLink" class="navLinks">Blacklist</a>
-
+  
       <form action="searchBar" class="searchBar">
-        <input type="text" id="searchBar" placeholder="Type to search..." />
-        <button onclick="search()" id="searchBtn">🔍</button>
+          <input type="text" id="searchBar" placeholder="Typ om te zoeken...">
+          <button onclick = "search()" id="searchBtn">🔍</button>
       </form>
-
+      
       <div class="navRight">
-        <button id="loginBtn" class="">Log In!</button>
-        <a href="#" class=""
-          ><img
-            src="/Images/Logos/Placeholder logo.png"
-            alt=""
-            id="accountImage"
-        /></a>
+          <article id="vbucksCounterArticle">
+              <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCounterImage">
+              <p id="vbucksCounter">800</p>
+          </article>
+          <button id="loginBtn" class="">Log In!</button>
+          <a href="#" class=""><img src="/Images/Logos/Placeholder logo.png" alt="" id="accountImage"></a>
       </div>
-    </nav>
+  </nav>
 
     <main class="AccountPageMain">
-      <article class="profile">
-        <img src="profile.jpg" />
-      </article>
+      <h2>Account Instellingen</h2>
+      <h3>Beheer je instellingen</h3>
+      
+      <section class="accPageSections" id="accInformationSection">
+        <h2>Account Informatie</h2>
+        <!--Kunen hier een unieke ID linken met cookies-->
+        <p id="accountID">
+          <span id="accIDspan">ID:</span>
+          <span id="accIDnumber">4212-4235-3146</span>
+        </p>
 
-      <article class="info">
-        <p>Naam</p>
-        <form action="submit" class="formFAQ">
-          <input type="text" />
-        </form>
-        <span class="change-btn">Verander</span>
-      </article>
-      <article class="info">
-        <p>Gebruikersnaam</p>
-        <form action="submit" class="formFAQ">
-          <input type="text" />
-        </form>
-        <span class="change-btn">Verander</span>
-      </article>
-      <article class="info">
-        <p>Telefoon Nummer</p>
-        <form action="submit" class="formFAQ">
-          <input type="text" />
-        </form>
-        <span class="change-btn">Verander</span>
-      </article>
-      <article class="info">
-        <p>Email</p>
-        <form action="submit" class="formFAQ">
-          <input type="text" />
-        </form>
-        <span class="change-btn">Verander</span>
-      </article>
+      <form action="" id="accInformationForm" class="accForms" method="post">
+
+        <article>
+          <input type="text" id="displayName" placeholder="Gebruikersnaam:">
+        </article>
+
+        <article>
+          <input type="text" id="email" placeholder="Email:">
+        </article>
+      </form>
+
+        <article>
+          <label for="language" id="languageLabel">Voorkeur Taal:</label><br>
+          <!--Kunnen hier een functie toevoegen om meerdere talen te tonen voor onze website maar dat is misschien wat ingewikkeld.-->
+          <select id="language" name="language" class="form-control">
+            <option value="Nederlands">Nederlands</option>
+            <option value="Engels">Engels</option>
+            <option value="French">Frans</option>
+            <option value="German">Duits</option>
+            <option value="Swedish">Zweeds</option>
+            <option value="Finnish">Fins</option>
+          </select>
+        </article>
+    </section>
+
+    <section class="accPageSections" id="accPersonalDataSection">
+      <h2>Persoonlijke Gegevens</h2>
+        <p>Beheer je naam en contact informatie. Deze gegevens zijn prive en zullen niet gedeeld worden met andere spelers. Bekijk de <span id="policyLink">Privacy Policy</span></p>
+
+      <form action="" class="accForms" method="post">
+        <article>
+          <input type="text" id="firstName" placeholder="Voornaam:">
+        </article>
+
+        <article>
+          <input type="text" id="lastName" placeholder="Familie Naam:">
+        </article>
+      </form>
+    </section>
+
+    <section class="accPageSections" id="accAdressSection">
+      <h2>Adres</h2>
+    <form action="" class="accForms" method="post">
+        <article>
+          <input type="text" id="adresRegel1" placeholder="Adres Regel 1:">
+        </article>
+
+        <article>
+          <input type="text" id="adresRegel2" placeholder="Adres Regel 2:">
+        </article>
+
+        <article>
+          <input type="text" id="stad" placeholder="Stad:">
+        </article>
+
+        <article>
+          <input type="text" id="gemeente" placeholder="Gemeente:">
+        </article>
+
+        <article>
+          <input type="text" id="postcode" placeholder="Postcode:">
+      </form>
+        </article>
+
+        <article id="deleteArticle">
+        <p>Verwijder je CHYN-account, inclusief alle persoonlijke informatie, aankopen, spelvoortgang, in-game content, je CHYN Wallet-saldo. Je account wordt permanent verwijderd na 30 dagen.</p>
+        <button id="saveChangesBtn">SAVE CHANGES</button>
+        <button id="deleteAccBtn">DELETE ACCOUNT</button>
+        </article>
+    </section>
+
     </main>
 
     <footer>
       <section id="socials">
-        <a href="#" id="footerLogo"
-          ><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt=""
-        /></a>
-        <div id="socialsIconsDiv">
-          <a href="#"
-            ><img
-              src="/Images/Icons/Transparent Icons/Facebook 64 transparent.png"
-              alt="Facebook"
-              class="socialsIcons"
-          /></a>
-          <a href="#"
-            ><img
-              src="/Images/Icons/Transparent Icons/X 64 transparent.png"
-              alt="Twitter"
-              class="socialsIcons"
-              id="SocialsIconTwitter"
-          /></a>
-          <a href="#"
-            ><img
-              src="/Images/Icons/Transparent Icons/Instagram 64 transparent.png"
-              alt="Instagram"
-              class="socialsIcons"
-          /></a>
-          <a href="#"
-            ><img
-              src="/Images/Icons/Transparent Icons/Youtube 64 transparent.png"
-              alt="Youtube"
-              class="socialsIcons"
-          /></a>
-          <a href="#"
-            ><img
-              src="/Images/Icons/Transparent Icons/Whatsapp 64 transparent.png"
-              alt="WhatsApp"
-              class="socialsIcons"
-          /></a>
-          <a href="#"
-            ><img
-              src="/Images/Icons/Transparent Icons/Snapchat 64 transparent.png"
-              alt="Snapchat"
-              class="socialsIcons"
-          /></a>
-          <a href="#"
-            ><img
-              src="/Images/Icons/Transparent Icons/Tiktok 64 transparent.png"
-              alt="TikTok"
-              class="socialsIcons"
-          /></a>
-        </div>
+          <a href="#" id="footerLogo"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" ></a>
+          <div id="socialsIconsDiv">
+              <a href="#"><img src="/Images/Icons/FacebookV3.png" alt="Facebook" class="socialsIcons"></a>
+              <a href="#"><img src="/Images/Icons/TwitterV3.png" alt="Twitter" class="socialsIcons"></a>
+              <a href="#"><img src="/Images/Icons/InstagramV3.png" alt="Instagram" class="socialsIcons"></a>
+              <a href="#"><img src="/Images/Icons/YoutubeV3.png" alt="Youtube" class="socialsIcons"></a>
+              <a href="#"><img src="/Images/Icons/WhatsAppV3.png" alt="WhatsApp" class="socialsIcons"></a>
+              <a href="#"><img src="/Images/Icons/SnapchatV3.png" alt="Snapchat" class="socialsIcons"></a>
+          </div>
       </section>
-
+      
       <section id="LinkSection">
-        <article class="footerLinks">
-          <h3>Main</h3>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Change Language</a></li>
-          </ul>
-        </article>
-
-        <article class="footerLinks">
-          <h3>More</h3>
-          <ul>
-            <li><a href="#">Payment Options</a></li>
-            <li><a href="#">Newsletter</a></li>
-            <li><a href="#">Chyn+</a></li>
-          </ul>
-        </article>
-
-        <article class="footerLinks">
-          <h3>Support</h3>
-          <ul>
-            <li><a href="Faq.html">FAQ</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Help Center</a></li>
-          </ul>
-        </article>
+          <article class="footerLinks">
+              <h3>Main</h3>
+              <ul>
+                  <li><a href="#">Over Ons</a></li>
+                  <li><a href="#">Terms & Conditions</a></li>
+                  <li><a href="#">Verander Taal</a></li>
+              </ul>
+          </article>
+      
+          <article class="footerLinks">
+              <h3>Meer</h3>
+              <ul>
+                  <li><a href="#">Payment Options</a></li>
+                  <li><a href="#">Newsletter</a></li>
+                  <li><a href="#">Chyn+</a></li>
+              </ul>
+          </article>
+      
+          <article class="footerLinks">
+              <h3>Support</h3>
+              <ul>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Help Centrum</a></li>
+              </ul>
+          </article>
       </section>
-    </footer>
+  </footer>
   </body>
 </html>
