@@ -1,0 +1,79 @@
+<%- include("partials/header") %>
+    <main class="shopPageMain">
+
+
+
+    <section class="spotlightSection">
+        <img src="/Images/Characters/CassidyQuinnSpotlight.png" alt="">
+        <span class="spotlightText">
+        <h2>Unlock New Outfits Like Cassidy Quinn, Valentina, and Big Dill!</h2>
+        <h3>Smash, grab, and make a clean getaway with their matching accessories.</h3>
+        <h2><a href="#">Buy now!</a></h2>
+        </span>
+    </section>
+
+    <h2 id="wrapperTitle">De nieuwste backpacks!</h2>
+    <section class="carousel-wrapper">
+      <button class="carousel-arrow left" id="carouselPrevBtn" aria-label="Scroll left">←</button>
+      <section class="carousel" id="carousel" role="region" aria-label="Featured Fortnite Items">
+        <% backpack.forEach(backpack => { %>
+        <article class="carousel-card">
+          <img src="<%= backpack.images.icon %>" alt="Group of characters" />
+          <h3><%= backpack.description %></h3>
+        </article>
+        <% }); %>
+
+      </section>
+    
+      <button class="carousel-arrow right" id="carouselNextBtn" aria-label="Scroll right">→</button>
+  </section>
+
+    <div class="itemBundlesDiv">   
+        <section class="itemBundles" >
+            <article class="itemBundlesArticles" id="">
+                <img src="/Images/Icons/Vbucks Png.png" alt="">
+            </article>
+
+            <article class="itemBundlesArticles" id="itemBundlesArticlesText">
+                <h2>Krijg tot 1500 V-Bucks</h2>
+                <p>Blijf XP verdienen om tot 1500 Vbucks te krijgen! Gebruik deze Vbucks voor Outfits, Emotes en meer uit de shop!
+                </p>
+            </article>
+        </section>
+
+        <section class="itemBundles" >
+            <article class="itemBundlesArticles" id="itemBundlesArticlesText">
+                <h2>Het is ieder voor zich met de ijskoude ‘Sub-Zero (MK3)’ outfit.</h2>
+                <p>Wannabe rapper Big Dill is misschien cool, maar deze verkrijgbare outfit is cool op heel ander niveau!</p>
+            </article>
+            
+            <article class="itemBundlesArticles">
+                <img src="/Images/Characters/Subzero.png" alt="">
+            </article>
+        </section>
+
+        <section class="itemBundles" id="itemBundle1">
+            <article class="itemBundlesArticles">
+                <img src="/Images/Characters/Outlaw Midas.png" alt="">
+            </article>
+
+            <article class="itemBundlesArticles" id="itemBundlesArticlesText">
+                <h2>The Infamous Outlaw Midas</h2>
+                <p>Begint in Maart, voltooi de battle pass missie's om deze outfit te ontgrendelen!</p>
+            </article>
+        </section>
+
+        <section class="itemBundles" id="itemBundle1">
+            <article class="itemBundlesArticles" id="itemBundlesArticlesText">
+                <h2>LEGO Styles stelen de show!</h2>
+                <p>Tel elk steentje. Alle originele Fortnite-outfits in de LAWLESS Battle Pass hebben een LEGO-stijl om te gebruiken in LEGO-ervaringen!"</p>
+            </article>
+            
+            <article class="itemBundlesArticles">
+                <img src="/Images/Characters/Lego characters.png" alt="">
+            </article>
+        </section>
+    </div>
+
+    </main>
+  <%- include("partials/footer") %>

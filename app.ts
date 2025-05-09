@@ -56,8 +56,20 @@ app.get("/Accountpage", (req,res) => {
     res.render("Accountpage", {title: "Account"})
 })
 
-app.get("/blacklist", (req, res) => {
-    res.render("blacklist", {title: "Blacklist"})
+app.get("/blacklist", async (req, res) => {
+        try {
+        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
+        const data = await response.json();
+
+        const characters = (data.data as Characters[]).filter (
+            (character) => character.type.value === "outfit" && character.introduction?.chapter === "6" && character.introduction.season === "1"
+        );
+
+        res.render("blacklist", {title: "Blacklist", characters})
+    } catch (error) {
+        console.error("Error met ophalen van character data:", error);
+        res.status(500).send("Error met ophalen van character data")
+    }
 })
 
 app.get("/CharacterInfo", (req,res) => {
@@ -68,8 +80,20 @@ app.get("/Faq", (req,res) => {
     res.render("Faq", {title: "FAQ"})
 })
 
-app.get("/favoritePage", (req,res) => {
-    res.render("favoritePage", {title: "Favorite"})
+app.get("/favoritePage", async (req,res) => {
+    try {
+        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
+        const data = await response.json();
+
+        const characters = (data.data as Characters[]).filter (
+            (character) => character.type.value === "outfit" && character.introduction?.chapter === "6" && character.introduction.season === "1"
+        );
+
+        res.render("favoritePage", {title: "favorite", characters})
+    } catch (error) {
+        console.error("Error met ophalen van character data:", error);
+        res.status(500).send("Error met ophalen van character data")
+    }
 })
 
 app.get("/Homepage", (req,res) => {
@@ -102,6 +126,35 @@ app.get("/Landingpage", (req, res) => {
 app.get("/RegistrationPage", (req, res) => {
     res.render("RegistrationPage", {title: "Registration Page"})
 } )
+
+app.get("/shopPage", async (req,res) => {
+        try {
+        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
+        const data = await response.json();
+
+        const backpack = (data.data as Characters[]).filter (
+            (character) => character.type.value === "backpack" && character.introduction?.chapter === "6" && character.introduction.season === "1"
+        );
+
+        res.render("shopPage", {title: "Shop", backpack})
+    } catch (error) {
+        console.error("Error met ophalen van character data:", error);
+        res.status(500).send("Error met ophalen van character data")
+    }
+    //         try {
+    //     const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
+    //     const data = await response.json();
+
+    //     const pickaxe = (data.data as Characters[]).filter (
+    //         (character) => character.type.value === "pickaxe" && character.introduction?.chapter === "6" && character.introduction.season === "1"
+    //     );
+
+    //     res.render("shopPage", {title: "Shop", pickaxe})
+    // } catch (error) {
+    //     console.error("Error met ophalen van character data:", error);
+    //     res.status(500).send("Error met ophalen van character data")
+    // }
+})
 
 app.listen(app.get("port"), async() => {
     console.log("[server] http://localhost:" + app.get("port"))

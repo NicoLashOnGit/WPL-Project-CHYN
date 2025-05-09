@@ -1,72 +1,16 @@
 <%- include("partials/header") %>
-<form action="/blacklist" method="POST">
+    <% characters.forEach(character => { %>
     <section id="blacklistedCharacterSection">
-        <article class="blacklistedCharacters" id="blacklistedCharacter1">
+        <article class="blacklistedCharacters" id="blacklistedCharacter">
             <button class="blacklistBtns" id="RemoveBlacklistBtn"><img src="/Images/ButtonImages/blackmarkButton.png" alt="" class="blacklistBtnImages"></button>
-            <img src="/Images/Characters/FN_CHAR1.png" alt="" class="blacklistedCharactersImages" id="blacklistedCharacterImage1">
+            <img src="<%= character.images.icon %>" alt="<%= character.name %>" class="blacklistedCharactersImages" id="blacklistedCharacterImage1">
             <div class="blacklistedCharactersText">
-            <h3 class="blacklistedCharacterNames" id="blacklistedCharacterName1">John Wick</h3>
+            <h3 class="blacklistedCharacterNames" id="blacklistedCharacterName"><%= character.name %></h3>
             
             <p class="blacklistReasons" id="blacklistReason1">Zorgde ervoor dat ik constant werd opgejaagd door andere spelers tijdens grote gevechten met meerdere teams. Het lijkt alsof iedereen zich op mij richt zodra ik deze skin gebruik.</p>
             <button class="blacklistBtns" id="BlacklistReasonEditBtn"><img src="/Images/ButtonImages/AdjustBtnImage.png" alt="" class="blacklistBtnImages"></button>
             </div>
         </article>
-    
-        <article class="blacklistedCharacters" id="blacklistedCharacter2">
-            <button class="blacklistBtns" id="RemoveBlacklistBtn2"><img src="/Images/ButtonImages/blackmarkButton.png" alt="" class="blacklistBtnImages"></button>
-            <img src="/Images/Characters/FN_CHAR2.png" alt="" class="blacklistedCharactersImages" id="blacklistedCharacterImage2">
-            <div class="blacklistedCharactersText">
-            <h3 class="blacklistedCharacterNames" id="blacklistedCharacterName2">Desert Trooper</h3>
-    
-            <p class="blacklistReasons" id="blacklistReason1">Heb hem vorig jaar zó vaak gespeeld dat ik er helemaal klaar mee ben. De skin voelt gewoon uitgeput en inspiratieloos nu.</p>
-            <button class="blacklistBtns" id="BlacklistReasonEditBtn"><img src="/Images/ButtonImages/AdjustBtnImage.png" alt="" class="blacklistBtnImages"></button>
-            
-            </div>
-        </article>
-    
-        <article class="blacklistedCharacters" id="blacklistedCharacter3">
-            <button class="blacklistBtns" id="RemoveBlacklistBtn3"><img src="/Images/ButtonImages/blackmarkButton.png" alt="" class="blacklistBtnImages"></button>
-            <img src="/Images/Characters/FN_CHAR3.png" alt="" class="blacklistedCharactersImages" id="blacklistedCharacterImage3">
-            <div class="blacklistedCharactersText">
-            <h3 class="blacklistedCharacterNames" id="blacklistedCharacterName3">Tomato Trooper</h3>
-            
-            <p class="blacklistReasons" id="blacklistReason3">Was echt een miskoop... Als ik hem kon teruggeven voor V-Bucks, zou ik het meteen doen. Geen enkele match voelde goed met deze skin.</p>
-            <button class="blacklistBtns" id="BlacklistReasonEditBtn"><img src="/Images/ButtonImages/AdjustBtnImage.png" alt="" class="blacklistBtnImages"></button>
-            </div>
-        </article>
-    
-        <article class="blacklistedCharacters" id="blacklistedCharacter4">
-            <button class="blacklistBtns" id="RemoveBlacklistBtn"><img src="/Images/ButtonImages/blackmarkButton.png" alt="" class="blacklistBtnImages"></button>
-            <img src="/Images/Characters/FN_CHAR4.png" alt="" class="blacklistedCharactersImages" id="blacklistedCharacterImage4">
-            <div class="blacklistedCharactersText">
-            <h3 class="blacklistedCharacterNames" id="blacklistedCharacterName4">Peelie</h3>
-            
-            <p class="blacklistReasons" id="blacklistReason4">Altijd vreselijke loot als ik met Peelie speel. Geen idee waarom, maar elke kist lijkt waardeloos te zijn met deze skin aan.</p>
-            <button class="blacklistBtns" id="BlacklistReasonEditBtn"><img src="/Images/ButtonImages/AdjustBtnImage.png" alt="" class="blacklistBtnImages"></button>
-            </div>
-        </article>
-    
-        <article class="blacklistedCharacters" id="blacklistedCharacter5">
-            <button class="blacklistBtns" id="RemoveBlacklistBtn"><img src="/Images/ButtonImages/blackmarkButton.png" alt="" class="blacklistBtnImages"></button>
-            <img src="/Images/Characters/FN_CHAR5.png" alt="" class="blacklistedCharactersImages" id="blacklistedCharacterImage5">
-            <div class="blacklistedCharactersText">
-            <h3 class="blacklistedCharacterNames" id="blacklistedCharacterName5">Street Soldier</h3>
-            
-            <p class="blacklistReasons" id="blacklistReason5">Zie deze skin letterlijk overal. Ooit voelde hij uniek, maar nu is het gewoon ‘nog eentje van de massa’.</p>
-            <button class="blacklistBtns" id="BlacklistReasonEditBtn"><img src="/Images/ButtonImages/AdjustBtnImage.png" alt="" class="blacklistBtnImages"></button>
-            </div>
-        </article>
-    
-        <article class="blacklistedCharacters" id="blacklistedCharacter6">
-            <button class="blacklistBtns" id="RemoveBlacklistBtn"><img src="/Images/ButtonImages/blackmarkButton.png" alt="" class="blacklistBtnImages"></button>
-            <img src="/Images/Characters/FN_CHAR6.png" alt="" class="blacklistedCharactersImages" id="6">
-            <div class="blacklistedCharactersText">
-            <h3 class="blacklistedCharacterNames" id="blacklistedCharacterName6">Zoey</h3>
-            
-            <p class="blacklistReasons" id="blacklistReason5">Veel te populair geworden, en ik kon gewoon nooit goed presteren als ik haar gebruikte. Geen goede vibe met deze skin.</p>
-            <button class="blacklistBtns" id="BlacklistReasonEditBtn"><img src="/Images/ButtonImages/AdjustBtnImage.png" alt="" class="blacklistBtnImages"></button>
-            </div>
-        </article>
     </section>
-</form>
+    <% }); %>
 <%- include("partials/footer") %>
