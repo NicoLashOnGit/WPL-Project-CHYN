@@ -14,9 +14,9 @@
 
     <h2 id="wrapperTitle">De nieuwste backpacks!</h2>
     <section class="carousel-wrapper">
-      <button class="carousel-arrow left" id="carouselPrevBtn" aria-label="Scroll left">←</button>
-      <section class="carousel" id="carousel" role="region" aria-label="Featured Fortnite Items">
-        <% backpack.forEach(backpack => { %>
+      <button class="carousel-arrow left" id="carouselPrevBtn-backpacks" aria-label="Scroll left">←</button>
+      <section class="carousel" id="carousel-backpacks" role="region" aria-label="Featured Fortnite Items">
+        <% backpacks.forEach(backpack => { %>
         <article class="carousel-card">
           <img src="<%= backpack.images.icon %>" alt="Group of characters" />
           <h3><%= backpack.description %></h3>
@@ -25,9 +25,40 @@
 
       </section>
     
-      <button class="carousel-arrow right" id="carouselNextBtn" aria-label="Scroll right">→</button>
+      <button class="carousel-arrow right" id="carouselNextBtn-backpacks" aria-label="Scroll right">→</button>
   </section>
 
+    <h2 id="wrapperTitle">De nieuwste pickaxes!</h2>
+    <section class="carousel-wrapper">
+      <button class="carousel-arrow left" id="carouselPrevBtn-pickaxes" aria-label="Scroll left">←</button>
+      <section class="carousel" id="carousel-pickaxes" role="region" aria-label="Featured Fortnite Items">
+        <% pickaxes.forEach(pickaxe => { %>
+        <article class="carousel-card">
+          <img src="<%= pickaxe.images.icon %>" alt="Group of characters" />
+          <h3><%= pickaxe.description %></h3>
+        </article>
+        <% }); %>
+
+      </section>
+    
+      <button class="carousel-arrow right" id="carouselNextBtn-pickaxes" aria-label="Scroll right">→</button>
+  </section>
+
+      <h2 id="wrapperTitle">De nieuwste gliders!</h2>
+    <section class="carousel-wrapper">
+      <button class="carousel-arrow left" id="carouselPrevBtn-gliders" aria-label="Scroll left">←</button>
+      <section class="carousel" id="carousel-gliders" role="region" aria-label="Featured Fortnite Items">
+        <% gliders.forEach(glider => { %>
+        <article class="carousel-card">
+          <img src="<%= glider.images.icon %>" alt="Group of characters" />
+          <h3><%= glider.description %></h3>
+        </article>
+        <% }); %>
+
+      </section>
+    
+      <button class="carousel-arrow right" id="carouselNextBtn-gliders" aria-label="Scroll right">→</button>
+  </section>
     <div class="itemBundlesDiv">   
         <section class="itemBundles" >
             <article class="itemBundlesArticles" id="">

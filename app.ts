@@ -1,6 +1,4 @@
 import express from "express";
-import { search } from "./public/TypeScript/searchbar.ts";
-import { favorite } from "./public/TypeScript/favorite.ts";
 import { Characters, Type, Rarity, Series, Set, Introduction, Images, MetaTags} from "./public/TypeScript/characterAPI.ts";
 const app = express();
 
@@ -132,28 +130,20 @@ app.get("/shopPage", async (req,res) => {
         const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
         const data = await response.json();
 
-        const backpack = (data.data as Characters[]).filter (
+        const backpacks = (data.data as Characters[]).filter (
             (character) => character.type.value === "backpack" && character.introduction?.chapter === "6" && character.introduction.season === "1"
         );
-
-        res.render("shopPage", {title: "Shop", backpack})
+        const pickaxes = (data.data as Characters[]).filter (
+            (character) => character.type.value === "pickaxe" && character.introduction?.chapter ==="6" && character.introduction?.season ==="1"
+        )
+        const gliders = (data.data as Characters[]).filter (
+            (character) => character.type.value === "glider" && character.introduction?.chapter ==="6" && character.introduction?.season ==="1"
+        )
+        res.render("shopPage", {title: "Shop", backpacks, pickaxes, gliders})
     } catch (error) {
         console.error("Error met ophalen van character data:", error);
         res.status(500).send("Error met ophalen van character data")
     }
-    //         try {
-    //     const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
-    //     const data = await response.json();
-
-    //     const pickaxe = (data.data as Characters[]).filter (
-    //         (character) => character.type.value === "pickaxe" && character.introduction?.chapter === "6" && character.introduction.season === "1"
-    //     );
-
-    //     res.render("shopPage", {title: "Shop", pickaxe})
-    // } catch (error) {
-    //     console.error("Error met ophalen van character data:", error);
-    //     res.status(500).send("Error met ophalen van character data")
-    // }
 })
 
 app.listen(app.get("port"), async() => {
