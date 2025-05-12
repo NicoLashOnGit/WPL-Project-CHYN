@@ -437,7 +437,7 @@ border: black 1px solid;
   border: 1px solid grey;
   margin-top: .2em;
   margin-bottom: 1.3em;
-  width: 80%;
+  width: 60%;
   background-color: lightblue;
   color: black;
   
@@ -746,6 +746,14 @@ margin: auto;
   width: 100%;
   top: 0;
   z-index: 1000;
+}
+
+#hamburgerBtn {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 #navLinksList,
@@ -1097,17 +1105,41 @@ a {
     margin-left: -10%;
   }
 
-  /* NAV */
-  .navLinks {
+  #hamburgerBtn {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    margin-left: auto;
+    margin-right: 1em;
+    z-index: 1100;
+  }
+
+  #navLinksContainer {
     display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    z-index: 1001;
   }
-  #searchBar {
-    width: 100px;
+
+  #navLinksContainer.show {
+    display: flex;
   }
-  #loginBtn {
-    height: 48px;
+
+  .navLinks {
+    display: block;
+    padding: 1em;
+    border-bottom: 1px solid #333;
+    color: white;
   }
-  /*##################*/
+
+
+  
   /* BLACKLIST*/
   .blacklistedCharactersImages {
     width: 150px;
@@ -1179,18 +1211,7 @@ a {
 /* Small Devices (Phones) */
 @media only screen and (max-width: 480px) {
   /* NAV */
-  .navLinks {
-    display: none;
-  }
-  #searchBar,
-  #searchBtn {
-    display: none;
-  }
-  #loginBtn {
-    height: 32px;
-    margin-top: 10px;
-    font-size: 0.5em;
-  }
+  
 
   /*##################*/
   /*FOOTER SECTION */
