@@ -1,38 +1,88 @@
 <%- include("partials/header") %>
 <form action="/Accountpage" method="POST">
-    <main class="AccountPageMain">
-      <article class="profile">
-        <img src="profile.jpg" />
-      </article>
+  <main class="AccountPageMain">
+      <h2>Account Instellingen</h2>
+      <h3>Beheer je instellingen</h3>
+      
+      <section class="accPageSections" id="accInformationSection">
+        <h2>Account Informatie</h2>
+        <!--Kunen hier een unieke ID linken met cookies-->
+        <p id="accountID">
+          <span id="accIDspan">ID:</span>
+          <span id="accIDnumber">4212-4235-3146</span>
+        </p>
 
-      <article class="info">
-        <p>Username</p>
-        <form action="submit" class="formFAQ">
-          <input type="text" />
-        </form>
-        <span class="change-btn">Change</span>
-      </article>
-      <article class="info">
-        <p>Display name</p>
-        <form action="submit" class="formFAQ">
-          <input type="text" />
-        </form>
-        <span class="change-btn">Change</span>
-      </article>
-      <article class="info">
-        <p>Phone number</p>
-        <form action="submit" class="formFAQ">
-          <input type="text" />
-        </form>
-        <span class="change-btn">Change</span>
-      </article>
-      <article class="info">
-        <p>Email</p>
-        <form action="submit" class="formFAQ">
-          <input type="text" />
-        </form>
-        <span class="change-btn">Change</span>
-      </article>
+      <form action="" id="accInformationForm" class="accForms" method="post">
+
+        <article>
+          <input type="text" id="displayName" placeholder="Gebruikersnaam:">
+        </article>
+
+        <article>
+          <input type="text" id="email" placeholder="Email:">
+        </article>
+      </form>
+
+        <article>
+          <label for="language" id="languageLabel">Voorkeur Taal:</label><br>
+          <!--Kunnen hier een functie toevoegen om meerdere talen te tonen voor onze website maar dat is misschien wat ingewikkeld.-->
+          <select id="language" name="language" class="form-control">
+            <option value="Nederlands">Nederlands</option>
+            <option value="Engels">Engels</option>
+            <option value="French">Frans</option>
+            <option value="German">Duits</option>
+            <option value="Swedish">Zweeds</option>
+            <option value="Finnish">Fins</option>
+          </select>
+        </article>
+    </section>
+
+    <section class="accPageSections" id="accPersonalDataSection">
+      <h2>Persoonlijke Gegevens</h2>
+        <p>Beheer je naam en contact informatie. Deze gegevens zijn prive en zullen niet gedeeld worden met andere spelers. Bekijk de <span id="policyLink">Privacy Policy</span></p>
+
+      <form action="" class="accForms" method="post">
+        <article>
+          <input type="text" id="firstName" placeholder="Voornaam:">
+        </article>
+
+        <article>
+          <input type="text" id="lastName" placeholder="Familie Naam:">
+        </article>
+      </form>
+    </section>
+
+    <section class="accPageSections" id="accAdressSection">
+      <h2>Adres</h2>
+    <form action="" class="accForms" method="post">
+        <article>
+          <input type="text" id="adresRegel1" placeholder="Adres Regel 1:">
+        </article>
+
+        <article>
+          <input type="text" id="adresRegel2" placeholder="Adres Regel 2:">
+        </article>
+
+        <article>
+          <input type="text" id="stad" placeholder="Stad:">
+        </article>
+
+        <article>
+          <input type="text" id="gemeente" placeholder="Gemeente:">
+        </article>
+
+        <article>
+          <input type="text" id="postcode" placeholder="Postcode:">
+      </form>
+        </article>
+
+        <article id="deleteArticle">
+        <p>Verwijder je CHYN-account, inclusief alle persoonlijke informatie, aankopen, spelvoortgang, in-game content, je CHYN Wallet-saldo. Je account wordt permanent verwijderd na 30 dagen.</p>
+        <button id="saveChangesBtn">SAVE CHANGES</button>
+        <button id="deleteAccBtn">DELETE ACCOUNT</button>
+        </article>
+    </section>
+
     </main>
   </form>
 <%- include("partials/footer") %>
