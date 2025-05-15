@@ -1,21 +1,18 @@
 <%- include("partials/header") %>
-<form action="/CharacterInfo" method="POST">
     <main>
+      <% if (character) { %>
     <div class="containerCI">
       <div class="image-container">
-        <img src="Images/Characters/FN_CHAR1.png" alt="Character" class="character-image" />
+        <img src="<%= character.images.icon %>" alt="<%= character.name %>" class="character-image" />
       </div>
       <div class="text-container">
-        <h1 class="title">About this character:</h1>
-        <p class="subtext">
-          John Wick is one of the most legendary and feared characters in Fortnite, renowned for his cold-blooded efficiency and unparalleled combat skills. Originally introduced as a collaboration with the iconic action movie franchise, John Wick quickly became a fan-favorite character, known for his sharp suit, stoic demeanor, and fierce fighting style.<br /><br />
-
-          When John Wick entered Fortnite, he brought a sense of sophistication and precision to the battlefield, blending his deadly skills with the game’s fast-paced action. His character comes with a refined look, featuring his signature black suit and a sharp sense of focus, representing the culmination of years of intense training and relentless determination.<br /><br />
-
-          With a history of being a top-tier warrior, John Wick’s persona has become synonymous with no-nonsense combat, making him a favorite for players who enjoy a methodical, calculated approach to victory. Whether he's taking down enemies in solo missions or teaming up for a squad battle, John Wick’s legacy in Fortnite remains a powerful testament to his reputation as one of the deadliest players in the game.
-        </p>
+        <h1 class="title">Over <%= character.name %></h1>
+        <p class="subtext"><%= character.description %></p>
       </div>
     </div>
+    <% } else { %>
+      <h2>Karakter niet gevonden.</h2>
+    <% } %>
   </main>
 </form>
   <%- include("partials/footer") %>
