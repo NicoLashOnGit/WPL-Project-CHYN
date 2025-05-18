@@ -11,11 +11,11 @@
 
 <body>
 <main id="Registration">
-    <article id="RegistrationMenu">
+<article id="RegistrationMenu">
     
-    <img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="loginLogo">
+    <a href="shopPage.html"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="loginLogo"></a>
     <h2 id="RegistrationMenuTitle">Registreer</h2>
-    <form id="RegistrationForm" action="#" method="post">
+    <form id="RegistrationForm" action="/register" method="post">
         <label for="email">Email Adres:</label><br>
         <input type="text" id="email" required><br>
       
@@ -278,9 +278,8 @@
             <option value="Zambia">Zambia</option>
             <option value="Zimbabwe">Zimbabwe</option>
         </select>
-    </form>
 
-    <label class="newsAndTos">
+            <label class="newsAndTos">
         <input type="checkbox" id="newsLetter">
         <span>Ontvang nieuws, enquêtes en speciale aanbiedingen.</span>
       </label>
@@ -290,6 +289,11 @@
         <span>Ik ga akkoord met de <a href="#">Terms of Service</a></span>
       </label>
       
+        <button id="RegistrationButton" type="submit">Account Aanmaken</button>
+    </form>
+</article>
+
+
         <button id="RegistrationButton" type="button">Account Aanmaken</button>
     </article>
 </main>
