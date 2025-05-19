@@ -1,7 +1,15 @@
+import dotenv from "dotenv";
+dotenv.config();
+import mongoose from 'mongoose';
+import User from './models/User';
 import express from "express";
 import { Characters, Type, Rarity, Series, Set, Introduction, Images, MetaTags} from "./public/TypeScript/characterAPI.ts";
 
 const app = express();
+
+mongoose.connect(process.env.MONGO_URI!)
+  .then(() => console.log("Verbonden met MongoDB"))
+  .catch((error) => console.error("Fout bij verbinden met MongoDB:", error));
 
 let favoriteCharacters: Record<string, boolean> = {};
 
@@ -55,21 +63,9 @@ app.get("/Accountpage", (req,res) => {
     res.render("Accountpage", {title: "Account"})
 })
 
-app.get("/blacklist", async (req, res) => {
-        try {
-        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
-        const data = await response.json();
-
-        const characters = (data.data as Characters[]).filter (
-            (character) => character.type.value === "outfit" && character.introduction?.chapter === "6" && character.introduction.season === "1"
-        );
-
-        res.render("blacklist", {title: "Blacklist", characters})
-    } catch (error) {
-        console.error("Error met ophalen van character data:", error);
-        res.status(500).send("Error met ophalen van character data")
-    }
-})
+app.get("/blacklist", (req, res) => {
+    res.render("blacklist", { title: "Blacklist", characters: [] });
+});
 
 app.get("/CharacterInfo", (req,res) => {
     res.render("CharacterInfo", {title: "Character Info"})
@@ -79,21 +75,9 @@ app.get("/Faq", (req,res) => {
     res.render("Faq", {title: "FAQ"})
 })
 
-app.get("/favoritePage", async (req,res) => {
-    try {
-        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
-        const data = await response.json();
-
-        const characters = (data.data as Characters[]).filter (
-            (character) => character.type.value === "outfit" && character.introduction?.chapter === "6" && character.introduction.season === "1"
-        );
-
-        res.render("favoritePage", {title: "favorite", characters})
-    } catch (error) {
-        console.error("Error met ophalen van character data:", error);
-        res.status(500).send("Error met ophalen van character data")
-    }
-})
+app.get("/favoritePage", (req, res) => {
+    res.render("favoritePage", { title: "Favorite", characters: [] });
+});
 
 app.get("/Homepage", (req,res) => {
     res.render("Homepage", {title: "Home"})
@@ -146,6 +130,53 @@ app.get("/shopPage", async (req,res) => {
         res.status(500).send("Error met ophalen van character data")
     }
 })
+
+
+
+app.post("/register", async (req, res) => {
+    const { email, password, firstName, lastName, displayName, country } = req.body;
+
+    try {
+        const newUser = new User({
+            email,
+            password, 
+            firstName,
+            lastName,
+            displayName,
+            country
+        });
+
+        await newUser.save();
+
+        res.status(201).json({ message: 'Gebruiker succesvol geregistreerd!' });
+    } catch (error) {
+        console.error('Fout bij het registreren van de gebruiker:', error);
+        res.status(500).json({ message: 'Er is een fout opgetreden bij het registreren van de gebruiker.' });
+    }
+});
+
+app.post("/login", async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        const user = await User.findOne({ email, password });
+
+        if (user) {
+            console.log("Login succesvol voor gebruiker:", email);
+            res.redirect("/Homepage");
+        } else {
+            console.log("Login mislukt: onjuiste gegevens");
+            res.send(`
+             <script>
+              alert("Ongeldige inloggegevens. Probeer opnieuw.");
+              window.location.href = "/Loginpage";
+             </script>`);
+        }
+    } catch (error) {
+        console.error("Fout tijdens login:", error);
+        res.status(500).send("Er is een fout opgetreden bij het inloggen.");
+    }
+});
 
 app.listen(app.get("port"), async() => {
     console.log("[server] http://localhost:" + app.get("port"))

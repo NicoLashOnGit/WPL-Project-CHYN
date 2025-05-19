@@ -1,40 +1,51 @@
 <%- include("partials/header") %>
-<form action="/Loginpage" method="POST">
+
 <main id="Login">
     <article id="LoginMenu">
-    
-    <img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="loginLogo">
-    <h2 id="LoginMenuTitle">Sign In</h2>
-    <form id="loginForm">
-        <label for="email">Email Addres:</label><br>
-        <input type="text" id="email" required><br>
-      
-        <label for="password">Wachtwoord:</label><br>
-        <input type="password" id="password" required>
-    </form>
-        <a href="#" class="loginLink">Wachtwoord Vergeten?</a> 
-    
-        <button id="LogInButton" type="submit">Log in</button>
+        <img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="loginLogo">
+        <h2 id="LoginMenuTitle">Sign In</h2>
+        <form action="/login" method="POST" id="loginForm">
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+            <button type="submit" id="LogInButton">Log in</button>
+        </form>
+
+        <a href="#" class="loginLink">Forgot Password?</a> 
 
         <section id="socialsLogins">
             <button id="facebookLogin" class="SocialsLoginBtns">
                 <img src="Images/Icons/Facebook LoginIcon.png" class="SocialsLoginImages">
             </button>
-            <button id="InstagramLogin" class="SocialsLoginBtns">
-                <img src="Images/Icons/Google Icon.png" class="SocialsLoginImages">
-            </button>
-            <button id="TwitterLogin" class="SocialsLoginBtns">
-                <img src="Images/Icons/PlayStation Icon.png" class="SocialsLoginImages">
-            </button>
-            <button id="YoutubeLogin" class="SocialsLoginBtns">
-                <img src="Images/Icons/Xbox Icon.png" class="SocialsLoginImages">
-            </button>
         </section>
 
-        <a href="/RegistrationPage" class="loginLink">Account Aanmaken</a>
+        <a href="/RegistrationPage" class="loginLink">Create Account</a>
         <a href="#" class="loginLink">Privacy Policy</a>
     </article>
-    </article>
 </main>
-</form>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    // Als login succesvol zou zijn, dan zou je dit hier kunnen zetten:
+    // Bijvoorbeeld, hier zetten we gewoon bij elke submit dat je 'ingelogd' bent
+    // Dit is enkel frontend, zonder server check!
+
+    localStorage.setItem('loggedIn', 'true');
+
+    // Het formulier wordt gewoon verstuurd, dus server doet de echte login check
+  });
+
+  // Optioneel: check bij het laden van de pagina of user al ingelogd is
+  window.addEventListener('load', function() {
+    if (localStorage.getItem('loggedIn') === 'true') {
+      alert('Je bent al ingelogd!');
+      // Hier kan je bijvoorbeeld redirecten naar een andere pagina
+      // window.location.href = '/Homepage';
+    }
+  });
+</script>
+
 <%- include("partials/footer") %>

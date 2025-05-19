@@ -1,0 +1,29 @@
+{
+    "name": "jouw-projectnaam",
+    "version": "1.0.0",
+    "main": "app.ts",
+    "scripts": {
+        "start": "ts-node app.ts"
+    },
+    "dependencies": {
+        "@types/bcrypt": "^5.0.2",
+        "@types/express-session": "^1.18.1",
+        "@types/node-fetch": "^2.6.12",
+        "bcrypt": "^6.0.0",
+        "body-parser": "^2.2.0",
+        "dotenv": "^16.5.0",
+        "ejs": "^3.1.10",
+        "express": "^5.1.0",
+        "express-session": "^1.18.1",
+        "mongoose": "^8.15.0",
+        "node-fetch": "^3.3.2"
+    },
+    "devDependencies": {
+        "@types/ejs": "^3.1.5",
+        "@types/express": "^5.0.2",
+        "@types/mongoose": "^5.11.97",
+        "@types/node": "^22.15.17",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.3"
+    }
+}

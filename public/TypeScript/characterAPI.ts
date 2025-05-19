@@ -51,5 +51,3 @@ export interface Characters {
     metaTags: MetaTags;
     added: string;
 }
-let characters: Characters[] = []
-
