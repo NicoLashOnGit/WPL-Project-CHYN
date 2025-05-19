@@ -3,7 +3,7 @@
       <% if (character) { %>
     <div class="containerCI">
       <div class="image-container">
-        <img src="<%= character.images.icon %>" alt="<%= character.name %>" class="character-image" />
+        <img src="<%= character.images.featured %>" alt="<%= character.name %>" class="character-image" />
       </div>
       <div class="text-container">
         <h1 class="title">Over <%= character.name %></h1>
@@ -15,4 +15,4 @@
     <% } %>
   </main>
 </form>
-  <%- include("partials/footer") %>
+<%- include("partials/footer") %>
