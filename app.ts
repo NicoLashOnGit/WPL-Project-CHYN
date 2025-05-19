@@ -63,21 +63,66 @@ app.get("/Accountpage", (req,res) => {
     res.render("Accountpage", {title: "Account"})
 })
 
-app.get("/blacklist", (req, res) => {
-    res.render("blacklist", { title: "Blacklist", characters: [] });
-});
+app.get("/blacklist", async (req, res) => {
+        try {
+        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
+        const data = await response.json();
 
-app.get("/CharacterInfo", (req,res) => {
-    res.render("CharacterInfo", {title: "Character Info"})
+        const characters = (data.data as Characters[]).filter (
+            (character) => character.type.value === "outfit" && character.introduction?.chapter === "6" && character.introduction.season === "1"
+        );
+
+        res.render("blacklist", {title: "Blacklist", characters})
+    } catch (error) {
+        console.error("Error met ophalen van karakter data:", error);
+        res.status(500).send("Error met ophalen van karakter data")
+    }
+})
+
+app.get("/CharacterInfo", async (req,res) => {
+    const name = (req.query.name as string)?.toLowerCase();
+    if (!name) {
+        return res.render("CharacterInfo", { character: null, title: "Character Info" });
+    }
+
+    try {
+        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
+        const data = await response.json();
+
+        const character = (data.data as Characters[]).find (
+            (character) => character.type.value === "outfit" && character.name.toLowerCase() === name
+        );
+
+        if (!character) {
+            return res.render("CharacterInfo", { character: null, title: "Karakter niet gevonden"});
+        }
+
+        res.render("CharacterInfo", { character, title: character.name })
+    } catch (error) {
+        console.error("Error met ophalen van karakter data:", error);
+        res.status(500).send("Error met ophalen van karakter data")
+    }
 })
 
 app.get("/Faq", (req,res) => {
     res.render("Faq", {title: "FAQ"})
 })
 
-app.get("/favoritePage", (req, res) => {
-    res.render("favoritePage", { title: "Favorite", characters: [] });
-});
+app.get("/favoritePage", async (req,res) => {
+    try {
+        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
+        const data = await response.json();
+
+        const characters = (data.data as Characters[]).filter (
+            (character) => character.type.value === "outfit" && character.introduction?.chapter === "6" && character.introduction.season === "1"
+        );
+
+        res.render("favoritePage", {title: "favorite", characters})
+    } catch (error) {
+        console.error("Error met ophalen van karakter data:", error);
+        res.status(500).send("Error met ophalen van karakter data")
+    }
+})
 
 app.get("/Homepage", (req,res) => {
     res.render("Homepage", {title: "Home"})
@@ -98,8 +143,8 @@ app.get("/Characterpage", async (req, res) => {
 
         res.render("Characterpage", {title: "Character Page", characters})
     } catch (error) {
-        console.error("Error met ophalen van character data:", error);
-        res.status(500).send("Error met ophalen van character data")
+        console.error("Error met ophalen van karakter data:", error);
+        res.status(500).send("Error met ophalen van karakter data")
     }
 })
 app.get("/Landingpage", (req, res) => {
@@ -126,8 +171,8 @@ app.get("/shopPage", async (req,res) => {
         )
         res.render("shopPage", {title: "Shop", backpacks, pickaxes, gliders})
     } catch (error) {
-        console.error("Error met ophalen van character data:", error);
-        res.status(500).send("Error met ophalen van character data")
+        console.error("Error met ophalen van karakter data:", error);
+        res.status(500).send("Error met ophalen van karakter data")
     }
 })
 
