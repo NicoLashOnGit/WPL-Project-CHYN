@@ -1,4 +1,5 @@
 <%- include("partials/header") %>
+<form action="/favoritePage" method="POST">
 <main id="favoriteCharactersMain">
     <% characters.forEach(character => { %>
     <article class="favoritedCharacters" id="favoritedCharacter1">
@@ -53,5 +54,5 @@
         </article>
     <% }); %>
 </main>
-
+</form>
 <%- include("partials/footer") %>

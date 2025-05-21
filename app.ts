@@ -35,7 +35,8 @@ app.get("/searchBar", (req, res) => {
         res.status(404).send("Page not found")
     }
 })
-
+app.post("/Characterpage/toggleFavorite", (req, res) => {
+});
 app.get("/", (req, res) => {
     res.render("Landingpage", {title: "Landingpage"})
 });
