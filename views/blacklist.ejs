@@ -1,4 +1,5 @@
 <%- include("partials/header") %>
+<form action="/blacklist" method="POST">
     <% characters.forEach(character => { %>
     <section id="blacklistedCharacterSection">
         <article class="blacklistedCharacters" id="blacklistedCharacter">
@@ -13,5 +14,6 @@
         </article>
     </section>
     <% }); %>
+</form>
 <%- include("partials/footer") %>
 z
