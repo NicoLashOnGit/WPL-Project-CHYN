@@ -41,19 +41,6 @@ app.get("/searchBar", (req, res) => {
     }
 })
 app.post("/Characterpage/toggleFavorite", (req, res) => {
-    const blacklistBtns = document.querySelectorAll(".characterPageBtn");
-    console.log("knop is aangelklingt")
-    blacklistBtns.forEach(function(button) {
-      button.addEventListener("click", function() {
-        const imgElement = button.querySelector("img");
-        console.log("knop is aangelklingt")
-        if (imgElement?.src.includes("blackEmptyFavouriteStar.png")) {
-          imgElement.src = "/Images/ButtonImages/FilledGoldFavouriteStar.png";
-        } else if (imgElement?.src.includes("FilledGoldFavouriteStar.png")) {
-          imgElement.src = "/Images/ButtonImages/blackEmptyFavouriteStar.png";
-        }
-      });
-    });
 });
 app.get("/", (req, res) => {
     res.render("Landingpage", {title: "Landingpage"})
