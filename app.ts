@@ -46,9 +46,7 @@ app.get("/Accountpage", (req,res) => {
 })
 
 app.get("/blacklist", (req, res) => {
-    res.render("blacklist", {
-        title: "Blacklist"
-    });
+    res.render("blacklist", {title: "Blacklist"});
 });
 app.get("/CharacterInfo", async (req,res) => {
     const name = (req.query.name as string)?.toLowerCase();
