@@ -1,4 +1,5 @@
 <%- include("partials/header") %>
+<form action="/CharacterPage" method="POST"></form>
 <main id="characterMain">
     <% characters.forEach(character => { %>
             <article id="<%= character.id %>" class="Characters">
@@ -15,7 +16,7 @@
             </article>
         <% }); %>
 </main>
-
+</form>
 <%- include("partials/footer") %>
 
 
