@@ -1,8 +1,5 @@
-import express ,{ Request, Response } from "express";
 import dotenv from "dotenv";
 dotenv.config();
-import mongoose from 'mongoose';
-import User from './models/User';
 import express from "express";
 import { MongoClient } from "mongodb";
 import { Characters, Type, Rarity, Series, Set, Introduction, Images, MetaTags} from "./public/TypeScript/characterAPI.ts";
@@ -16,9 +13,6 @@ app.use(session);
 const uri = "mongodb+srv://CHYN-User:t5iKaBbTegc8Ghpw@userdb.tsld2b6.mongodb.net/"
 const client = new MongoClient(uri);
 
-mongoose.connect(process.env.MONGO_URI!)
-  .then(() => console.log("Verbonden met MongoDB"))
-  .catch((error) => console.error("Fout bij verbinden met MongoDB:", error));
 
 
 app.use(express.static("public", {
