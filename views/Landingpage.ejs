@@ -8,8 +8,8 @@
         </article>
 
         <article class="projectArticles">
-            <a href="/Homepage" id="fortnite-link"><img src="Images/Backgrounds/Fortnite Wallpaper.png" alt="" class="ProjectImages"></a>
-            <a href="/Homepage" class="ProjectTitles">Fortnite</a>
+            <a href="/shopPage" id="fortnite-link"><img src="Images/Backgrounds/Fortnite Wallpaper.png" alt="" class="ProjectImages"></a>
+            <a href="/shopPage" class="ProjectTitles">Fortnite</a>
         </article>
 
         <article class="projectArticles">
@@ -50,12 +50,9 @@
       return;
     }
 
-    // Vanaf hier ben je ingelogd
     if (target.id === 'fortnite-link') {
-      // Fortnite is geregistreerd content, dus laat doorgaan
       return;
     } else {
-      // Andere content waarvoor je niet geregistreerd bent
       event.preventDefault();
       alert('Je bent niet geregistreerd voor deze content.');
     }

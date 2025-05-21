@@ -27,25 +27,4 @@
     </article>
 </main>
 
-<script>
-  document.getElementById('loginForm').addEventListener('submit', function(event) {
-    // Als login succesvol zou zijn, dan zou je dit hier kunnen zetten:
-    // Bijvoorbeeld, hier zetten we gewoon bij elke submit dat je 'ingelogd' bent
-    // Dit is enkel frontend, zonder server check!
-
-    localStorage.setItem('loggedIn', 'true');
-
-    // Het formulier wordt gewoon verstuurd, dus server doet de echte login check
-  });
-
-  // Optioneel: check bij het laden van de pagina of user al ingelogd is
-  window.addEventListener('load', function() {
-    if (localStorage.getItem('loggedIn') === 'true') {
-      alert('Je bent al ingelogd!');
-      // Hier kan je bijvoorbeeld redirecten naar een andere pagina
-      // window.location.href = '/Homepage';
-    }
-  });
-</script>
-
 <%- include("partials/footer") %>
