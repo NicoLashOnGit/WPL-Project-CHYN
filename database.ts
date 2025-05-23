@@ -4,9 +4,9 @@ import { User, FavoriteCharacter } from "./types" ;
 import { ObjectId } from "mongodb";
 dotenv.config();
 
-export const client = new MongoClient(process.env.MongoDB_URI || "mongodb://localhost:27017");
+export const client = new MongoClient(process.env.MongoDB_URI || "mongodb+srv://CHYN-User:t5iKaBbTegc8Ghpw@userdb.tsld2b6.mongodb.net/");
 
-export const collection : Collection<User> = client.db("userDB").collection<User>("users");
+export const collection : Collection<User> = client.db("UserDB").collection<User>("users");
 
 async function exit(){
     try {
