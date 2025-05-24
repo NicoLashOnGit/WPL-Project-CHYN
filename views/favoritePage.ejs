@@ -1,10 +1,9 @@
 <%- include("partials/header") %>
-<form action="/favoritePage" method="POST">
 <main id="favoriteCharactersMain">
     <% characters.forEach(character => { %>
-    <article class="favoritedCharacters" id="favoritedCharacter1">
+    <article class="favoritedCharacters" data-wins="<%= character.wins || 0 %>" data-losses="<%= character.losses || 0 %>">
         <section class="FavoriteCharacterPortraitsAndCosmeticsSections">
-            <img src="<%= character.images.icon %>" alt="" class="favoriteCharacterPortraits">
+            <img src="<%= character.image %>" alt="" class="favoriteCharacterPortraits">
             <button class="favoritedBtns favoriteBtn">
                 <img src="/Images/ButtonImages/FilledGoldFavouriteStar.png" alt="" class="favoritedBtnImages">
             </button>
@@ -15,44 +14,29 @@
                 <img src="/Images/ButtonImages/fortnite_weapon_slot.png" alt="" class="favoriteCharacterCosmeticImages" id="favoriteCharacterCosmeticImage2">
             </button>
         </section>
-    
-            <!--the &nbsp; is er om een spatie toe te voegen na de dubbele punt.-->
             <section class="favouritedCharacterTexts">
                 <h3 class="favoriteCharacterNames"><%= character.name %></h3>
                 <p class="favoriteCharactersStatictics">
-                    <span class="label">Gewonnen:</span> <span class="value win-count"> &nbsp;0</span> 
-                    <button class="WinLossBtns IncreaseWinBtn"><img src="/Images/ButtonImages/AddBtnGreen.png" alt="" class="WinLossBtnsImages"></button>
-                    <button class="WinLossBtns DecreaseWinBtn"><img src="/Images/ButtonImages/RemoveBtnBlue.png" alt="" class="WinLossBtnsImages"></button>
+                    <span class="label">Gewonnen:</span> <span class="value win-count"> &nbsp;<%= character.wins || 0 %></span> 
+                    <button class="WinLossBtns IncreaseWinBtn" type="button"><img src="/Images/ButtonImages/AddBtnGreen.png" alt="" class="WinLossBtnsImages"></button>
+                    <button class="WinLossBtns DecreaseWinBtn" type="button"><img src="/Images/ButtonImages/RemoveBtnBlue.png" alt="" class="WinLossBtnsImages"></button>
                 </p>
             
                 <p class="favoriteCharactersStatictics">
-                    <span class="label">Verloren:</span> <span class="value lose-count">&nbsp;0</span>
-                    <button class="WinLossBtns IncreaseLossnBtn"><img src="/Images/ButtonImages/AddBtnGreen.png" alt="" class="WinLossBtnsImages"></button>
-                    <button class="WinLossBtns DecreaseLossBtn"><img src="/Images/ButtonImages/RemoveBtnBlue.png" alt="" class="WinLossBtnsImages"></button>
+                    <span class="label">Verloren:</span> <span class="value lose-count">&nbsp;<%= character.losses || 0 %></span>
+                    <button class="WinLossBtns IncreaseLossnBtn" type="button"><img src="/Images/ButtonImages/AddBtnGreen.png" alt="" class="WinLossBtnsImages"></button>
+                    <button class="WinLossBtns DecreaseLossBtn" type="button"><img src="/Images/ButtonImages/RemoveBtnBlue.png" alt="" class="WinLossBtnsImages"></button>
                 </p>
             
                 <p class="favoriteCharactersStatictics">
-                    <span class="label">Spellen Gespeeld:</span> <span class="value gameCount">&nbsp;0</span>
-                </p>
-            
-                <p class="favoriteCharactersStatictics">
-                    <span class="label">Headshot Percentage:</span> <span class="value">&nbsp;27.3%</span>
-                </p>
-            
-                <p class="favoriteCharactersStatictics">
-                    <span class="label">Gemiddelde Kills per game:</span> <span class="value">&nbsp;4.3</span>
-                </p>
-            
-                <p class="favoriteCharactersStatictics">
-                    <span class="label">Nauwkeurigheid:</span> <span class="value">&nbsp;64.8%</span>
+                    <span class="label">Spellen Gespeeld:</span> <span class="value gameCount">&nbsp;<%= (character.wins || 0) + (character.losses || 0) %></span>
                 </p>
 
                 <p class="favoriteCharactersStatictics">
-                    <span class="label">Win ratio:</span> <span class="value WinRate">&nbsp;0%</span>
+                    <span class="label">Win ratio:</span> <span class="value WinRate">&nbsp;<%= (character.wins && (character.wins + character.losses) > 0) ? ((character.wins / (character.wins + character.losses)) * 100).toFixed(2) : 0 %>%</span>
                 </p>
             </section> 
         </article>
     <% }); %>
 </main>
-</form>
 <%- include("partials/footer") %>

@@ -1,11 +1,12 @@
 import dotenv from "dotenv";
 dotenv.config();
-import express from "express";
+import express, {Request, Response} from "express";
 import { MongoClient } from "mongodb";
 import { Characters, Type, Rarity, Series, Set, Introduction, Images, MetaTags} from "./public/TypeScript/characterAPI.ts";
-import {connect, createUser, findUserByCredentials, getUsers, addFavoriteCharacter, updateUserAccountInfo } from "./database.ts";
+import {connect, createUser, findUserByCredentials, getUsers, addFavoriteCharacter, updateUserAccountInfo, collection } from "./database.ts";
 import { User , FavoriteCharacter} from "./types";
 import session from "./session";
+import { title } from "process";
 
 const app = express();
 app.use(session);
@@ -85,20 +86,55 @@ app.get("/Faq", (req,res) => {
 })
 
 app.get("/favoritePage", async (req,res) => {
+    const displayName = req.session.displayName;
+    if (!displayName) {
+        res.redirect("/Loginpage")
+        return;
+    }
+
     try {
-        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
-        const data = await response.json();
+        const users = await getUsers();
+        const user = users.find(u => u.displayName === displayName);
 
-        const characters = (data.data as Characters[]).filter (
-            (character) => character.type.value === "outfit" && character.introduction?.chapter === "6" && character.introduction.season === "1"
-        );
+        const characters = user && user.favorites ? user.favorites.filter(fav => fav.name && fav.image) : [];
 
-        res.render("favoritePage", {title: "favorite", characters})
-    } catch (error) {
-        console.error("Error met ophalen van karakter data:", error);
-        res.status(500).send("Error met ophalen van karakter data")
+        res.render("favoritePage", { title: "favorite", characters })
+    }
+    catch (error) {
+        console.error("Error met ophalen van favorite karakters:", error);
+        res.status(500).send("Error met ophalen van favoriete karakters")
     }
 })
+
+app.post("/favoritePage/updateStats", async (req, res) => {
+    const displayName = req.session.displayName;
+    const { name, wins, losses } = req.body;
+
+    if (!displayName) {
+        res.status(401).json({ message: "Niet ingelogd" })
+        return
+    }
+
+    try {
+        const users = await getUsers();
+        const user = users.find(u => u.displayName === displayName)
+
+        if (!user) {
+            res.status(404).json({ message: "Gebruiker niet gevonden"})
+            return;
+        }
+
+        const result = await collection.updateOne(
+            { _id: user._id, "favorites.name": name},
+            { $set: { "favorites.$.wins": wins, "favorites.$.losses": losses}}
+        );
+
+        res.status(200).json({ message: "Statistieken bijgewerkt"});
+    } catch (error) {
+        console.error("Fout bij opslaan statistieken:", error);
+        res.status(500).json({ message: "Interne Serverfout"});
+    }
+});
 
 app.get("/Homepage", (req,res) => {
     res.render("Homepage", {title: "Home"})
@@ -153,10 +189,9 @@ app.get("/shopPage", async (req,res) => {
 })
 
 app.post("/register", async (req, res) => {
-let user : User = req.body;
-await createUser(user);
-res.redirect("/Loginpage")
-
+    let user : User = req.body;
+    await createUser(user);
+    res.redirect("/Loginpage")
 })
 
 app.post("/login", async (req, res) => {
@@ -177,12 +212,13 @@ app.post("/login", async (req, res) => {
     }
 });
 
-/*app.post("/favourite", async (req, res) => {
+app.post("/favourite", async (req, res) => {
     const { name, image } = req.body;
     const displayName = req.session.displayName;
 
     if (!displayName) {
-        return res.status(401).json({ message: "Niet ingelogd" });
+        res.status(401).json({ message: "Niet ingelogd" });
+        return
     }
 
     try {
@@ -190,66 +226,70 @@ app.post("/login", async (req, res) => {
         const user = users.find(u => u.displayName === displayName);
 
         if (!user) {
-            return res.status(404).json({ message: "Gebruiker niet gevonden" });
+            res.status(404).json({ message: "Gebruiker niet gevonden" });
+            return
         }
 
         const result = await addFavoriteCharacter(user._id.toString(), name, image);
 
         if (result.modifiedCount === 0) {
-            return res.status(200).json({ message: "Character was al favoriet" });
+            res.status(200).json({ message: "Character was al favoriet" });
+            return
         }
 
         res.status(200).json({ message: "Character toegevoegd aan favorieten" });
     } catch (err) {
         console.error("Fout bij opslaan favoriete character:", err);
         res.status(500).json({ message: "Interne serverfout" });
+        return
     }
-}); 
+});
 
 app.post("/Accountpage", async (req, res) => {
-  const displayName = req.session.displayName;
+    const displayName = req.session.displayName;
 
-  if (!displayName) {
-    return res.status(401).send("Niet ingelogd.");
-  }
-
-  const {
-    email,
-    firstName,
-    lastName,
-    displayName: newDisplayName,
-    language,
-    addressLine1,
-    addressLine2,
-    city,
-    region,
-    postalCode
-  } = req.body;
-
-  try {
-    await updateUserAccountInfo(displayName, {
-      email,
-      firstName,
-      lastName,
-      displayName: newDisplayName,
-      language,
-      addressLine1,
-      addressLine2,
-      city,
-      region,
-      postalCode
-    });
-
-    if (newDisplayName && newDisplayName !== displayName) {
-      req.session.displayName = newDisplayName;
+    if (!displayName) {
+        res.status(401).send("Niet ingelogd.");
+        return;
     }
 
-    res.redirect("/Accountpage");
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Fout bij updaten van accountgegevens.");
-  }
-}); */
+    const {
+        email,
+        firstName,
+        lastName,
+        displayName: newDisplayName,
+        language,
+        addressLine1,
+        addressLine2,
+        city,
+        region,
+        postalCode
+    } = req.body;
+
+    try {
+        await updateUserAccountInfo(displayName, {
+            email,
+            firstName,
+            lastName,
+            displayName: newDisplayName,
+            language,
+            addressLine1,
+            addressLine2,
+            city,
+            region,
+            postalCode
+        });
+
+        if (newDisplayName && newDisplayName !== displayName) {
+            req.session.displayName = newDisplayName;
+        }
+
+        res.redirect("/Accountpage");
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Fout bij updaten van accountgegevens.");
+    }
+});
 
 app.listen(app.get("port"), async() => {
     await connect();

@@ -3,6 +3,8 @@ import { ObjectId } from "mongodb";
 export interface FavoriteCharacter {
     name: string;
     image: string;
+    wins?: number;
+    losses?: number;
 }
 
 export interface User {
