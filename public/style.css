@@ -194,12 +194,18 @@ border: black 1px solid;
 
 #language{
  width: 15%;
+
 }
 
 #languageLabel{
   color: white;
   font-size: 1.2em;
   font-weight: 1000;
+    text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
 }
 
 #deleteArticle{
