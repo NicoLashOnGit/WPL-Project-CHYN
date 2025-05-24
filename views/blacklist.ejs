@@ -4,11 +4,11 @@
     <section id="blacklistedCharacterSection">
         <article class="blacklistedCharacters" id="blacklistedCharacter">
             <button class="blacklistBtns" id="RemoveBlacklistBtn"><img src="/Images/ButtonImages/blackmarkButton.png" alt="" class="blacklistBtnImages"></button>
-            <img src="<%= character.images.icon %>" alt="<%= character.name %>" class="blacklistedCharactersImages" id="blacklistedCharacterImage1">
+            <img src="<%= character.image %>" alt="<%= character.name %>" class="blacklistedCharactersImages" id="blacklistedCharacterImage1">
             <div class="blacklistedCharactersText">
             <h3 class="blacklistedCharacterNames" id="blacklistedCharacterName"><%= character.name %></h3>
             
-            <p class="blacklistReasons" id="blacklistReason1">Zorgde ervoor dat ik constant werd opgejaagd door andere spelers tijdens grote gevechten met meerdere teams. Het lijkt alsof iedereen zich op mij richt zodra ik deze skin gebruik.</p>
+            <p class="blacklistReasons" id="blacklistReason1"><%= character.reason %></p>
             <button class="blacklistBtns" id="BlacklistReasonEditBtn"><img src="/Images/ButtonImages/AdjustBtnImage.png" alt="" class="blacklistBtnImages"></button>
             </div>
         </article>

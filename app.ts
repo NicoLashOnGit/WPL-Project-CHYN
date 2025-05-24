@@ -1,12 +1,13 @@
 import dotenv from "dotenv";
 dotenv.config();
 import express, {Request, Response} from "express";
-import { MongoClient } from "mongodb";
+import { MongoClient, ReturnDocument } from "mongodb";
 import { Characters, Type, Rarity, Series, Set, Introduction, Images, MetaTags} from "./public/TypeScript/characterAPI.ts";
-import {connect, createUser, findUserByCredentials, getUsers, addFavoriteCharacter, updateUserAccountInfo, collection } from "./database.ts";
+import {connect, createUser, findUserByCredentials, getUsers, addFavoriteCharacter, updateUserAccountInfo, collection, addBlacklistedCharacter } from "./database.ts";
 import { User , FavoriteCharacter} from "./types";
 import session from "./session";
 import { title } from "process";
+import { stat } from "fs";
 
 const app = express();
 app.use(session);
@@ -53,9 +54,52 @@ app.get("/Accountpage", (req,res) => {
     res.render("Accountpage", {title: "Account"})
 })
 
-app.get("/blacklist", (req, res) => {
-    res.render("blacklist", {title: "Blacklist"});
+app.get("/blacklist", async (req, res) => {
+    const displayName = req.session.displayName;
+    if (!displayName) {
+        res.redirect("/Loginpage");
+        return
+    }
+
+    const users = await getUsers();
+    const user = users.find(u => u.displayName === displayName);
+    const characters = user && user.blacklist ? user.blacklist : [];
+    res.render("blacklist", { title: "Blacklist", characters });
 });
+
+app.post("/blacklist", async (req, res) => {
+    const { name, image, reason } = req.body;
+    const displayName = req.session.displayName;
+
+    if  (!displayName) {
+        res.status(401).json({ message: "Niet ingelogd" });
+        return;
+    }
+
+    try {
+        const users = await getUsers();
+        const user = users.find(u => u.displayName === displayName);
+
+        if (!user) {
+            res.status(404).json({ message: "Gebruiker niet gevonden" });
+            return;
+        }
+
+        const result = await addBlacklistedCharacter(user._id.toString(), name, image, reason)
+
+        if (result.modifiedCount === 0) {
+            res.status(200).json({ message: "Karakter is al geblacklist"})
+            return;
+        }
+
+        res.status(200).json({ message: "Character toegevoegd aan blacklist" })
+    } catch (err) {
+        console.error("Fout bij opslaan van blacklisted karakter:", err)
+        res.status(500).json({ message: "Interne serverfout" });
+        return
+    }
+});
+
 app.get("/CharacterInfo", async (req,res) => {
     const name = (req.query.name as string)?.toLowerCase();
     if (!name) {
@@ -146,16 +190,27 @@ app.get("/Loginpage", (req, res) => {
 
 app.get("/Characterpage", async (req, res) => {
     try {
-        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
+        const response = await fetch("https://fortnite-api.com/v2/cosmetics/br");
         const data = await response.json();
 
-        const characters = (data.data as Characters[]).filter (
-            (character) => character.type.value === "outfit" && character.introduction?.chapter === "6" && character.introduction.season === "1"
+        let characters = (data.data as Characters[]).filter(
+            (character) => character.type.value === "outfit" &&
+                        character.introduction?.chapter === "6" &&
+                        character.introduction.season === "1"
         );
 
-        res.render("Characterpage", {title: "Character Page", characters})
+        const displayName = req.session.displayName;
+        if (displayName) {
+            const users = await getUsers();
+            const user = users.find(u => u.displayName === displayName);
+            if ( user  && user.blacklist) {
+                const blacklistNames = user.blacklist.map(b => b.name);
+                characters = characters.filter(c => !blacklistNames.includes(c.name))
+            }
+        }
+        res.render("Characterpage", { title: "Character Page", characters})
     } catch (error) {
-        console.error("Error met ophalen van karakter data:", error);
+        console.error("Error met ophalen van karakter date:", error);
         res.status(500).send("Error met ophalen van karakter data")
     }
 })
@@ -195,9 +250,9 @@ app.post("/register", async (req, res) => {
 })
 
 app.post("/login", async (req, res) => {
-    const { name, password } = req.body;
+    const { displayName, password } = req.body;
 
-    const user = await findUserByCredentials(name, password);
+    const user = await findUserByCredentials(displayName, password);
     
 
     if (user) {

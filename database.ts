@@ -30,6 +30,7 @@ export async function getNextId(){
 
 export async function createUser(user:User){
     user.id = await getNextId();
+    user.vbucks = 800;
     return await collection.insertOne(user);
 }
 
@@ -37,8 +38,8 @@ export async function getUsers(){
     return await collection.find({}).toArray()
 }
 
-export async function findUserByCredentials(name: string, password: string): Promise<User | null> {
-    return await collection.findOne({ name, password });
+export async function findUserByCredentials(displayName: string, password: string): Promise<User | null> {
+    return await collection.findOne({ displayName, password });
 }
 
 export async function addFavoriteCharacter(userId: string, name: string, image: string) {
@@ -47,6 +48,18 @@ export async function addFavoriteCharacter(userId: string, name: string, image: 
         {
             $addToSet: {
                 favorites: { name, image } 
+            }
+        }
+    );
+    return result;
+}
+
+export async function addBlacklistedCharacter(userId: string, name: string, image: string, reason: string) {
+    const result = await collection.updateOne(
+        { _id: new ObjectId(userId) },
+        { 
+            $addToSet: {
+                blacklist: { name, image, reason}
             }
         }
     );

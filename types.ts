@@ -7,6 +7,12 @@ export interface FavoriteCharacter {
     losses?: number;
 }
 
+export interface BlacklistedCharacter {
+    name: string;
+    image: string;
+    reason: string;
+}
+
 export interface User {
     _id: ObjectId;
     id: number;
@@ -25,4 +31,6 @@ export interface User {
     city?: string;
     region?: string; 
     postalCode?: string;
+    vbucks: number;
+    blacklist?: BlacklistedCharacter[];
 }
