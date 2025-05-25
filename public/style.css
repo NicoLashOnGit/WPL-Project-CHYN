@@ -12,6 +12,24 @@ body {
   color: white;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  min-height: 100vh; /* ensures full screen */
+}
+
+main {
+  flex: 1; /* main fills the space between nav and footer */
+}
+
+
+
 
 
 /* ###################################*/
@@ -539,17 +557,23 @@ border: black 1px solid;
 #favoriteCharactersMain {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   width: 100%;
+  justify-content: space-around;
+  padding: 1em;
 }
 
 .favoritedCharacters {
-  display: flex;
-  padding: 1em;
+height: 252px;
+min-width: 33%;
+flex-wrap: wrap;
+display: flex;
+padding-bottom: 1em;
 }
 
 .FavoriteCharacterPortraitsAndCosmeticsSections {
   position: relative;
+  height: 252px;
+  
 }
 
 /* BUTTONS*/
@@ -562,12 +586,12 @@ border: black 1px solid;
   cursor: pointer;
 }
 
-.favoritedBtns,
-.favoriteCharacterCosmeticBtns {
+.favoritedBtns,.favoriteCharacterCosmeticBtns {
   position: absolute;
   background: transparent;
   border: none;
   cursor: pointer;
+  
 }
 
 .favoritedBtns {
@@ -599,9 +623,12 @@ border: black 1px solid;
 
 .favouritedCharacterTexts {
   border: white 1px solid;
-  width: 90%;
   height: 250px;
+  width: 50%;
   padding-left: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .favoriteCharacterNames {
@@ -937,6 +964,14 @@ a {
   
 }
 
+.carouselItemPriceDiv{
+  display: flex;
+}
+
+#vbucksCostImage{
+  width: 32px;
+}
+
 #wrapperTitle{
   font-size: 2em;
   text-align: center;
@@ -963,6 +998,7 @@ a {
   padding: 16px;
   color: white;
   max-width: 250px;
+  cursor: pointer;
 }
 
 .carousel-card img {
@@ -1185,6 +1221,7 @@ a {
 
   .favoritedCharacters {
     flex-direction: column;
+      min-width: 100%;
   }
 
   .favoriteCharacterPortraits {
@@ -1325,6 +1362,7 @@ a {
 
   .favoritedCharacters {
     flex-direction: column;
+    
   }
 
   .favoriteCharacterPortraits {
