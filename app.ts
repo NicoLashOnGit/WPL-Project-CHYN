@@ -3,8 +3,8 @@ dotenv.config();
 import express, {Request, Response} from "express";
 import { MongoClient, ReturnDocument } from "mongodb";
 import { Characters, Type, Rarity, Series, Set, Introduction, Images, MetaTags} from "./public/TypeScript/characterAPI.ts";
-import {connect, createUser, findUserByCredentials, getUsers, addFavoriteCharacter, updateUserAccountInfo, collection, addBlacklistedCharacter } from "./database.ts";
-import { User , FavoriteCharacter} from "./types";
+import {connect, createUser, findUserByCredentials, getUsers, addFavoriteCharacter, updateUserAccountInfo, collection, addBlacklistedCharacter, addPurchaseItem } from "./database.ts";
+import { User , FavoriteCharacter, PurchaseItem} from "./types";
 import session from "./session";
 import { title } from "process";
 import { stat } from "fs";
@@ -100,6 +100,78 @@ app.post("/blacklist", async (req, res) => {
     }
 });
 
+/* Shop page 
+
+app.post("/shopPage/buy", async (req, res) => {
+  const displayName = req.session.displayName;
+
+  if (!displayName) {
+    return res.status(401).json({ message: "Niet ingelogd" });
+  }
+
+  const { name, image, type } = req.body;
+
+  try {
+    const users = await getUsers();
+    const user = users.find(u => u.displayName === displayName);
+
+    if (!user) {
+      return res.status(404).json({ message: "Gebruiker niet gevonden." });
+    }
+
+    const result = await addPurchaseItem(user._id.toString(), { name, image, type });
+
+    if (result.modifiedCount === 0) {
+      return res.status(500).json({ message: "Kon item niet toevoegen." });
+    }
+
+    res.status(200).json({ message: "Item succesvol toegevoegd!" });
+  } catch (error) {
+    console.error("Fout bij toevoegen item:", error);
+    res.status(500).json({ message: "Interne serverfout." });
+  }
+});
+
+app.post("/buyItem", async (req, res) => {
+  const displayName = req.session.displayName;
+  const { name, image, price } = req.body;
+
+  if (!displayName) {
+    return res.status(401).json({ message: "Niet ingelogd" });
+  }
+
+  try {
+    const users = await getUsers();
+    const user = users.find(u => u.displayName === displayName);
+
+    if (!user) {
+      return res.status(404).json({ message: "Gebruiker niet gevonden" });
+    }
+
+    if (user.vbucks < price) {
+      return res.status(400).json({ message: "Niet genoeg Vbucks" });
+    }
+
+    const updateResult = await collection.updateOne(
+      { _id: user._id },
+      {
+        $inc: { vbucks: -price },
+        $addToSet: { favorites: { name, image } } 
+      }
+    );
+
+    if (updateResult.modifiedCount === 0) {
+      return res.status(500).json({ message: "Fout bij aankoop" });
+    }
+
+    res.status(200).json({ message: "Aankoop gelukt", newVbucks: user.vbucks - price });
+  } catch (error) {
+    console.error("Fout bij aankoop:", error);
+    res.status(500).json({ message: "Interne serverfout" });
+  }
+});
+
+*/
 app.get("/CharacterInfo", async (req,res) => {
     const name = (req.query.name as string)?.toLowerCase();
     if (!name) {
@@ -226,6 +298,13 @@ app.get("/shopPage", async (req,res) => {
         try {
         const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
         const data = await response.json();
+
+
+        const prices = {
+           backpack: 200,
+           pickaxe: 300,
+           glider: 250
+        };
 
         const backpacks = (data.data as Characters[]).filter (
             (character) => character.type.value === "backpack" && character.introduction?.chapter === "6" && character.introduction.season === "1"

@@ -1,6 +1,6 @@
 import { Collection, MongoClient } from "mongodb";
 import dotenv from "dotenv";
-import { User, FavoriteCharacter } from "./types" ;
+import { User, FavoriteCharacter, PurchaseItem } from "./types" ;
 import { ObjectId } from "mongodb";
 dotenv.config();
 
@@ -52,6 +52,14 @@ export async function addFavoriteCharacter(userId: string, name: string, image: 
         }
     );
     return result;
+}
+
+export async function addPurchaseItem(userId: string, item: PurchaseItem) {
+  const result = await collection.updateOne(
+    { _id: new ObjectId(userId) },
+    { $push: { purchases: item } } 
+  );
+  return result;
 }
 
 export async function addBlacklistedCharacter(userId: string, name: string, image: string, reason: string) {
