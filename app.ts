@@ -100,44 +100,15 @@ app.post("/blacklist", async (req, res) => {
     }
 });
 
-/* Shop page 
-
-app.post("/shopPage/buy", async (req, res) => {
-  const displayName = req.session.displayName;
-
-  if (!displayName) {
-    return res.status(401).json({ message: "Niet ingelogd" });
-  }
-
-  const { name, image, type } = req.body;
-
-  try {
-    const users = await getUsers();
-    const user = users.find(u => u.displayName === displayName);
-
-    if (!user) {
-      return res.status(404).json({ message: "Gebruiker niet gevonden." });
-    }
-
-    const result = await addPurchaseItem(user._id.toString(), { name, image, type });
-
-    if (result.modifiedCount === 0) {
-      return res.status(500).json({ message: "Kon item niet toevoegen." });
-    }
-
-    res.status(200).json({ message: "Item succesvol toegevoegd!" });
-  } catch (error) {
-    console.error("Fout bij toevoegen item:", error);
-    res.status(500).json({ message: "Interne serverfout." });
-  }
-});
+/* Shop page */
 
 app.post("/buyItem", async (req, res) => {
   const displayName = req.session.displayName;
-  const { name, image, price } = req.body;
+  const { name, image, price, type } = req.body;
 
   if (!displayName) {
-    return res.status(401).json({ message: "Niet ingelogd" });
+    res.status(401).json({ message: "Niet ingelogd" })
+    return
   }
 
   try {
@@ -145,23 +116,26 @@ app.post("/buyItem", async (req, res) => {
     const user = users.find(u => u.displayName === displayName);
 
     if (!user) {
-      return res.status(404).json({ message: "Gebruiker niet gevonden" });
+      res.status(404).json({ message: "Gebruiker niet gevonden" });
+      return 
     }
 
     if (user.vbucks < price) {
-      return res.status(400).json({ message: "Niet genoeg Vbucks" });
+      res.status(400).json({ message: "Niet genoeg V-Bucks" });
+      return 
     }
 
     const updateResult = await collection.updateOne(
       { _id: user._id },
       {
         $inc: { vbucks: -price },
-        $addToSet: { favorites: { name, image } } 
+        $addToSet: { purchases: { name, image, type } } 
       }
     );
 
     if (updateResult.modifiedCount === 0) {
-      return res.status(500).json({ message: "Fout bij aankoop" });
+      res.status(500).json({ message: "Fout bij aankoop" })
+      return
     }
 
     res.status(200).json({ message: "Aankoop gelukt", newVbucks: user.vbucks - price });
@@ -171,7 +145,8 @@ app.post("/buyItem", async (req, res) => {
   }
 });
 
-*/
+/* ------------------------------------------*/
+
 app.get("/CharacterInfo", async (req,res) => {
     const name = (req.query.name as string)?.toLowerCase();
     if (!name) {
@@ -315,7 +290,7 @@ app.get("/shopPage", async (req,res) => {
         const gliders = (data.data as Characters[]).filter (
             (character) => character.type.value === "glider" && character.introduction?.chapter ==="6" && character.introduction?.season ==="1"
         )
-        res.render("shopPage", {title: "Shop", backpacks, pickaxes, gliders})
+        res.render("shopPage", {title: "Shop", backpacks, pickaxes, gliders, prices})
     } catch (error) {
         console.error("Error met ophalen van karakter data:", error);
         res.status(500).send("Error met ophalen van karakter data")
