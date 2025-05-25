@@ -175,11 +175,7 @@ main {
   font-size: 1.6em;
   font-weight: 800;
   padding-bottom: .4em;
-  text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
+
 }
 
 .AccountPageMain>h3,.accPageSections>p{
@@ -187,11 +183,6 @@ main {
   font-weight: 0;
   color: lightgrey;
   padding-bottom: 1em;
-  text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
 }
 
 
@@ -219,7 +210,9 @@ border: black 1px solid;
   color: white;
   font-size: 1.2em;
   font-weight: 1000;
-    text-shadow:
+}
+#deleteArticle>p,#languageLabel,.AccountPageMain>h3,.accPageSections>p,.AccountPageMain>h2,.accPageSections>h2{
+  text-shadow:
     -1px -1px 0 black,
      1px -1px 0 black,
     -1px  1px 0 black,
@@ -453,6 +446,7 @@ border: black 1px solid;
   max-width: 80%;
 }
 
+
 #RegistrationButton{
   padding: 0.3em;
   font-size: 1.3em;
@@ -558,13 +552,13 @@ border: black 1px solid;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-around;
   padding: 1em;
 }
 
 .favoritedCharacters {
-height: 252px;
-min-width: 33%;
+min-width: 50%;
+max-width: 50%;
+justify-content: center;
 flex-wrap: wrap;
 display: flex;
 padding-bottom: 1em;
@@ -1109,10 +1103,10 @@ a {
   }
   /*##################*/
 
-  /* Account page */
-
-  /* ##########################*/
 }
+  /* ##########################*/
+  
+
 
 /* Large Devices (Large Desktop) */
 @media only screen and (max-width: 1024px) {
@@ -1218,34 +1212,6 @@ a {
   }
   /*##################*/
   /* FAVORITE PAGE*/
-
-  .favoritedCharacters {
-    flex-direction: column;
-      min-width: 100%;
-  }
-
-  .favoriteCharacterPortraits {
-    width: 100%;
-  }
-
-  .favouritedCharacterTexts {
-    padding: 0em;
-    width: 100%;
-  }
-  .favoriteCharacterNames {
-    font-size: 1.5em;
-    padding-left: 1em;
-  }
-  .favoriteCharactersStatictics {
-    padding-left: 0.5em;
-  }
-
-  #favoriteCharacterCosmeticBtn1 {
-    right: 32.5%;
-  }
-  #favoriteCharacterCosmeticBtn2 {
-    left: 32.5%;
-  }
 
   /*##################*/
   /* Account page */
@@ -1360,35 +1326,6 @@ a {
 
   /* FAVORITE PAGE*/
 
-  .favoritedCharacters {
-    flex-direction: column;
-    
-  }
-
-  .favoriteCharacterPortraits {
-    width: 100%;
-  }
-
-  .favouritedCharacterTexts {
-    width: 100%;
-  }
-  .favoriteCharacterNames {
-    font-size: 1.5em;
-    padding-left: 0.5em;
-  }
-  .favoriteCharactersStatictics {
-    padding-left: 0.5em;
-    padding-right: 0.3em;
-    font-size: 1.25em;
-  }
-
-  #favoriteCharacterCosmeticBtn1 {
-    right: 30%;
-  }
-  #favoriteCharacterCosmeticBtn2 {
-    left: 30%;
-  }
-  /*##################*/
 }
 
 /* Login Queries */
