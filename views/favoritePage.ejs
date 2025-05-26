@@ -1,4 +1,5 @@
 <%- include("partials/header") %>
+
 <main id="favoriteCharactersMain">
     <% characters.forEach(character => { %>
     <article class="favoritedCharacters" data-wins="<%= character.wins || 0 %>" data-losses="<%= character.losses || 0 %>">
@@ -7,36 +8,63 @@
             <button class="favoritedBtns favoriteBtn">
                 <img src="/Images/ButtonImages/FilledGoldFavouriteStar.png" alt="" class="favoritedBtnImages">
             </button>
-            <button class="favoriteCharacterCosmeticBtns" id="favoriteCharacterCosmeticBtn1">
-                <img src="/Images/ButtonImages/fortnite_weapon_slot.png" alt="" class="favoriteCharacterCosmeticImages" id="favoriteCharacterCosmeticImage1">
+
+            <button class="favoriteCharacterCosmeticBtns" onclick="openCosmeticPopup('<%= character.name %>', 1)">
+                <img 
+                    src="<%= character.cosmetic1 || '/Images/ButtonImages/fortnite_weapon_slot.png' %>" 
+                    alt="" 
+                    class="favoriteCharacterCosmeticImages"
+                >
             </button>
-            <button class="favoriteCharacterCosmeticBtns" id="favoriteCharacterCosmeticBtn2">
-                <img src="/Images/ButtonImages/fortnite_weapon_slot.png" alt="" class="favoriteCharacterCosmeticImages" id="favoriteCharacterCosmeticImage2">
+            <button class="favoriteCharacterCosmeticBtns" onclick="openCosmeticPopup('<%= character.name %>', 2)">
+                <img 
+                    src="<%= character.cosmetic2 || '/Images/ButtonImages/fortnite_weapon_slot.png' %>" 
+                    alt="" 
+                    class="favoriteCharacterCosmeticImages"
+                >
             </button>
         </section>
-            <section class="favouritedCharacterTexts">
-                <h3 class="favoriteCharacterNames"><%= character.name %></h3>
-                <p class="favoriteCharactersStatictics">
-                    <span class="label">Gewonnen:</span> <span class="value win-count"> &nbsp;<%= character.wins || 0 %></span> 
-                    <button class="WinLossBtns IncreaseWinBtn" type="button"><img src="/Images/ButtonImages/AddBtnGreen.png" alt="" class="WinLossBtnsImages"></button>
-                    <button class="WinLossBtns DecreaseWinBtn" type="button"><img src="/Images/ButtonImages/RemoveBtnBlue.png" alt="" class="WinLossBtnsImages"></button>
-                </p>
-            
-                <p class="favoriteCharactersStatictics">
-                    <span class="label">Verloren:</span> <span class="value lose-count">&nbsp;<%= character.losses || 0 %></span>
-                    <button class="WinLossBtns IncreaseLossnBtn" type="button"><img src="/Images/ButtonImages/AddBtnGreen.png" alt="" class="WinLossBtnsImages"></button>
-                    <button class="WinLossBtns DecreaseLossBtn" type="button"><img src="/Images/ButtonImages/RemoveBtnBlue.png" alt="" class="WinLossBtnsImages"></button>
-                </p>
-            
-                <p class="favoriteCharactersStatictics">
-                    <span class="label">Spellen Gespeeld:</span> <span class="value gameCount">&nbsp;<%= (character.wins || 0) + (character.losses || 0) %></span>
-                </p>
 
-                <p class="favoriteCharactersStatictics">
-                    <span class="label">Win ratio:</span> <span class="value WinRate">&nbsp;<%= (character.wins && (character.wins + character.losses) > 0) ? ((character.wins / (character.wins + character.losses)) * 100).toFixed(2) : 0 %>%</span>
-                </p>
-            </section> 
-        </article>
+        <section class="favouritedCharacterTexts">
+            <h3 class="favoriteCharacterNames"><%= character.name %></h3>
+
+            <p class="favoriteCharactersStatictics">
+                <span class="label">Gewonnen:</span> <span class="value win-count">&nbsp;<%= character.wins || 0 %></span>
+                <button class="WinLossBtns IncreaseWinBtn" type="button"><img src="/Images/ButtonImages/AddBtnGreen.png" alt="" class="WinLossBtnsImages"></button>
+                <button class="WinLossBtns DecreaseWinBtn" type="button"><img src="/Images/ButtonImages/RemoveBtnBlue.png" alt="" class="WinLossBtnsImages"></button>
+            </p>
+
+            <p class="favoriteCharactersStatictics">
+                <span class="label">Verloren:</span> <span class="value lose-count">&nbsp;<%= character.losses || 0 %></span>
+                <button class="WinLossBtns IncreaseLossnBtn" type="button"><img src="/Images/ButtonImages/AddBtnGreen.png" alt="" class="WinLossBtnsImages"></button>
+                <button class="WinLossBtns DecreaseLossBtn" type="button"><img src="/Images/ButtonImages/RemoveBtnBlue.png" alt="" class="WinLossBtnsImages"></button>
+            </p>
+
+            <p class="favoriteCharactersStatictics">
+                <span class="label">Spellen Gespeeld:</span> <span class="value gameCount">&nbsp;<%= (character.wins || 0) + (character.losses || 0) %></span>
+            </p>
+
+            <p class="favoriteCharactersStatictics">
+                <span class="label">Win ratio:</span> 
+                <span class="value WinRate">
+                    &nbsp;<%= (character.wins && (character.wins + character.losses) > 0) ? ((character.wins / (character.wins + character.losses)) * 100).toFixed(2) : 0 %>% 
+                </span>
+            </p>
+        </section>
+    </article>
     <% }); %>
 </main>
+
+<div id="cosmeticPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+    background:white; padding:20px; border:2px solid black; z-index:1000;">
+    <div id="cosmeticOptions" style="display:flex; flex-wrap:wrap; gap:10px; max-height:300px; overflow-y:auto;"></div>
+    <button onclick="saveCosmeticSelection()">Opslaan</button>
+    <button onclick="document.getElementById('cosmeticPopup').style.display='none'">Sluiten</button>
+</div>
+<script id="userPurchasesData" type="application/json">
+  <%= JSON.stringify(user?.purchases || []) %>
+</script>
+
+<script src="/public/TypeScript/cosmeticmodal.js"></script>
+
 <%- include("partials/footer") %>

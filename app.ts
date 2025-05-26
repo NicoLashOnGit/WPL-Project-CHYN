@@ -147,6 +147,45 @@ app.post("/buyItem", async (req, res) => {
 
 /* ------------------------------------------*/
 
+app.post("/favoritePage/updateCosmetics", async (req, res) => {
+    const displayName = req.session.displayName;
+    const { name, cosmetic1, cosmetic2 } = req.body;
+
+    if (!displayName) {
+      res.status(401).json({ message: "Niet ingelogd" });
+      return
+    }
+
+    try {
+        const users = await getUsers();
+        const user = users.find(u => u.displayName === displayName);
+
+        if (!user) {
+            res.status(404).json({ message: "Gebruiker niet gevonden" });
+            return 
+        }
+
+        const updateResult = await collection.updateOne(
+            { _id: user._id, "favorites.name": name },
+            {
+                $set: {
+                    "favorites.$.cosmetic1": cosmetic1,
+                    "favorites.$.cosmetic2": cosmetic2
+                }
+            }
+        );
+
+        if (updateResult.modifiedCount > 0) {
+            res.status(200).json({ message: "Cosmetics opgeslagen" });
+        } else {
+            res.status(400).json({ message: "Favoriet character niet gevonden of ongewijzigd" });
+        }
+    } catch (error) {
+        console.error("Fout bij opslaan cosmetics:", error);
+        res.status(500).json({ message: "Interne serverfout" });
+    }
+});
+
 app.get("/CharacterInfo", async (req,res) => {
     const name = (req.query.name as string)?.toLowerCase();
     if (!name) {
@@ -189,7 +228,7 @@ app.get("/favoritePage", async (req,res) => {
 
         const characters = user && user.favorites ? user.favorites.filter(fav => fav.name && fav.image) : [];
 
-        res.render("favoritePage", { title: "favorite", characters })
+        res.render("favoritePage", { title: "favorite", characters : user?.favorites, user: user })
     }
     catch (error) {
         console.error("Error met ophalen van favorite karakters:", error);

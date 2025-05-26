@@ -5,6 +5,8 @@ export interface FavoriteCharacter {
     image: string;
     wins?: number;
     losses?: number;
+    cosmetic1?: string;
+    cosmetic2?: string;
 }
 
 export interface BlacklistedCharacter {
