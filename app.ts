@@ -12,6 +12,27 @@ import { stat } from "fs";
 const app = express();
 app.use(session);
 
+/* Dit stukje code maakt user available in al de get routes */
+/* Is nodig voor vbucks counter omdat de ejs niet kan geraken aan user.vbucks voor een of andere reden */
+app.use(async (req, res, next) => {
+    const displayName = req.session.displayName;
+
+    if (displayName) {
+        try {
+            const users = await getUsers();
+            const user = users.find(u => u.displayName === displayName);
+            res.locals.user = user || null;
+        } catch (error) {
+            console.error("Fout bij ophalen van user in middleware:", error);
+            res.locals.user = null;
+        }
+    } else {
+        res.locals.user = null;
+    }
+
+    next();
+});
+
 const uri = "mongodb+srv://CHYN-User:t5iKaBbTegc8Ghpw@userdb.tsld2b6.mongodb.net/"
 const client = new MongoClient(uri);
 
