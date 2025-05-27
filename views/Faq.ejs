@@ -111,12 +111,18 @@
       </article>
       
       <article class="faq-item dropdown">
-        <p class="dropbtn">Hoe vaak verandert de item shop?</p>
-        <div class="dropdown-content">
-          <a href="#">De item shop wordt dagelijks bijgewerkt met nieuwe en terugkerende cosmetische items zoals outfits, emotes en wraps.</a>
-        </div>
+        <p class="question dropbtn">Hoe vaak verandert de item shop?</p>
+        <p class="answer dropdown-content">
+          De item shop wordt dagelijks bijgewerkt met nieuwe en terugkerende cosmetische items zoals outfits, emotes en wraps.
+        </p>
       </article>
-      
-
 </main>
+<script>
+  document.querySelectorAll('.faq-item .question').forEach(q => {
+    q.addEventListener('click', () => {
+      const parent = q.closest('.faq-item');
+      parent.classList.toggle('active');
+    });
+  });
+</script>
 <%- include("partials/footer") %>
