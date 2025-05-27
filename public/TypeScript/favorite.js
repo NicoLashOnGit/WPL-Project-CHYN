@@ -14,6 +14,7 @@ function favorite() {
   });
 }
 
+
 document.addEventListener("DOMContentLoaded", favorite);
 
 document.addEventListener("DOMContentLoaded", function() {

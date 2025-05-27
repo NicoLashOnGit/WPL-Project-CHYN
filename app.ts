@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 import express, {Request, Response} from "express";
-import { MongoClient, ReturnDocument } from "mongodb";
+import { MongoClient, ReturnDocument, ObjectId } from "mongodb";
 import { Characters, Type, Rarity, Series, Set, Introduction, Images, MetaTags} from "./public/TypeScript/characterAPI.ts";
 import {connect, createUser, findUserByCredentials, getUsers, addFavoriteCharacter, updateUserAccountInfo, collection, addBlacklistedCharacter, addPurchaseItem } from "./database.ts";
 import { User , FavoriteCharacter, PurchaseItem} from "./types";
@@ -71,9 +71,46 @@ app.get("/", (req, res) => {
     res.render("Landingpage", {title: "Landingpage"})
 });
 
-app.get("/Accountpage", (req,res) => {
-    res.render("Accountpage", {title: "Account"})
+app.get("/Accountpage", async (req,res) => {
+    const userId = req.session.userId;
+    if (!userId) {
+        res.redirect("/Loginpage");
+        return;
+    }
+    const users = await getUsers();
+    const user = users.find(u => u._id.toString() === userId);
+    if (!user) {
+        res.status(404).send("Gebruiker niet gevonden");
+        return
+    }
+    res.render("Accountpage", {title: "Account", user})
 })
+
+app.post("/Accountpage/updateField", async (req, res) => {
+    const userId = req.session.userId;
+    const { field, value } = req.body;
+
+    if (!userId) {
+        res.status(401).json({ message: "Niet ingelogd"});
+        return
+    }
+
+    try {
+        const update = { [field]: value};
+        await collection.updateOne(
+            { _id: new ObjectId(userId) },
+            { $set: update }
+        );
+
+        if (field === "displayName") {
+            req.session.displayName = value;
+        }
+        res.status(200).json({ message: "Gegevens bijgewerkt." });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Fout bij updaten van accountgegevens." })
+    }
+});
 
 app.get("/blacklist", async (req, res) => {
     const displayName = req.session.displayName;
@@ -372,6 +409,7 @@ app.post("/login", async (req, res) => {
     if (user) {
         console.log("Ingelogd");
         req.session.displayName = user.displayName
+        req.session.userId = user._id.toString();
         const username = req.session.displayName;
         console.log(username);
         res.redirect("/shopPage");

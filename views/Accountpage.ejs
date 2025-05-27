@@ -1,5 +1,4 @@
 <%- include("partials/header") %>
-<form action="/Accountpage" method="POST">
   <main class="AccountPageMain">
       <h2>Account Instellingen</h2>
       <h3>Beheer je instellingen</h3>
@@ -9,31 +8,31 @@
         <!--Kunen hier een unieke ID linken met cookies-->
         <p id="accountID">
           <span id="accIDspan">ID:</span>
-          <span id="accIDnumber">4212-4235-3146</span>
+          <span id="accIDnumber"><%= user.id %></span>
         </p>
-
-      <form action="" id="accInformationForm" class="accForms" method="post">
-
         <article>
-          <input type="text" id="displayName" placeholder="Gebruikersnaam:">
+          <input type="text" id="displayName" value="<%= user.displayName %>" disabled>
+          <button class="editBtn" data-field="displayName">✏️</button>
         </article>
 
         <article>
-          <input type="text" id="email" placeholder="Email:">
+          <input type="text" id="email" value="<%= user.email %>" disabled>
+          <button class="editBtn" data-field="email">✏️</button>
         </article>
       </form>
 
         <article>
           <label for="language" id="languageLabel">Voorkeur Taal:</label><br>
           <!--Kunnen hier een functie toevoegen om meerdere talen te tonen voor onze website maar dat is misschien wat ingewikkeld.-->
-          <select id="language" name="language" class="form-control">
-            <option value="Nederlands">Nederlands</option>
-            <option value="Engels">Engels</option>
-            <option value="French">Frans</option>
-            <option value="German">Duits</option>
-            <option value="Swedish">Zweeds</option>
-            <option value="Finnish">Fins</option>
+          <select id="language" name="language" class="form-control" disabled>
+            <option value="Nederlands" <%= user.language === 'Nederlands'%>>Nederlands</option>
+            <option value="Engels" <%= user.language === 'Engels' %>>Engels</option>
+            <option value="French" <%= user.language === 'French' %>>Frans</option>
+            <option value="German" <%= user.language === 'German' %>>Duits</option>
+            <option value="Swedish" <%= user.language === 'Swedish' %>>Zweeds</option>
+            <option value="Finnish" <%= user.language === 'Finnish' %>>Fins</option>
           </select>
+          <button class="editBtn" data-field="language">✏️</button>
         </article>
     </section>
 
@@ -41,49 +40,51 @@
       <h2>Persoonlijke Gegevens</h2>
         <p>Beheer je naam en contact informatie. Deze gegevens zijn prive en zullen niet gedeeld worden met andere spelers. Bekijk de <span id="policyLink">Privacy Policy</span></p>
 
-      <form action="" class="accForms" method="post">
         <article>
-          <input type="text" id="firstName" placeholder="Voornaam:">
+          <input type="text" id="firstName" placeholder="Voornaam:" value="<%= user.firstName %>" disabled>
+          <button class="editBtn" data-field="firstName">✏️</button>
         </article>
 
         <article>
-          <input type="text" id="lastName" placeholder="Familie Naam:">
+          <input type="text" id="lastName" placeholder="Familie Naam:" value="<%= user.lastName %>" disabled>
+          <button class="editBtn" data-field="lastName">✏️</button>
         </article>
-      </form>
     </section>
 
     <section class="accPageSections" id="accAdressSection">
       <h2>Adres</h2>
-    <form action="" class="accForms" method="post">
         <article>
-          <input type="text" id="adresRegel1" placeholder="Adres Regel 1:">
+          <input type="text" id="addressLine1" placeholder="Adres Regel 1:" value="<%= user.addressLine1 || '' %>" disabled>
+          <button class="editBtn" data-field="addressLine1">✏️</button>
         </article>
 
         <article>
-          <input type="text" id="adresRegel2" placeholder="Adres Regel 2:">
+          <input type="text" id="addressLine2" placeholder="Adres Regel 2:" value="<%= user.addressLine2 || '' %>" disabled>
+          <button class="editBtn" data-field="addressLine2">✏️</button>
         </article>
 
         <article>
-          <input type="text" id="stad" placeholder="Stad:">
+          <input type="text" id="city" placeholder="Stad:" value="<%= user.city || '' %>" disabled>
+          <button class="editBtn" data-field="city">✏️</button>
         </article>
 
         <article>
-          <input type="text" id="gemeente" placeholder="Gemeente:">
+          <input type="text" id="region" placeholder="Gemeente:" value="<%= user.region || '' %>" disabled>
+          <button class="editBtn" data-field="region">✏️</button>
         </article>
 
         <article>
-          <input type="text" id="postcode" placeholder="Postcode:">
-      </form>
+          <input type="text" id="postalCode" value="<%= user.postalCode || '' %>" disabled>
+          <button class="editBtn" data-field="postalCode">✏️</button>
         </article>
 
         <article id="deleteArticle">
         <p>Verwijder je CHYN-account, inclusief alle persoonlijke informatie, aankopen, spelvoortgang, in-game content, je CHYN Wallet-saldo. Je account wordt permanent verwijderd na 30 dagen.</p>
-        <button id="saveChangesBtn">VERANDERINGEN OPSLAGEN</button>
         <button id="deleteAccBtn">ACCOUNT VERWIJDEREN</button>
         <button id="logOutBtn">UITLOGGEN</button>
         </article>
     </section>
 
     </main>
-  </form>
+    <script src="/TypeScript/accountEdit.js"></script>
 <%- include("partials/footer") %>
