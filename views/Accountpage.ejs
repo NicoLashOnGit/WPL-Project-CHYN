@@ -8,7 +8,7 @@
         <!--Kunen hier een unieke ID linken met cookies-->
         <p id="accountID">
           <span id="accIDspan">ID:</span>
-          <span id="accIDnumber"><=% user._id %></span>
+          <span id="accIDnumber"><%= user.id %></span>
         </p>
         <article>
           <input type="text" id="displayName" value="<%= user.displayName %>" disabled>
@@ -25,12 +25,12 @@
           <label for="language" id="languageLabel">Voorkeur Taal:</label><br>
           <!--Kunnen hier een functie toevoegen om meerdere talen te tonen voor onze website maar dat is misschien wat ingewikkeld.-->
           <select id="language" name="language" class="form-control" disabled>
-            <option value="Nederlands" <%= user.language === 'Nederlands' ? selected : '' %>>Nederlands</option>
-            <option value="Engels" <%= user.language === 'Engels' ? selected : '' %>>Engels</option>
-            <option value="French" <%= user.language === 'French' ? selected : '' %>>Frans</option>
-            <option value="German" <%= user.language === 'German' ? selected : '' %>>Duits</option>
-            <option value="Swedish" <%= user.language === 'Swedish' ? selected : '' %>>Zweeds</option>
-            <option value="Finnish" <%= user.language === 'Finnish' ? selected : '' %>>Fins</option>
+            <option value="Nederlands" <%= user.language === 'Nederlands'%>>Nederlands</option>
+            <option value="Engels" <%= user.language === 'Engels' %>>Engels</option>
+            <option value="French" <%= user.language === 'French' %>>Frans</option>
+            <option value="German" <%= user.language === 'German' %>>Duits</option>
+            <option value="Swedish" <%= user.language === 'Swedish' %>>Zweeds</option>
+            <option value="Finnish" <%= user.language === 'Finnish' %>>Fins</option>
           </select>
           <button class="editBtn" data-field="language">✏️</button>
         </article>
@@ -80,7 +80,6 @@
 
         <article id="deleteArticle">
         <p>Verwijder je CHYN-account, inclusief alle persoonlijke informatie, aankopen, spelvoortgang, in-game content, je CHYN Wallet-saldo. Je account wordt permanent verwijderd na 30 dagen.</p>
-        <button id="saveChangesBtn">VERANDERINGEN OPSLAGEN</button>
         <button id="deleteAccBtn">ACCOUNT VERWIJDEREN</button>
         <button id="logOutBtn">UITLOGGEN</button>
         </article>
