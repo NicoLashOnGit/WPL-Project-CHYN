@@ -9,9 +9,28 @@ body {
   background-color: #1e1e2f;
   font-family: sans-serif;
   width: 100%;
-  height: 100vh;
   color: white;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  min-height: 100vh; /* ensures full screen */
+}
+
+main {
+  flex: 1; /* main fills the space between nav and footer */
+}
+
+
+
+
 
 /* ###################################*/
 /*------------Home Page-------------*/
@@ -156,11 +175,7 @@ body {
   font-size: 1.6em;
   font-weight: 800;
   padding-bottom: .4em;
-  text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
+
 }
 
 .AccountPageMain>h3,.accPageSections>p{
@@ -168,11 +183,6 @@ body {
   font-weight: 0;
   color: lightgrey;
   padding-bottom: 1em;
-  text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
 }
 
 
@@ -201,6 +211,13 @@ border: black 1px solid;
   font-size: 1.2em;
   font-weight: 1000;
 }
+#deleteArticle>p,#languageLabel,.AccountPageMain>h3,.accPageSections>p,.AccountPageMain>h2,.accPageSections>h2{
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
 
 #deleteArticle{
   padding-top: 1em;
@@ -218,6 +235,14 @@ border: black 1px solid;
 }
 #deleteAccBtn{
   background-color:#DE3341;
+  padding: 1em;
+  border: none;
+  border-radius: 5%;
+  font-weight: 500;
+  color: white;
+}
+#logOutBtn{
+  background-color:orange;
   padding: 1em;
   border: none;
   border-radius: 5%;
@@ -421,6 +446,7 @@ border: black 1px solid;
   max-width: 80%;
 }
 
+
 #RegistrationButton{
   padding: 0.3em;
   font-size: 1.3em;
@@ -525,17 +551,23 @@ border: black 1px solid;
 #favoriteCharactersMain {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   width: 100%;
+  padding: 1em;
 }
 
 .favoritedCharacters {
-  display: flex;
-  padding: 1em;
+min-width: 50%;
+max-width: 50%;
+justify-content: center;
+flex-wrap: wrap;
+display: flex;
+padding-bottom: 1em;
 }
 
 .FavoriteCharacterPortraitsAndCosmeticsSections {
   position: relative;
+  height: 252px;
+  
 }
 
 /* BUTTONS*/
@@ -548,12 +580,12 @@ border: black 1px solid;
   cursor: pointer;
 }
 
-.favoritedBtns,
-.favoriteCharacterCosmeticBtns {
+.favoritedBtns,.favoriteCharacterCosmeticBtns {
   position: absolute;
   background: transparent;
   border: none;
   cursor: pointer;
+  
 }
 
 .favoritedBtns {
@@ -585,9 +617,12 @@ border: black 1px solid;
 
 .favouritedCharacterTexts {
   border: white 1px solid;
-  width: 90%;
   height: 250px;
+  width: 50%;
   padding-left: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .favoriteCharacterNames {
@@ -923,6 +958,14 @@ a {
   
 }
 
+.carouselItemPriceDiv{
+  display: flex;
+}
+
+#vbucksCostImage{
+  width: 32px;
+}
+
 #wrapperTitle{
   font-size: 2em;
   text-align: center;
@@ -949,6 +992,7 @@ a {
   padding: 16px;
   color: white;
   max-width: 250px;
+  cursor: pointer;
 }
 
 .carousel-card img {
@@ -1059,10 +1103,10 @@ a {
   }
   /*##################*/
 
-  /* Account page */
-
-  /* ##########################*/
 }
+  /* ##########################*/
+  
+
 
 /* Large Devices (Large Desktop) */
 @media only screen and (max-width: 1024px) {
@@ -1168,33 +1212,6 @@ a {
   }
   /*##################*/
   /* FAVORITE PAGE*/
-
-  .favoritedCharacters {
-    flex-direction: column;
-  }
-
-  .favoriteCharacterPortraits {
-    width: 100%;
-  }
-
-  .favouritedCharacterTexts {
-    padding: 0em;
-    width: 100%;
-  }
-  .favoriteCharacterNames {
-    font-size: 1.5em;
-    padding-left: 1em;
-  }
-  .favoriteCharactersStatictics {
-    padding-left: 0.5em;
-  }
-
-  #favoriteCharacterCosmeticBtn1 {
-    right: 32.5%;
-  }
-  #favoriteCharacterCosmeticBtn2 {
-    left: 32.5%;
-  }
 
   /*##################*/
   /* Account page */
@@ -1309,34 +1326,6 @@ a {
 
   /* FAVORITE PAGE*/
 
-  .favoritedCharacters {
-    flex-direction: column;
-  }
-
-  .favoriteCharacterPortraits {
-    width: 100%;
-  }
-
-  .favouritedCharacterTexts {
-    width: 100%;
-  }
-  .favoriteCharacterNames {
-    font-size: 1.5em;
-    padding-left: 0.5em;
-  }
-  .favoriteCharactersStatictics {
-    padding-left: 0.5em;
-    padding-right: 0.3em;
-    font-size: 1.25em;
-  }
-
-  #favoriteCharacterCosmeticBtn1 {
-    right: 30%;
-  }
-  #favoriteCharacterCosmeticBtn2 {
-    left: 30%;
-  }
-  /*##################*/
 }
 
 /* Login Queries */

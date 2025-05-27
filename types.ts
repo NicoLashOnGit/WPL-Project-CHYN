@@ -13,6 +13,12 @@ export interface BlacklistedCharacter {
     reason: string;
 }
 
+export interface PurchaseItem {
+    name: string;
+    image: string;
+    type: "backpack" | "pickaxe" | "glider";
+}
+
 export interface User {
     _id: ObjectId;
     id: number;
@@ -33,4 +39,5 @@ export interface User {
     postalCode?: string;
     vbucks: number;
     blacklist?: BlacklistedCharacter[];
+    purchases?: PurchaseItem[];
 }

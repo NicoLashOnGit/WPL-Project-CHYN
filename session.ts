@@ -5,7 +5,8 @@ import session, { MemoryStore } from "express-session";
 
 declare module 'express-session' {
     export interface SessionData {
-        displayName?: string;
+        displayName?: string,
+        userId: string;
     }
 }
 

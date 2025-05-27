@@ -1,9 +1,5 @@
 <%- include("partials/header") %>
-<form action="/shopPage" method="POST">
     <main class="shopPageMain">
-
-
-
     <section class="spotlightSection">
         <img src="/Images/Characters/CassidyQuinnSpotlight.png" alt="">
         <span class="spotlightText">
@@ -21,6 +17,17 @@
         <article class="carousel-card">
           <img src="<%= backpack.images.icon %>" alt="Group of characters" />
           <h3><%= backpack.description %></h3>
+          <div class="carouselItemPriceDiv">
+            <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCostImage">
+            <p id="vbucksCounter"><%= prices.backpack %></p>
+          </div>
+          <form action="/buyItem" method="POST">
+            <input type="hidden" name="name" value="<%= backpack.name %>">
+            <input type="hidden" name="image" value="<%= backpack.images.icon %>">
+            <input type="hidden" name="type" value="backpack">
+            <input type="hidden" name="price" value="<%= prices.backpack %>">
+            <button type="submit">Koop</button>
+          </form>
         </article>
         <% }); %>
 
@@ -37,6 +44,17 @@
         <article class="carousel-card">
           <img src="<%= pickaxe.images.icon %>" alt="Group of characters" />
           <h3><%= pickaxe.description %></h3>
+                    <div class="carouselItemPriceDiv">
+            <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCostImage">
+            <p id="vbucksCounter"><%= prices.pickaxe %></p>
+          </div>
+          <form action="/buyItem" method="POST">
+            <input type="hidden" name="name" value="<%= pickaxe.name %>">
+            <input type="hidden" name="image" value="<%= pickaxe.images.icon %>">
+            <input type="hidden" name="type" value="pickaxe">
+            <input type="hidden" name="price" value="<%= prices.pickaxe %>">
+            <button type="submit">Koop</button>
+          </form>
         </article>
         <% }); %>
 
@@ -53,6 +71,17 @@
         <article class="carousel-card">
           <img src="<%= glider.images.icon %>" alt="Group of characters" />
           <h3><%= glider.description %></h3>
+                    <div class="carouselItemPriceDiv">
+            <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCostImage">
+            <p id="vbucksCounter"><%= prices.glider %></p>
+          </div>
+          <form action="/buyItem" method="POST">
+            <input type="hidden" name="name" value="<%= glider.name %>">
+            <input type="hidden" name="image" value="<%= glider.images.icon %>">
+            <input type="hidden" name="type" value="glider">
+            <input type="hidden" name="price" value="<%= prices.glider %>">
+            <button type="submit">Koop</button>
+          </form>
         </article>
         <% }); %>
 
@@ -108,5 +137,4 @@
     </div>
 
     </main>
-</form>
   <%- include("partials/footer") %>

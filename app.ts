@@ -1,10 +1,10 @@
 import dotenv from "dotenv";
 dotenv.config();
 import express, {Request, Response} from "express";
-import { MongoClient, ReturnDocument } from "mongodb";
+import { MongoClient, ReturnDocument, ObjectId } from "mongodb";
 import { Characters, Type, Rarity, Series, Set, Introduction, Images, MetaTags} from "./public/TypeScript/characterAPI.ts";
-import {connect, createUser, findUserByCredentials, getUsers, addFavoriteCharacter, updateUserAccountInfo, collection, addBlacklistedCharacter } from "./database.ts";
-import { User , FavoriteCharacter} from "./types";
+import {connect, createUser, findUserByCredentials, getUsers, addFavoriteCharacter, updateUserAccountInfo, collection, addBlacklistedCharacter, addPurchaseItem } from "./database.ts";
+import { User , FavoriteCharacter, PurchaseItem} from "./types";
 import session from "./session";
 import { title } from "process";
 import { stat } from "fs";
@@ -50,9 +50,46 @@ app.get("/", (req, res) => {
     res.render("Landingpage", {title: "Landingpage"})
 });
 
-app.get("/Accountpage", (req,res) => {
-    res.render("Accountpage", {title: "Account"})
+app.get("/Accountpage", async (req,res) => {
+    const userId = req.session.userId;
+    if (!userId) {
+        res.redirect("/Loginpage");
+        return;
+    }
+    const users = await getUsers();
+    const user = users.find(u => u._id.toString() === userId);
+    if (!user) {
+        res.status(404).send("Gebruiker niet gevonden");
+        return
+    }
+    res.render("Accountpage", {title: "Account", user})
 })
+
+app.post("/Accountpage/updateField", async (req, res) => {
+    const userId = req.session.userId;
+    const { field, value } = req.body;
+
+    if (!userId) {
+        res.status(401).json({ message: "Niet ingelogd"});
+        return
+    }
+
+    try {
+        const update = { [field]: value};
+        await collection.updateOne(
+            { _id: new ObjectId(userId) },
+            { $set: update }
+        );
+
+        if (field === "displayName") {
+            req.session.displayName = value;
+        }
+        res.status(200).json({ message: "Gegevens bijgewerkt." });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Fout bij updaten van accountgegevens." })
+    }
+});
 
 app.get("/blacklist", async (req, res) => {
     const displayName = req.session.displayName;
@@ -99,6 +136,53 @@ app.post("/blacklist", async (req, res) => {
         return
     }
 });
+
+/* Shop page */
+
+app.post("/buyItem", async (req, res) => {
+  const displayName = req.session.displayName;
+  const { name, image, price, type } = req.body;
+
+  if (!displayName) {
+    res.status(401).json({ message: "Niet ingelogd" })
+    return
+  }
+
+  try {
+    const users = await getUsers();
+    const user = users.find(u => u.displayName === displayName);
+
+    if (!user) {
+      res.status(404).json({ message: "Gebruiker niet gevonden" });
+      return 
+    }
+
+    if (user.vbucks < price) {
+      res.status(400).json({ message: "Niet genoeg V-Bucks" });
+      return 
+    }
+
+    const updateResult = await collection.updateOne(
+      { _id: user._id },
+      {
+        $inc: { vbucks: -price },
+        $addToSet: { purchases: { name, image, type } } 
+      }
+    );
+
+    if (updateResult.modifiedCount === 0) {
+      res.status(500).json({ message: "Fout bij aankoop" })
+      return
+    }
+
+    res.status(200).json({ message: "Aankoop gelukt", newVbucks: user.vbucks - price });
+  } catch (error) {
+    console.error("Fout bij aankoop:", error);
+    res.status(500).json({ message: "Interne serverfout" });
+  }
+});
+
+/* ------------------------------------------*/
 
 app.get("/CharacterInfo", async (req,res) => {
     const name = (req.query.name as string)?.toLowerCase();
@@ -227,6 +311,13 @@ app.get("/shopPage", async (req,res) => {
         const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
         const data = await response.json();
 
+
+        const prices = {
+           backpack: 200,
+           pickaxe: 300,
+           glider: 250
+        };
+
         const backpacks = (data.data as Characters[]).filter (
             (character) => character.type.value === "backpack" && character.introduction?.chapter === "6" && character.introduction.season === "1"
         );
@@ -236,7 +327,7 @@ app.get("/shopPage", async (req,res) => {
         const gliders = (data.data as Characters[]).filter (
             (character) => character.type.value === "glider" && character.introduction?.chapter ==="6" && character.introduction?.season ==="1"
         )
-        res.render("shopPage", {title: "Shop", backpacks, pickaxes, gliders})
+        res.render("shopPage", {title: "Shop", backpacks, pickaxes, gliders, prices})
     } catch (error) {
         console.error("Error met ophalen van karakter data:", error);
         res.status(500).send("Error met ophalen van karakter data")
@@ -258,6 +349,7 @@ app.post("/login", async (req, res) => {
     if (user) {
         console.log("Ingelogd");
         req.session.displayName = user.displayName
+        req.session.userId = user._id.toString();
         const username = req.session.displayName;
         console.log(username);
         res.redirect("/shopPage");
