@@ -364,6 +364,11 @@ app.get("/Loginpage", (req, res) => {
 })
 
 app.get("/Characterpage", async (req, res) => {
+
+    if (!req.session.displayName) {
+    return res.redirect("/Loginpage");
+    }
+
     try {
         const response = await fetch("https://fortnite-api.com/v2/cosmetics/br");
         const data = await response.json();
@@ -398,6 +403,9 @@ app.get("/RegistrationPage", (req, res) => {
 } )
 
 app.get("/shopPage", async (req,res) => {
+        if (!req.session.displayName) {
+        return res.redirect("/Loginpage");
+        }
         try {
         const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
         const data = await response.json();
@@ -545,7 +553,7 @@ app.post("/Accountpage/delete", async (req, res) => {
     }
 })
 
-app.post("/logout", (req, res) => {
+app.post("/Accountpage/logout", (req, res) => {
     req.session.destroy(() => {
         res.status(200).json({ message: "Uitgelogd" })
     })
