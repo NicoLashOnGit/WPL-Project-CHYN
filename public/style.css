@@ -1187,7 +1187,9 @@ a {
     z-index: 1100;
   }
 
-
+.spotlightText{
+  display: none;
+}
 
   #seccontainer {
     flex-direction: column;
