@@ -4,21 +4,21 @@
     
     <img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="loginLogo">
     <h2 id="RegistrationMenuTitle">Registreer</h2>
-    <form id="RegistrationForm" action="#" method="post">
+    <form id="RegistrationForm" action="/register" method="POST">
         <label for="email">Email Adres:</label><br>
-        <input type="text" id="email" required><br>
+        <input type="text" id="email" name="email" required><br>
       
         <label for="password">Wachtwoord:</label><br>
-        <input type="text" id="password" required><br>
+        <input type="text" id="password" name="password" required><br>
 
         <label for="firstName">Voornaam:</label><br>
-        <input type="text" id="firstName" required><br>
+        <input type="text" id="firstName" name="firstName" required><br>
 
         <label for="lastName">Achternaam:</label><br>
-        <input type="text" id="lastName" required><br>
+        <input type="text" id="lastName" name="lastName" required><br>
 
         <label for="displayName">Gebruikersnaam:</label><br>
-        <input type="text" id="displayName" required><br>
+        <input type="text" id="displayName" name="displayName" required><br>
 
         <label for="countryLabel">Land:</label><br>
         <select id="country" name="country" class="form-control">
@@ -267,22 +267,19 @@
             <option value="Zambia">Zambia</option>
             <option value="Zimbabwe">Zimbabwe</option>
         </select>
-    </form>
 
-    <label class="newsAndTos">
-        <input type="checkbox" id="newsLetter">
-        <span>Ontvang nieuws, enquêtes en speciale aanbiedingen.</span>
-      </label>
-      
-      <label class="newsAndTos">
-        <input type="checkbox" id="agreeWithTOS">
-        <span>Ik ga akkoord met de <a href="#">Terms of Service</a></span>
-      </label>
-      
+        <label class="newsAndTos">
+          <input type="checkbox" id="newsLetter">
+          <span>Ontvang nieuws, enquêtes en speciale aanbiedingen.</span>
+        </label>
+        
+        <label class="newsAndTos">
+          <input type="checkbox" id="agreeWithTOS">
+          <span>Ik ga akkoord met de <a href="#">Terms of Service</a></span>
+        </label>
+
         <button id="RegistrationButton" type="submit">Account Aanmaken</button>
+    </form>
     </article>
 </main>
-
 <%- include("partials/footer") %>
-
-</html>

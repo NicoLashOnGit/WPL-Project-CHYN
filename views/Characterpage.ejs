@@ -3,12 +3,16 @@
     <% characters.forEach(character => { %>
             <article id="<%= character.id %>" class="Characters">
                 <div class="characterBtnContainer">
-                    <button class="characterPageBtns" id="blacklistBtn">
-                        <img src="/Images/ButtonImages/blackEmptyFavouriteStar.png" alt="Favorite" class="characterPageBtnImages">
-                    </button>
-                    <button class="characterPageBtns" id="favouriteBtn">
-                        <img src="/Images/ButtonImages/blackmarkButton.png" alt="Blacklist" class="characterPageBtnImages">
-                    </button>
+    	            <form class="favouriteForm" data-name="<%= character.name %>" data-image="<%= character.images.icon %>">
+                        <button class="characterPageBtns" id="blacklistBtn" type="submit">
+                            <img src="/Images/ButtonImages/blackEmptyFavouriteStar.png" alt="Favorite" class="characterPageBtnImages">
+                        </button>
+                    </form>
+                    <form class="blacklistForm" data-name="<%= character.name %>" data-image="<%= character.images.icon %>">
+                        <button class="characterPageBtns" id="favouriteBtn" type="submit">
+                            <img src="/Images/ButtonImages/blackmarkButton.png" alt="Blacklist" class="characterPageBtnImages">
+                        </button>
+                    </form>
                 </div>
                 <img src="<%= character.images.icon %>" alt="<%= character.name %>" class="characterPortraits">
                 <h2 class="characterNames"><%= character.name %></h2>
@@ -16,3 +20,5 @@
         <% }); %>
 </main>
 <%- include("partials/footer") %>
+
+

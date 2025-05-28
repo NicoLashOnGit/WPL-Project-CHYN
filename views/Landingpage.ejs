@@ -1,35 +1,64 @@
 <%- include("partials/header") %>
 <form action="/Landingpage" method="POST">
-    <main id = "Mainlanding">
+    <main id="Mainlanding">
+
         <article class="projectArticles">
-            <a href="#"><img src="Images/Backgrounds/Fifa.jpg" alt="" class="ProjectImages"></a>
-            <a href="http://" class="ProjectTitles">Fifa</a>
-        </article>
-        
-        <article class="projectArticles">
-            <a href="/Homepage"><img src="Images/Backgrounds/Fortnite Wallpaper.png" alt="" class="ProjectImages"></a>
-            <a href="/Homepage" class="ProjectTitles">Fortnite</a>
+            <a href="#" id="fifa-link"><img src="Images/Backgrounds/Fifa.jpg" alt="" class="ProjectImages"></a>
+            <a href="#" class="ProjectTitles">Fifa</a>
         </article>
 
         <article class="projectArticles">
-            <a href="#"><img src="Images/Backgrounds/LegoMasters.jpg" alt="" class="ProjectImages"></a>
-            <a href="http://" class="ProjectTitles">Lego Masters</a>
+            <a href="/shopPage" id="fortnite-link"><img src="Images/Backgrounds/Fortnite Wallpaper.png" alt="" class="ProjectImages"></a>
+            <a href="/shopPage" class="ProjectTitles">Fortnite</a>
         </article>
 
         <article class="projectArticles">
-            <a href="#"><img src="Images/Backgrounds/LOTR.jpg" alt="" class="ProjectImages"></a>
-            <a href="http://" class="ProjectTitles">Lord of the Rings</a>
+            <a href="#" id="lego-link"><img src="Images/Backgrounds/LegoMasters.jpg" alt="" class="ProjectImages"></a>
+            <a href="#" class="ProjectTitles">Lego Masters</a>
         </article>
 
         <article class="projectArticles">
-            <a href="#"><img src="Images/Backgrounds/MagicTheGathering.jpg" alt="" class="ProjectImages"></a>
-            <a href="http://" class="ProjectTitles">Magic the Gathering</a>
+            <a href="#" id="lotr-link"><img src="Images/Backgrounds/LOTR.jpg" alt="" class="ProjectImages"></a>
+            <a href="#" class="ProjectTitles">Lord of the Rings</a>
         </article>
 
         <article class="projectArticles">
-            <a href="#"><img src="Images/Backgrounds/Pokemon.jpg" alt="" class="ProjectImages"></a>
-            <a href="http://" class="ProjectTitles">Pokemon</a>
+            <a href="#" id="mtg-link"><img src="Images/Backgrounds/MagicTheGathering.jpg" alt="" class="ProjectImages"></a>
+            <a href="#" class="ProjectTitles">Magic the Gathering</a>
         </article>
+
+        <article class="projectArticles">
+            <a href="#" id="pokemon-link"><img src="Images/Backgrounds/Pokemon.jpg" alt="" class="ProjectImages"></a>
+            <a href="#" class="ProjectTitles">Pokemon</a>
+        </article>
+
     </main>
 </form>
+<script>
+  document.getElementById('Mainlanding').addEventListener('click', function(event) {
+    let target = event.target;
+    while (target && target.tagName !== 'A' && target.id !== 'Mainlanding') {
+      target = target.parentNode;
+    }
+    if (!target || target.id === 'Mainlanding') return;
+
+    const loggedIn = localStorage.getItem('loggedIn') === 'true';
+
+    if (!loggedIn) {
+      event.preventDefault();
+      alert('Je bent nog niet ingelogd. Log eerst in.');
+      return;
+    }
+
+    if (target.id === 'fortnite-link') {
+      return;
+    } else {
+      event.preventDefault();
+      alert('Je bent niet geregistreerd voor deze content.');
+    }
+  });
+</script>
+
+
+
 <%- include("partials/footer") %>
