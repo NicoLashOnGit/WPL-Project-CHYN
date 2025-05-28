@@ -372,6 +372,9 @@ app.get("/RegistrationPage", (req, res) => {
 } )
 
 app.get("/shopPage", async (req,res) => {
+        if (!req.session.displayName) {
+        return res.redirect("/Loginpage");
+        }
         try {
         const response = await fetch("https://fortnite-api.com/v2/cosmetics/br")
         const data = await response.json();
