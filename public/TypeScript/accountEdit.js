@@ -33,5 +33,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const result = await response.json();
         alert(result.message);    
     }
+
+    const deleteBtn = document.getElementById("deleteAccBtn");
+    if (deleteBtn) {
+        deleteBtn.addEventListener("click", async function() {
+            const confirmed = confirm("Weet je zeker dat je je account permanent wil verwijderen? Dit kan niet ongedaan gemaakt worden!")
+            if (confirmed) {
+                const response = await fetch("/Accountpage/delete", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json"}
+                });
+                const result = await response.json();
+                alert(result.message);
+                if (response.ok) {
+                    window.location.href = "/Landingpage"
+                }
+            }
+        })
+    }
 });
 
