@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const gameCount = article.querySelector('.gameCount');
         const WinRate = article.querySelector('.WinRate');
         const characterName= article.querySelector('.favoriteCharacterNames').textContent.trim();
-        const vbuckCount = article.querySelector('vbucksCounter')
 
         function updateStats() {
             gameCount.textContent = `\xA0 ${winCount + loseCount}`
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         winIncreaseButton.addEventListener('click', () => {
             winCount++;
-            vbuckCount= vbuckCount+200;
             updateStats();
         });
         winDecreaseButton.addEventListener('click', () => {

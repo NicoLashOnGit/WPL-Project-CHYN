@@ -30,7 +30,7 @@ export async function getNextId(){
 
 export async function createUser(user:User){
     user.id = await getNextId();
-    user.vbucks = 800;
+    user.vbucks = 80000;
     return await collection.insertOne(user);
 }
 

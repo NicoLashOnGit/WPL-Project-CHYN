@@ -2,6 +2,12 @@
 
 <main id="favoriteCharactersMain">
     <% characters.forEach(character => { %>
+
+        <article id="vbucksCounterArticleHidden">
+            <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCounterImageHidden">
+            <p id="vbucksCounter"><%= user?.vbucks ?? 0 %></p>
+        </article>
+
     <article class="favoritedCharacters" data-wins="<%= character.wins || 0 %>" data-losses="<%= character.losses || 0 %>">
         <section class="FavoriteCharacterPortraitsAndCosmeticsSections">
             <img src="<%= character.image %>" alt="" class="favoriteCharacterPortraits">
@@ -66,3 +72,11 @@
 <script src="/TypeScript/shopPage.js"></script>
 <script src="/TypeScript/cosmeticmodal.js"></script>
 <%- include("partials/footer") %>
+
+<style>
+    #vbucksCounterArticleHidden, #vbucksCounterImageHidden{
+        display: none;
+    }
+
+
+</style>
