@@ -47,7 +47,9 @@
             <p id="vbucksCounter"><%= user?.vbucks ?? 0 %></p>
         </article>
         
-        <a href="/Accountpage" class=""><img src="/Images/Logos/Placeholder logo.png" alt="" id="accountImage"></a>
+        <a href="<%= user ? '/Accountpage' : '/Loginpage' %>">
+        <img src="/Images/Logos/Placeholder logo.png" alt="Account" id="accountImage">
+        </a>
     </div>
 </nav>
 <body>
