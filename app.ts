@@ -33,9 +33,6 @@ app.use(async (req, res, next) => {
     next();
 });
 
-const uri = "mongodb+srv://CHYN-User:t5iKaBbTegc8Ghpw@userdb.tsld2b6.mongodb.net/"
-const client = new MongoClient(uri);
-
 
 
 app.use(express.static("public", {
