@@ -560,6 +560,7 @@ border: black 1px solid;
   flex-wrap: wrap;
   width: 100%;
   padding: 1em;
+  justify-content: center;
 }
 
 .favoritedCharacters {
@@ -1105,11 +1106,17 @@ a {
 /* Medium Devices (Tablets) */
 @media only screen and (max-width: 1440px) {
   /* BLACKLIST PAGE*/
-  .blacklistedCharacters {
-    width: 70%;
-  }
-  /*##################*/
 
+  /*##################*/
+  #favoriteCharactersMain {
+    justify-content: center;
+  }
+  
+  .favoritedCharacters {
+  min-width: 80%;
+  max-width: 80%;
+  }
+  
 }
   /* ##########################*/
   
@@ -1139,8 +1146,17 @@ a {
   }
   /*##################*/
 
-  /*Account page */
- 
+  /*favorite page */
+   /*##################*/
+   #favoriteCharactersMain {
+    justify-content: center;
+  }
+  
+  .favoritedCharacters {
+  min-width: 80%;
+  max-width: 80%;
+
+  }
   /* ######################*/
 }
 
@@ -1219,7 +1235,10 @@ a {
   }
   /*##################*/
   /* FAVORITE PAGE*/
-
+  .favoritedCharacters {
+    min-width: 100%;
+    max-width: 100%;
+    }
   /*##################*/
   /* Account page */
  
