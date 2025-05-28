@@ -959,6 +959,17 @@ a {
 /*------------Shop Page-------------*/
 /* ###################################*/
 
+.buyBtns{
+    background: none ;
+    background-color: #7FB9F1;
+    padding: 1em;
+    border: none;
+    border-radius: 5%;
+    font-weight: 1000;
+    color: white;
+  }
+
+
 .carousel-wrapper {
   position: relative;
   display: flex;
