@@ -519,7 +519,7 @@ app.post("/Accountpage/delete", async (req, res) => {
     }
 })
 
-app.post("/logout", (req, res) => {
+app.post("/Accountpage/logout", (req, res) => {
     req.session.destroy(() => {
         res.status(200).json({ message: "Uitgelogd" })
     })
