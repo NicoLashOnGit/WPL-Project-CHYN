@@ -344,7 +344,7 @@ border: black 1px solid;
 #Mainlanding {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -1412,4 +1412,66 @@ a {
 
 .faq-item.active .answer {
   display: block;
+}
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: sans-serif;
+  padding-left: .5em;
+}
+
+.icon {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.toggle {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 14px;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tooltip:hover .tooltip-text,
+.tooltip:focus-within .tooltip-text,
+.toggle:checked + .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
