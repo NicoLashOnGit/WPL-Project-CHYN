@@ -328,9 +328,9 @@ app.get("/Homepage", (req,res) => {
     res.render("Homepage", {title: "Home"})
 })
 
-app.get("/Loginpage", (req, res) => {
-    res.render("Loginpage", {title: "Login"})
-})
+app.get("/login", (req, res) => {
+  res.render("Loginpage", { title: "Login" });
+});
 
 app.get("/Characterpage", async (req, res) => {
     try {
@@ -417,6 +417,15 @@ app.post("/login", async (req, res) => {
         console.log("Login mislukt");
         res.status(401).send("Ongeldige gebruikersnaam of wachtwoord");
     }
+});
+
+app.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('Fout bij uitloggen:', err);
+    }
+    res.redirect('/login');
+  });
 });
 
 app.post("/favourite", async (req, res) => {
