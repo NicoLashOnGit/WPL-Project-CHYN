@@ -9,22 +9,18 @@
                 <img src="/Images/ButtonImages/FilledGoldFavouriteStar.png" alt="" class="favoritedBtnImages">
             </button>
 
-            <button class="favoriteCharacterCosmeticBtns" onclick="openCosmeticPopup('<%= character.name %>', 1)">
-                <img 
-                    src="<%= character.cosmetic1 || '/Images/ButtonImages/fortnite_weapon_slot.png' %>" 
-                    alt="" 
-                    class="favoriteCharacterCosmeticImages"
-                >
+            <button class="favoriteCharacterCosmeticBtns" id="favoriteCharacterCosmeticBtn1" data-cosmetic-type="backpack" data-carousel-id="carousel-<%= character.name.replace(/\s/g, '') %>-backpack">
+                <img src="<%= character.cosmetic1 || '/Images/ButtonImages/fortnite_weapon_slot.png' %>" alt="" class="favoriteCharacterCosmeticImages">
             </button>
-            <button class="favoriteCharacterCosmeticBtns" onclick="openCosmeticPopup('<%= character.name %>', 2)">
-                <img 
-                    src="<%= character.cosmetic2 || '/Images/ButtonImages/fortnite_weapon_slot.png' %>" 
-                    alt="" 
-                    class="favoriteCharacterCosmeticImages"
-                >
+
+            <button class="favoriteCharacterCosmeticBtns" id="favoriteCharacterCosmeticBtn2" data-cosmetic-type="pickaxe" data-carousel-id="carousel-<%= character.name.replace(/\s/g, '') %>-pickaxe">
+                <img src="<%= character.cosmetic2 || '/Images/ButtonImages/fortnite_weapon_slot.png' %>" alt="" class="favoriteCharacterCosmeticImages">
+            </button>
+
+            <button class="favoriteCharacterCosmeticBtns" id="favoriteCharacterCosmeticBtn3" data-cosmetic-type="glider" data-carousel-id="carousel-<%= character.name.replace(/\s/g, '') %>-glider">
+                <img src="<%= character.cosmetic3 || '/Images/ButtonImages/fortnite_weapon_slot.png' %>" alt="" class="favoriteCharacterCosmeticImages">
             </button>
         </section>
-
         <section class="favouritedCharacterTexts">
             <h3 class="favoriteCharacterNames"><%= character.name %></h3>
 
@@ -55,16 +51,18 @@
     <% }); %>
 </main>
 
-<div id="cosmeticPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
-    background:white; padding:20px; border:2px solid black; z-index:1000;">
-    <div id="cosmeticOptions" style="display:flex; flex-wrap:wrap; gap:10px; max-height:300px; overflow-y:auto;"></div>
-    <button onclick="saveCosmeticSelection()">Opslaan</button>
-    <button onclick="document.getElementById('cosmeticPopup').style.display='none'">Sluiten</button>
+<div id="cosmeticCarouselOverlay" style="display: none;">
+    <div id="cosmeticCarouselModal">
+        <button id="closeCarouselModal" style="position: absolute;top: 10px;right: 20px;font-size: 2rem;">&times;</button>
+        <div id="carouselModalContent"></div>
+    </div>
 </div>
-<script id="userPurchasesData" type="application/json">
-  <%= JSON.stringify(user?.purchases || []) %>
+<style>
+
+</style>
+<script>
+    window.userPurchases = <%- JSON.stringify(user && user.purchases? user.purchases : []) %>
 </script>
-
-<script src="/public/TypeScript/cosmeticmodal.js"></script>
-
+<script src="/TypeScript/shopPage.js"></script>
+<script src="/TypeScript/cosmeticmodal.js"></script>
 <%- include("partials/footer") %>

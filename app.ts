@@ -207,7 +207,7 @@ app.post("/buyItem", async (req, res) => {
 
 app.post("/favoritePage/updateCosmetics", async (req, res) => {
     const displayName = req.session.displayName;
-    const { name, cosmetic1, cosmetic2 } = req.body;
+    const { name, cosmetic1, cosmetic2, cosmetic3 } = req.body;
 
     if (!displayName) {
       res.status(401).json({ message: "Niet ingelogd" });
@@ -223,14 +223,14 @@ app.post("/favoritePage/updateCosmetics", async (req, res) => {
             return 
         }
 
+        const updateFields: any = {};
+        if (cosmetic1) updateFields["favorites.$.cosmetic1"] = cosmetic1;
+        if (cosmetic2) updateFields["favorites.$.cosmetic2"] = cosmetic2;
+        if (cosmetic3) updateFields["favorites.$.cosmetic3"] = cosmetic3;
+
         const updateResult = await collection.updateOne(
             { _id: user._id, "favorites.name": name },
-            {
-                $set: {
-                    "favorites.$.cosmetic1": cosmetic1,
-                    "favorites.$.cosmetic2": cosmetic2
-                }
-            }
+            { $set: updateFields }
         );
 
         if (updateResult.modifiedCount > 0) {
@@ -497,6 +497,22 @@ app.post("/Accountpage", async (req, res) => {
         res.status(500).send("Fout bij updaten van accountgegevens.");
     }
 });
+
+app.post("/Accountpage/delete", async (req, res) => {
+    const userId = req.session.userId;
+    if (!userId) {
+        res.status(401).json({ message: "Niet ingelogd" })
+        return;
+    }
+    try {
+        await collection.deleteOne ({ _id: new ObjectId(userId) });
+        req.session.destroy(() => {});
+        res.status(200).json({ message: "Account succesvol verwijdert." });
+    } catch (error) {
+        console.error("Fout bij verwijderen van account:", error);
+        res.status(500).json({ message: "Fout bij verwijderen van account. "});
+    }
+})
 
 app.listen(app.get("port"), async() => {
     await connect();

@@ -1,69 +1,65 @@
-let currentCharacter = null;
-let cosmeticSlot = null;
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.favoriteCharacterCosmeticBtns').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const article = btn.closest('article');
+            const characterName = article.querySelector('.favoriteCharacterNames').textContent.trim();
+            const type = btn.getAttribute('data-cosmetic-type');
+            const purchases = window.userPurchases || [];
+            const items = purchases.filter(item => item.type === type);
 
-const userPurchases = JSON.parse(document.getElementById("userPurchasesData").textContent);
-function openCosmeticPopup(characterName, slot) {
-    currentCharacter = characterName;
-    cosmeticSlot = slot;
+            let carouselHtml = `
+                <div class="carousel-wrapper" style="display:flex;align-items:center;">
+                    <button id="carouselPrevBtn-modal">&lt;</button>
+                    <div class="cosmetic-carousel" id="carousel-modal" style="flex:1;">
+                        ${items.map(item => 
+                            `<img src="${item.image}" alt="${item.name}" class="selectable-cosmetic" data-cosmetic-image="${item.image}" style="cursor:pointer;">`
+                        ).join('')}
+                    </div>
+                    <button id="carouselNextBtn-modal">&gt;</button>
+                </div>
+            `;
 
-    const container = document.getElementById("cosmeticOptions");
-    container.innerHTML = "";
+            document.getElementById('carouselModalContent').innerHTML = carouselHtml;
+            document.getElementById('cosmeticCarouselOverlay').style.display = 'flex';
 
-    userPurchases.forEach(item => {
-      const img = document.createElement("img");
-      img.src = item.image;
-      img.style.width = "100px";
-      img.style.cursor = "pointer";
-      img.style.margin = "5px";
-      img.alt = item.name || "";
-      img.title = item.name || "";
+            if (typeof setupCarousel === "function") {
+                setupCarousel("carousel-modal", "carouselPrevBtn-modal", "carouselNextBtn-modal");
+            }
 
-      img.onclick = () => {
-        selectCosmetic(item.image);
-      };
+            document.querySelectorAll('.selectable-cosmetic').forEach(img => {
+                img.addEventListener('click', async function() {
+                    const cosmeticImage = img.getAttribute('data-cosmetic-image');
+                    let payload = { name: characterName };
+                    if (type === "backpack") payload.cosmetic1 = cosmeticImage;
+                    if (type === "pickaxe") payload.cosmetic2 = cosmeticImage;
+                    if (type === "glider") payload.cosmetic3 = cosmeticImage;
 
-      container.appendChild(img);
+                    const res = await fetch('/favoritePage/updateCosmetics', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await res.json();
+
+                    btn.querySelector('img').src = cosmeticImage;
+
+                    document.getElementById('cosmeticCarouselOverlay').style.display = 'none';
+                    document.getElementById('carouselModalContent').innerHTML = "";
+
+                    if(result && result.message) alert(result.message);
+                });
+            });
+        });
     });
 
-    document.getElementById("cosmeticPopup").style.display = "block";
-}
-
-let selectedCosmetics = { 1: null, 2: null };
-
-function selectCosmetic(imageUrl) {
-    selectedCosmetics[cosmeticSlot] = imageUrl;
-
-    const container = document.getElementById("cosmeticOptions");
-    [...container.children].forEach(img => {
-      img.style.border = (img.src === imageUrl) ? "3px solid blue" : "none";
+    document.getElementById('closeCarouselModal').addEventListener('click', function() {
+        document.getElementById('cosmeticCarouselOverlay').style.display = 'none';
+        document.getElementById('carouselModalContent').innerHTML = "";
     });
-}
-
-async function saveCosmeticSelection() {
-    if (!currentCharacter) {
-        alert("Geen character geselecteerd");
-        return;
-    }
-    const dataToSend = { name: currentCharacter };
-    dataToSend[`cosmetic${cosmeticSlot}`] = selectedCosmetics[cosmeticSlot];
-
-    try {
-      const res = await fetch("/favoritePage/updateCosmetics", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(dataToSend)
-      });
-
-      if (res.ok) {
-        document.getElementById("cosmeticPopup").style.display = "none";
-        location.reload();
-      } else {
-        alert("Fout bij opslaan van cosmetic");
-      }
-    } catch (e) {
-      alert("Fout bij verbinden met server");
-      console.error(e);
-    }
-}
+    document.getElementById('cosmeticCarouselOverlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+            document.getElementById('carouselModalContent').innerHTML = "";
+        }
+    });
+});
