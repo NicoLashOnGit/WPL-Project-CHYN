@@ -19,9 +19,13 @@
 <nav id="nav">
     <a href="shopPage"><img src="/Images/Logos/fn_logo_met_hamer_copy.png" alt="" id="navLogoImage"></a>
 
+    <button id="hamburgerBtn">☰</button>
+
+    <section id="navLinksContainer">
     <a href="/Characterpage" id="charactersLink" class="navLinks">Karakters</a>
     <a href="/favoritePage" id="favoritesLink" class="navLinks">Favorieten</a>
     <a href="/blacklist" id="blacklistLink" class="navLinks">Blacklist</a>
+    </section>
 
     <label class="tooltip">
         <span class="icon">i</span>
@@ -50,4 +54,12 @@
         <a href="/Accountpage" class=""><img src="/Images/Logos/Placeholder logo.png" alt="" id="accountImage"></a>
     </div>
 </nav>
+<script defer>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navLinksContainer = document.getElementById('navLinksContainer');
+
+hamburgerBtn.addEventListener('click', () => {
+  navLinksContainer.classList.toggle('show');
+});
+</script>
 <body>

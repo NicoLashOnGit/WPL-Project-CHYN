@@ -28,7 +28,9 @@ main {
   flex: 1; /* main fills the space between nav and footer */
 }
 
-
+#hamburgerBtn {
+  display: none;
+}
 
 
 
@@ -1163,6 +1165,19 @@ a {
 /* Medium Devices (Tablets) */
 @media only screen and (max-width: 768px) {
   /* Homepagina */
+  #hamburgerBtn {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    width: 16px;
+    padding-right: 3em;
+    z-index: 1100;
+  }
+
+
+
   #seccontainer {
     flex-direction: column;
   }
@@ -1188,7 +1203,7 @@ a {
     position: absolute;
     top: 60px;
     left: 0;
-    width: 100%;
+    width: 80%;
     background-color: rgba(0, 0, 0, 0.95);
     flex-direction: column;
     z-index: 1001;
@@ -1556,3 +1571,4 @@ a {
     left: 67%;
     right: auto;
 }
+
