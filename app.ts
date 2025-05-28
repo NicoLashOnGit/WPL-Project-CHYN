@@ -514,6 +514,12 @@ app.post("/Accountpage/delete", async (req, res) => {
     }
 })
 
+app.post("/logout", (req, res) => {
+    req.session.destroy(() => {
+        res.status(200).json({ message: "Uitgelogd" })
+    })
+})
+
 app.listen(app.get("port"), async() => {
     await connect();
     console.log("[server] http://localhost:" + app.get("port"))

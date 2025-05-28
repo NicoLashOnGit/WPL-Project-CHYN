@@ -33,7 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const result = await response.json();
         alert(result.message);    
     }
-
+    const logOutBtn = document.getElementById("logOutBtn");
+    if (logOutBtn) {
+        logOutBtn.addEventListener( "click", async function() {
+            const response = await fetch("/logout" {
+                method: "POST",
+                headers: { "Content-Type": "application/json" }
+            })
+            if (response.ok) {
+                window.location.href = "/Landingpage"
+            } else {
+                alert("Uitloggen mislukt.")
+            }
+        })
+    }
     const deleteBtn = document.getElementById("deleteAccBtn");
     if (deleteBtn) {
         deleteBtn.addEventListener("click", async function() {
