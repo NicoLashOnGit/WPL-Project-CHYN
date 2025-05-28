@@ -435,10 +435,11 @@ border: black 1px solid;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+ 
   background-image: url(./Images/Backgrounds/Fortnite\ Wallpaper.png);
   background-position: center;  
-  background-size: cover;       
+  background-size: cover;
+        
 }
 #RegistrationMenu,#LoginMenu {
   backdrop-filter: blur(10px);
