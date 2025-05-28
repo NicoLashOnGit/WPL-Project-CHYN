@@ -48,6 +48,7 @@
     if (!loggedIn) {
       event.preventDefault();
       alert('Je bent nog niet ingelogd. Log eerst in.');
+      res.redirect("/Loginpage")
       return;
     }
 

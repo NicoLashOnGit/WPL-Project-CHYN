@@ -7,6 +7,7 @@ export interface FavoriteCharacter {
     losses?: number;
     cosmetic1?: string;
     cosmetic2?: string;
+    cosmetic3?: string;
 }
 
 export interface BlacklistedCharacter {

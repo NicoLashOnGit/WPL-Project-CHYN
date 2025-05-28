@@ -21,12 +21,12 @@
             <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCostImage">
             <p id="vbucksCounter"><%= prices.backpack %></p>
           </div>
-          <form action="/buyItem" method="POST">
+          <form class="buyItemForm" action="/buyItem" method="POST">
             <input type="hidden" name="name" value="<%= backpack.name %>">
             <input type="hidden" name="image" value="<%= backpack.images.icon %>">
             <input type="hidden" name="type" value="backpack">
             <input type="hidden" name="price" value="<%= prices.backpack %>">
-            <button type="submit">Koop</button>
+            <button type="submit" class="buyBtns">Koop</button>
           </form>
         </article>
         <% }); %>
@@ -48,12 +48,12 @@
             <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCostImage">
             <p id="vbucksCounter"><%= prices.pickaxe %></p>
           </div>
-          <form action="/buyItem" method="POST">
+          <form class="buyItemForm" action="/buyItem" method="POST">
             <input type="hidden" name="name" value="<%= pickaxe.name %>">
             <input type="hidden" name="image" value="<%= pickaxe.images.icon %>">
             <input type="hidden" name="type" value="pickaxe">
             <input type="hidden" name="price" value="<%= prices.pickaxe %>">
-            <button type="submit">Koop</button>
+            <button type="submit" class="buyBtns">Koop</button>
           </form>
         </article>
         <% }); %>
@@ -75,12 +75,12 @@
             <img src="/Images/Logos/Vbuck coin png.png" alt="" id="vbucksCostImage">
             <p id="vbucksCounter"><%= prices.glider %></p>
           </div>
-          <form action="/buyItem" method="POST">
+          <form class="buyItemForm" action="/buyItem" method="POST">
             <input type="hidden" name="name" value="<%= glider.name %>">
             <input type="hidden" name="image" value="<%= glider.images.icon %>">
             <input type="hidden" name="type" value="glider">
             <input type="hidden" name="price" value="<%= prices.glider %>">
-            <button type="submit">Koop</button>
+            <button type="submit" class="buyBtns">Koop</button>
           </form>
         </article>
         <% }); %>

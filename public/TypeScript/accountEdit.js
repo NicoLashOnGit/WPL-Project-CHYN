@@ -33,5 +33,36 @@ document.addEventListener("DOMContentLoaded", () => {
         const result = await response.json();
         alert(result.message);    
     }
+    const logOutBtn = document.getElementById("logOutBtn");
+    if (logOutBtn) {
+        logOutBtn.addEventListener( "click", async function() {
+            const response = await fetch("/logout" {
+                method: "POST",
+                headers: { "Content-Type": "application/json" }
+            })
+            if (response.ok) {
+                window.location.href = "/Landingpage"
+            } else {
+                alert("Uitloggen mislukt.")
+            }
+        })
+    }
+    const deleteBtn = document.getElementById("deleteAccBtn");
+    if (deleteBtn) {
+        deleteBtn.addEventListener("click", async function() {
+            const confirmed = confirm("Weet je zeker dat je je account permanent wil verwijderen? Dit kan niet ongedaan gemaakt worden!")
+            if (confirmed) {
+                const response = await fetch("/Accountpage/delete", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json"}
+                });
+                const result = await response.json();
+                alert(result.message);
+                if (response.ok) {
+                    window.location.href = "/Landingpage"
+                }
+            }
+        })
+    }
 });
 
