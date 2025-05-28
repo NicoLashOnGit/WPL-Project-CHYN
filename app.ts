@@ -125,6 +125,40 @@ app.get("/blacklist", async (req, res) => {
     res.render("blacklist", { title: "Blacklist", characters });
 });
 
+app.post("/blacklist/updateReason", async (req,res) => {
+    const displayName = req.session.displayName;
+    const {name, reason} = req.body;
+
+    if (!displayName) {
+        res.status(401).json({ message: "Niet ingelogd"});
+        return;
+    }
+
+    try {
+        const users = await getUsers();
+        const user = users.find(u => u.displayName === displayName);
+
+        if (!user) {
+            res.status(404).json({ message: "Gebruiker niet gevonden" });
+            return;
+        }
+
+        const updateResult = await collection.updateOne(
+            { _id: user._id, "blacklist.name": name},
+            { $set: {"blacklist.$.reason": reason}}
+        );
+
+        if (updateResult.modifiedCount > 0) {
+            res.status(200).json({ message: "Reden bijgewerkt" });
+        } else {
+            res.status(400).json({ message: "Karakter niet gevonden of reden ongewijzigd" })
+        }
+    } catch (error) {
+        console.error("Fout bij bewerken van reden", error);
+        res.status(500).json({ message: "Interne serverfout"})
+    }
+})
+
 app.post("/blacklist", async (req, res) => {
     const { name, image, reason } = req.body;
     const displayName = req.session.displayName;
